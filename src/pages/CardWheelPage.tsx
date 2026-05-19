@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import CardWheelRenderer from '../components/CardWheelRenderer';
 import ResultModal from '../components/ResultModal';
 import CollectionStatus from '../components/CollectionStatus';
@@ -35,7 +36,7 @@ export default function CardWheelPage() {
       setLastOutcome(rewardResult);
 
       if (import.meta.env.DEV) {
-        console.log('🃏 积分卡指针命中:', rewardResult.cardLabel, rewardResult);
+        console.log('积分卡指针命中:', rewardResult.cardLabel, rewardResult);
       }
     }
   }, [addCard, getSeasonFromIndex]);
@@ -75,34 +76,40 @@ export default function CardWheelPage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <div className="cute-font min-h-screen bg-[radial-gradient(circle_at_top,#fff7ed_0%,#fdf2f8_42%,#eef6ff_100%)] flex flex-col items-center justify-center p-4 relative overflow-hidden text-amber-950">
       <div
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-35"
         style={{
-          backgroundImage: `repeating-linear-gradient(45deg, #D4AF37 0px, #D4AF37 1px, transparent 1px, transparent 20px),
-                           repeating-linear-gradient(-45deg, #FFD700 0px, #FFD700 1px, transparent 1px, transparent 20px)`,
+          backgroundImage: `linear-gradient(rgba(251, 191, 36, 0.18) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(244, 114, 182, 0.14) 1px, transparent 1px)`,
+          backgroundSize: '28px 28px',
         }}
       />
 
-      <div className="relative z-10 w-full max-w-5xl">
-        <div className="text-center mb-8">
+      <div className="relative z-10 w-full max-w-6xl">
+        <div className="text-center mb-5">
+          <div className="mb-4 flex justify-center">
+            <Link
+              to="/"
+              className="rounded-full border border-amber-200 bg-white/80 px-5 py-2 text-sm font-bold text-amber-800 shadow-sm transition hover:bg-white"
+            >
+              ← 返回棋盘首页
+            </Link>
+          </div>
           <h1
-            className="text-6xl font-bold mb-3 bg-gradient-to-r from-amber-600 via-orange-500 to-yellow-600 bg-clip-text text-transparent"
-            style={{ fontFamily: "'Noto Sans SC', sans-serif" }}
+            className="text-4xl font-black mb-2 bg-gradient-to-r from-amber-600 via-rose-500 to-violet-500 bg-clip-text text-transparent md:text-5xl"
           >
-            🃏 积分卡转盘
+            积分卡转盘
           </h1>
-          <p className="text-gray-600 text-lg font-medium">红色指针停在哪一格，就记录对应季节积分卡</p>
+          <p className="text-sm font-bold text-amber-700/75">红色指针停在哪一格，就记录对应季节积分卡</p>
         </div>
 
-        <CollectionStatus />
-
-        <div className="flex justify-center my-8 relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-200/30 via-orange-200/30 to-yellow-200/30 rounded-full blur-3xl" />
+        <div className="relative mx-auto mb-6 flex max-w-3xl justify-center rounded-[36px] border border-white/80 bg-white/70 px-4 py-8 shadow-[0_22px_50px_rgba(180,83,9,0.14)] backdrop-blur">
+          <div className="absolute inset-x-12 top-10 h-64 rounded-full bg-gradient-to-br from-amber-200/30 via-pink-200/25 to-sky-200/30 blur-3xl" />
 
           {resultSeason && (
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-30 rounded-full bg-white/95 px-5 py-2 text-sm font-bold text-amber-800 border border-amber-300 shadow-xl">
-              指针命中：{resultSeason.emoji} {resultSeason.cardLabel}
+            <div className="absolute left-1/2 top-3 z-30 max-w-[92%] -translate-x-1/2 rounded-full bg-white/95 px-5 py-2 text-sm font-bold text-amber-800 border border-amber-200 shadow-lg">
+              指针命中：{resultSeason.cardLabel}
               {resultDescription && <span className="ml-2 text-amber-600">· {resultDescription}</span>}
             </div>
           )}
@@ -145,18 +152,18 @@ export default function CardWheelPage() {
           )}
         </div>
 
-        <div className="flex gap-4 justify-center mb-6">
+        <div className="flex flex-wrap gap-3 justify-center mb-6">
           <button
             onClick={startSpin}
             disabled={isSpinning || isLoading}
-            className={`px-12 py-4 rounded-full font-bold text-xl transition-all duration-300 transform relative overflow-hidden group ${
+            className={`px-10 py-3 rounded-full font-bold text-lg transition-all duration-300 transform relative overflow-hidden group ${
               isSpinning || isLoading
-                ? 'bg-gray-300 cursor-not-allowed opacity-50'
-                : 'bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 hover:from-amber-400 hover:via-orange-400 hover:to-yellow-400 hover:scale-110 shadow-2xl hover:shadow-amber-500/40'
+                ? 'bg-gray-200 cursor-not-allowed opacity-60 text-gray-500'
+                : 'bg-gradient-to-r from-amber-400 via-rose-400 to-violet-400 hover:from-amber-300 hover:via-rose-300 hover:to-violet-300 hover:scale-105 shadow-xl hover:shadow-rose-300/40'
             }`}
           >
             <span className="relative z-10 text-white drop-shadow-md font-bold tracking-wide">
-              {isSpinning ? '🎴 抽取中...' : '✨ 抽取积分卡'}
+              {isSpinning ? '抽取中...' : '抽取积分卡'}
             </span>
             {!isSpinning && !isLoading && (
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -166,16 +173,17 @@ export default function CardWheelPage() {
           <button
             onClick={handleReset}
             disabled={isSpinning}
-            className={`px-8 py-4 rounded-full font-bold text-xl transition-all duration-300 ${
+            className={`px-7 py-3 rounded-full font-bold text-lg transition-all duration-300 ${
               isSpinning
-                ? 'bg-gray-300 cursor-not-allowed opacity-50'
-                : 'bg-white hover:bg-gray-50 text-amber-700 hover:text-amber-800 font-semibold border-3 border-amber-300 hover:border-amber-400 shadow-lg hover:shadow-xl'
+                ? 'bg-gray-200 cursor-not-allowed opacity-60 text-gray-500'
+                : 'bg-white/90 hover:bg-white text-amber-700 hover:text-amber-800 border border-amber-200 hover:border-amber-300 shadow-md hover:shadow-lg'
             }`}
-            style={{ borderWidth: '3px' }}
           >
-            🔄 重置游戏
+            重置游戏
           </button>
         </div>
+
+        <CollectionStatus />
 
         {result && resultSeason && !pendingReward && !showVideoReward && (
           <ResultModal

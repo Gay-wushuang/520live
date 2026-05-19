@@ -1,6 +1,35 @@
 import { useEffect, useState } from 'react';
 import { SEASON_LIST } from '../data/seasons';
-import { useGameStore } from '../stores/gameStore';
+import { useGameStore, type GiftAuditLogEntry } from '../stores/gameStore';
+
+const GIFT_LOG_TYPE_LABEL: Record<GiftAuditLogEntry['type'], string> = {
+  card_spin: '抽卡',
+  reward_unlocked: '解锁',
+  reward_claimed: '领取',
+  archive: '档案',
+  reset: '重置',
+};
+
+function formatLogTime(value: string): string {
+  return new Date(value).toLocaleString('zh-CN', { hour12: false });
+}
+
+function formatGiftLogsForCopy(logs: GiftAuditLogEntry[]): string {
+  const header = ['时间', '类型', '玩家', '季节', '积分卡', '奖励', '备注'].join('\t');
+  const rows = logs.map((log) =>
+    [
+      formatLogTime(log.createdAt),
+      GIFT_LOG_TYPE_LABEL[log.type],
+      log.playerName,
+      log.seasonName ?? '',
+      log.cardLabel ?? '',
+      log.rewardLabel ?? '',
+      log.note,
+    ].join('\t')
+  );
+
+  return [header, ...rows].join('\n');
+}
 
 export default function CollectionStatus() {
   const {
@@ -17,6 +46,7 @@ export default function CollectionStatus() {
     totalSpins,
     cardSpins,
     spinHistory,
+    auditLogs,
   } = useGameStore();
   const [nickname, setNicknameDraft] = useState(userProfile.nickname);
   const [archiveMessage, setArchiveMessage] = useState('已自动读取本地存档');
@@ -66,8 +96,22 @@ export default function CollectionStatus() {
     setArchiveMessage(deleted ? `已删除 ${archiveName}` : '至少需要保留一个存档');
   };
 
+  const handleCopyGiftLogs = async () => {
+    if (auditLogs.length === 0) {
+      setArchiveMessage('暂无积分卡日志可复制');
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(formatGiftLogsForCopy(auditLogs));
+      setArchiveMessage(`已复制 ${auditLogs.length} 条积分卡日志`);
+    } catch {
+      setArchiveMessage('复制失败，请检查浏览器剪贴板权限');
+    }
+  };
+
   return (
-    <div className="bg-white/85 backdrop-blur-sm rounded-2xl p-6 shadow-xl border-2 border-amber-200">
+    <div className="bg-white/[0.85] backdrop-blur-sm rounded-2xl p-6 shadow-xl border-2 border-amber-200">
       <div className="flex flex-col gap-4 mb-5 lg:flex-row lg:items-start lg:justify-between">
         <div>
           <h3 className="text-xl font-bold text-amber-800">📊 玩家收集档案</h3>
@@ -247,6 +291,40 @@ export default function CollectionStatus() {
           </div>
         </div>
       )}
+
+      <div className="mt-4 border-t border-amber-200 pt-4">
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h4 className="text-sm font-black text-amber-900">下播核对日志</h4>
+            <p className="text-xs font-bold text-amber-700/70">记录抽卡、奖励解锁、奖励领取和重置</p>
+          </div>
+          <button
+            type="button"
+            onClick={handleCopyGiftLogs}
+            className="rounded-lg border border-amber-300 bg-white px-3 py-2 text-xs font-black text-amber-700 shadow-sm transition hover:bg-amber-50"
+          >
+            复制日志
+          </button>
+        </div>
+
+        <div className="max-h-44 space-y-2 overflow-y-auto pr-1">
+          {auditLogs.length === 0 ? (
+            <div className="rounded-lg border border-dashed border-amber-200 bg-amber-50 px-3 py-3 text-xs font-bold text-amber-700">
+              暂无日志，开始抽取后会自动记录。
+            </div>
+          ) : (
+            auditLogs.slice(0, 10).map((log) => (
+              <div key={log.id} className="rounded-lg border border-amber-200 bg-white/75 px-3 py-2 text-xs">
+                <div className="flex flex-wrap items-center justify-between gap-2 font-black text-amber-900">
+                  <span>{GIFT_LOG_TYPE_LABEL[log.type]} · {log.playerName}</span>
+                  <span className="text-amber-600">{formatLogTime(log.createdAt)}</span>
+                </div>
+                <p className="mt-1 font-bold text-gray-600">{log.note}</p>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
     </div>
   );
 }

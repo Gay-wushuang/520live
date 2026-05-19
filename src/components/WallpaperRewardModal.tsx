@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useGameStore, type GameReward } from '../stores/gameStore';
 
 interface WallpaperRewardModalProps {
@@ -8,6 +8,20 @@ interface WallpaperRewardModalProps {
 export default function WallpaperRewardModal({ reward }: WallpaperRewardModalProps) {
   const [isVisible, setIsVisible] = useState(false);
   const { claimWallpaper, claimUltimateReward } = useGameStore();
+  const rewardLights = useMemo(
+    () =>
+      reward
+        ? Array.from({ length: reward.type === 'ultimate' ? 46 : 24 }, (_, index) => ({
+            id: index,
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            size: 2 + Math.random() * 4,
+            delay: `${Math.random() * 2.4}s`,
+            duration: `${2.8 + Math.random() * 2.6}s`,
+          }))
+        : [],
+    [reward]
+  );
 
   useEffect(() => {
     let timer: number | undefined;
@@ -31,71 +45,71 @@ export default function WallpaperRewardModal({ reward }: WallpaperRewardModalPro
 
   return (
     <div
-      className={`fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-[#090714]/[0.88] p-4 backdrop-blur-md transition-opacity duration-500 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
     >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_16%,rgba(251,191,36,0.24),transparent_34%),radial-gradient(circle_at_18%_82%,rgba(244,114,182,0.18),transparent_36%),radial-gradient(circle_at_82%_78%,rgba(125,211,252,0.16),transparent_32%)]" />
+      <div className="absolute left-1/2 top-1/2 h-[120vh] w-16 -translate-x-1/2 -translate-y-1/2 rotate-[21deg] bg-gradient-to-b from-transparent via-amber-100/[0.16] to-transparent blur-xl" />
+      <div className="absolute left-1/2 top-1/2 h-[120vh] w-16 -translate-x-1/2 -translate-y-1/2 rotate-[-28deg] bg-gradient-to-b from-transparent via-pink-100/[0.14] to-transparent blur-xl" />
+
       <div
-        className={`bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 rounded-3xl p-10 max-w-lg w-full mx-4 shadow-2xl border-2 transform transition-all duration-700 ${
-          isUltimate
-            ? 'border-yellow-400 shadow-yellow-400/30'
-            : 'border-amber-500 shadow-amber-500/20'
-        } ${isVisible ? 'scale-100 translate-y-0' : 'scale-50 translate-y-20'}`}
+        className={`relative w-full max-w-3xl overflow-hidden rounded-[32px] border bg-black/[0.62] shadow-2xl backdrop-blur-xl transition-all duration-700 ${
+          isUltimate ? 'border-amber-200/50 shadow-amber-300/20' : 'border-rose-200/[0.35] shadow-rose-300/15'
+        } ${isVisible ? 'scale-100 translate-y-0' : 'scale-95 translate-y-8'}`}
       >
-        {isUltimate && (
-          <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-            <div className="text-7xl animate-bounce">👑</div>
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/[0.12] to-transparent" />
+        <div className="absolute -left-20 -top-20 h-48 w-48 rounded-full bg-amber-200/20 blur-3xl" />
+        <div className="absolute -bottom-20 -right-16 h-52 w-52 rounded-full bg-fuchsia-300/[0.18] blur-3xl" />
+
+        <div className="relative z-10 p-6 text-center md:p-8">
+          <div className="mb-6">
+            <p className="text-xs font-black uppercase tracking-[0.32em] text-amber-200">
+              {isUltimate ? 'Ultimate Reward' : 'Wallpaper Reward'}
+            </p>
+            <h2 className="mt-3 text-3xl font-black text-white md:text-4xl">
+              {isUltimate ? '终极大奖已解锁' : '壁纸奖励已解锁'}
+            </h2>
+            <p className="mt-3 text-sm font-bold text-slate-300">
+              指针命中：<span className="text-amber-200">{reward.sourceCardLabel}</span>
+            </p>
+            <p className="mt-2 text-base font-bold text-slate-200">
+              {isUltimate
+                ? `再次集齐 ${reward.seasonName} 积分卡，进入终极奖励阶段`
+                : `集齐 2 张 ${reward.seasonName} 积分卡，获得 ${reward.wallpaperLabel}`}
+            </p>
           </div>
-        )}
 
-        <div className="text-center relative z-10">
-          <h2
-            className={`text-4xl font-bold mb-4 ${
-              isUltimate ? 'bg-gradient-to-r from-yellow-300 via-yellow-500 to-orange-500' : 'bg-gradient-to-r from-amber-400 to-orange-500'
-            } bg-clip-text text-transparent`}
-          >
-            {isUltimate ? '🎊 终极大奖！' : '🎁 壁纸奖励！'}
-          </h2>
-
-          <p className="text-gray-300 text-lg mb-3 font-medium">
-            指针命中：<span className="text-yellow-300 font-bold">{reward.sourceCardLabel}</span>
-          </p>
-          <p className="text-gray-300 text-xl mb-8 font-medium">
-            {isUltimate
-              ? `再次集齐 ${reward.seasonName} 积分卡，终极奖励已解锁`
-              : `集齐 2 张 ${reward.seasonName} 积分卡，获得 ${reward.wallpaperLabel}`
-            }
-          </p>
-
-          <div className="space-y-6 mb-8">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-2xl opacity-75 blur transition duration-300 group-hover:opacity-100" />
+          <div className={`mb-7 grid gap-4 ${isUltimate ? 'md:grid-cols-2' : ''}`}>
+            <div className="group relative overflow-hidden rounded-3xl border border-white/[0.18] bg-white/[0.08] p-2 shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-200/[0.12] via-transparent to-sky-200/[0.12] opacity-80" />
               <img
                 src={reward.wallpaperImage}
                 alt={reward.wallpaperLabel}
-                className="relative rounded-2xl w-full h-64 object-cover border-4 border-white/30 shadow-2xl"
+                className="relative h-60 w-full rounded-2xl object-cover shadow-[0_18px_48px_rgba(0,0,0,0.28)] md:h-72"
               />
-              <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium border border-white/20">
-                🖼️ {reward.wallpaperLabel}
+              <div className="absolute bottom-5 left-5 rounded-full border border-white/[0.18] bg-black/[0.62] px-4 py-1.5 text-sm font-black text-white backdrop-blur">
+                {reward.wallpaperLabel}
               </div>
             </div>
 
             {reward.type === 'ultimate' && (
-              <div className="relative group animate-pulse">
-                <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 rounded-2xl opacity-75 blur transition duration-300" />
+              <div className="group relative overflow-hidden rounded-3xl border border-amber-200/[0.35] bg-amber-100/[0.08] p-2 shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-200/[0.18] via-transparent to-fuchsia-200/[0.14] opacity-90" />
                 <img
                   src={reward.computerWallpaper}
-                  alt="电脑壁纸"
-                  className="relative rounded-2xl w-full h-64 object-cover border-4 border-yellow-400/50 shadow-2xl"
+                  alt="电脑静态壁纸"
+                  className="relative h-60 w-full rounded-2xl object-cover shadow-[0_18px_48px_rgba(0,0,0,0.28)] md:h-72"
                 />
-                <div className="absolute top-3 left-3 bg-gradient-to-r from-yellow-500 to-orange-500 px-4 py-1.5 rounded-full text-white text-sm font-bold shadow-lg">
-                  💻 限定电脑壁纸
+                <div className="absolute bottom-5 left-5 rounded-full border border-amber-100/30 bg-black/[0.62] px-4 py-1.5 text-sm font-black text-amber-100 backdrop-blur">
+                  电脑静态壁纸
                 </div>
               </div>
             )}
           </div>
 
           <button
+            type="button"
             onClick={() => {
               if (isUltimate) {
                 claimUltimateReward();
@@ -103,39 +117,58 @@ export default function WallpaperRewardModal({ reward }: WallpaperRewardModalPro
                 claimWallpaper(reward.season);
               }
             }}
-            className={`px-10 py-4 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 ${
+            className={`rounded-full px-10 py-4 text-xl font-black transition duration-300 hover:brightness-110 ${
               isUltimate
-                ? 'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 hover:from-yellow-300 hover:to-red-400 text-white shadow-2xl hover:shadow-yellow-500/50'
-                : 'bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white shadow-xl'
+                ? 'bg-gradient-to-r from-amber-300 via-rose-300 to-sky-300 text-slate-950 shadow-2xl shadow-amber-300/20'
+                : 'bg-gradient-to-r from-rose-300 via-amber-300 to-sky-300 text-slate-950 shadow-xl shadow-rose-300/20'
             }`}
           >
-            {isUltimate ? '✨ 领取终极奖励' : '🎉 领取壁纸'}
+            {isUltimate ? '领取终极奖励' : '领取壁纸'}
           </button>
 
           {!isUltimate && (
-            <p className="mt-4 text-gray-400 text-sm">
+            <p className="mt-4 text-sm font-bold text-slate-400">
               领取后该季节积分卡会归零，再集齐 2 张可解锁终极奖励。
             </p>
           )}
         </div>
 
-        <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
-          {[...Array(isUltimate ? 40 : 20)].map((_, index) => (
-            <div
-              key={index}
-              className={`absolute rounded-full animate-ping ${
-                isUltimate ? 'w-3 h-3 bg-yellow-400' : 'w-2 h-2 bg-amber-400'
-              }`}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[32px]">
+          {rewardLights.map((light) => (
+            <span
+              key={light.id}
+              className="reward-light absolute rounded-full bg-white/80 shadow-[0_0_18px_rgba(255,255,255,0.9)]"
               style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${1 + Math.random()}s`,
+                top: light.top,
+                left: light.left,
+                width: `${light.size}px`,
+                height: `${light.size}px`,
+                animationDelay: light.delay,
+                animationDuration: light.duration,
               }}
             />
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes rewardLightFloat {
+          0% {
+            transform: translate3d(0, 16px, 0) scale(0.65);
+            opacity: 0.25;
+          }
+          50% {
+            opacity: 0.95;
+          }
+          100% {
+            transform: translate3d(16px, -76px, 0) scale(1);
+            opacity: 0.12;
+          }
+        }
+        .reward-light {
+          animation: rewardLightFloat ease-in-out infinite alternate;
+        }
+      `}</style>
     </div>
   );
 }

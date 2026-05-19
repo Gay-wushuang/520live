@@ -20,7 +20,7 @@ export default function CardWheelRenderer({ config, images, rotation }: CardWhee
     const { size, segments } = config;
     const centerX = size / 2;
     const centerY = size / 2;
-    const radius = size / 2 - 10;
+    const radius = size / 2 - 30;
     const segmentAngle = (2 * Math.PI) / segments;
     const labels = config.labels ?? [];
 
@@ -39,40 +39,41 @@ export default function CardWheelRenderer({ config, images, rotation }: CardWhee
       ctx.arc(centerX, centerY, radius, startAngle, endAngle);
       ctx.closePath();
 
-      const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+      const gradient = ctx.createRadialGradient(centerX, centerY, 15, centerX, centerY, radius);
       const cardColors = [
-        ['#FFE5E5', '#FFB3B3'],
-        ['#E5F5FF', '#B3D9FF'],
-        ['#E8FFE5', '#B3FFB3'],
-        ['#FFFDE5', '#FFF4B3'],
+        ['#fff1f2', '#fecdd3'],
+        ['#ecfeff', '#bae6fd'],
+        ['#f0fdf4', '#bbf7d0'],
+        ['#fffbeb', '#fde68a'],
       ];
       gradient.addColorStop(0, cardColors[i][0]);
       gradient.addColorStop(1, cardColors[i][1]);
       ctx.fillStyle = gradient;
       ctx.fill();
 
-      ctx.strokeStyle = '#ffffff';
-      ctx.lineWidth = 4;
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.95)';
+      ctx.lineWidth = 5;
       ctx.stroke();
 
       if (images[i]) {
         ctx.save();
-        ctx.beginPath();
-        ctx.moveTo(centerX, centerY);
-        ctx.arc(centerX, centerY, radius * 0.7, startAngle, endAngle);
-        ctx.closePath();
-        ctx.clip();
-
         const img = images[i];
-        const imgSize = radius * 0.55;
+        const imgSize = radius * 0.46;
         const midAngle = startAngle + segmentAngle / 2;
-        const imgX = centerX + Math.cos(midAngle) * (radius * 0.38) - imgSize / 2;
-        const imgY = centerY + Math.sin(midAngle) * (radius * 0.38) - imgSize / 2;
+        const imgX = centerX + Math.cos(midAngle) * (radius * 0.34) - imgSize / 2;
+        const imgY = centerY + Math.sin(midAngle) * (radius * 0.34) - imgSize / 2;
 
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
-        ctx.shadowBlur = 10;
-        ctx.shadowOffsetX = 2;
-        ctx.shadowOffsetY = 2;
+        ctx.shadowColor = 'rgba(146, 64, 14, 0.16)';
+        ctx.shadowBlur = 14;
+        ctx.shadowOffsetY = 7;
+        ctx.fillStyle = 'rgba(255,255,255,0.82)';
+        ctx.beginPath();
+        ctx.roundRect(imgX - 8, imgY - 8, imgSize + 16, imgSize + 16, 18);
+        ctx.fill();
+        ctx.shadowColor = 'transparent';
+        ctx.beginPath();
+        ctx.roundRect(imgX, imgY, imgSize, imgSize, 14);
+        ctx.clip();
 
         ctx.drawImage(img, imgX, imgY, imgSize, imgSize);
         ctx.restore();
@@ -84,12 +85,12 @@ export default function CardWheelRenderer({ config, images, rotation }: CardWhee
         const labelY = centerY + Math.sin(midAngle) * (radius * 0.68);
 
         ctx.save();
-        ctx.font = 'bold 18px Arial, sans-serif';
+        ctx.font = 'bold 18px YouYuan, Microsoft YaHei, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.lineWidth = 4;
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.9)';
-        ctx.fillStyle = '#92400e';
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.95)';
+        ctx.fillStyle = '#7c2d12';
         ctx.strokeText(labels[i], labelX, labelY);
         ctx.fillText(labels[i], labelX, labelY);
         ctx.restore();
@@ -99,58 +100,46 @@ export default function CardWheelRenderer({ config, images, rotation }: CardWhee
     ctx.restore();
 
     ctx.beginPath();
-    ctx.arc(centerX, centerY, radius + 6, 0, 2 * Math.PI);
+    ctx.arc(centerX, centerY, radius + 10, 0, 2 * Math.PI);
     const borderGradient = ctx.createLinearGradient(0, 0, size, size);
-    borderGradient.addColorStop(0, '#D4AF37');
-    borderGradient.addColorStop(0.25, '#FFD700');
-    borderGradient.addColorStop(0.5, '#D4AF37');
-    borderGradient.addColorStop(0.75, '#FFD700');
-    borderGradient.addColorStop(1, '#D4AF37');
+    borderGradient.addColorStop(0, '#f9a8d4');
+    borderGradient.addColorStop(0.35, '#fcd34d');
+    borderGradient.addColorStop(0.7, '#93c5fd');
+    borderGradient.addColorStop(1, '#c4b5fd');
     ctx.strokeStyle = borderGradient;
-    ctx.lineWidth = 10;
-    ctx.setLineDash([15, 5]);
+    ctx.lineWidth = 14;
     ctx.stroke();
-    ctx.setLineDash([]);
-
-    for (let i = 0; i < 24; i++) {
-      const angle = (i * 15 * Math.PI) / 180;
-      const x1 = centerX + Math.cos(angle) * (radius + 12);
-      const y1 = centerY + Math.sin(angle) * (radius + 12);
-      const x2 = centerX + Math.cos(angle) * (radius + 20);
-      const y2 = centerY + Math.sin(angle) * (radius + 20);
-
-      ctx.beginPath();
-      ctx.moveTo(x1, y1);
-      ctx.lineTo(x2, y2);
-      ctx.strokeStyle = '#FFD700';
-      ctx.lineWidth = 3;
-      ctx.stroke();
-    }
 
     ctx.beginPath();
-    ctx.arc(centerX, centerY, 30, 0, 2 * Math.PI);
+    ctx.arc(centerX, centerY, radius + 22, 0, 2 * Math.PI);
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.86)';
+    ctx.lineWidth = 6;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 38, 0, 2 * Math.PI);
     const centerGradient = ctx.createRadialGradient(
       centerX - 5,
       centerY - 5,
       0,
       centerX,
       centerY,
-      30
+      38
     );
     centerGradient.addColorStop(0, '#fff');
-    centerGradient.addColorStop(0.7, '#f0f0f0');
-    centerGradient.addColorStop(1, '#d0d0d0');
+    centerGradient.addColorStop(0.68, '#fff7ed');
+    centerGradient.addColorStop(1, '#fde68a');
     ctx.fillStyle = centerGradient;
     ctx.fill();
-    ctx.strokeStyle = '#D4AF37';
-    ctx.lineWidth = 4;
+    ctx.strokeStyle = '#f59e0b';
+    ctx.lineWidth = 5;
     ctx.stroke();
 
-    ctx.font = 'bold 16px Arial';
-    ctx.fillStyle = '#D4AF37';
+    ctx.font = 'bold 15px YouYuan, Microsoft YaHei, sans-serif';
+    ctx.fillStyle = '#b45309';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('GO', centerX, centerY);
+    ctx.fillText('抽卡', centerX, centerY);
 
   }, [config, images, rotation]);
 
@@ -162,7 +151,7 @@ export default function CardWheelRenderer({ config, images, rotation }: CardWhee
       style={{
         maxWidth: '100%',
         height: 'auto',
-        filter: 'drop-shadow(0 15px 35px rgba(212, 175, 55, 0.4))',
+        filter: 'drop-shadow(0 20px 38px rgba(180, 83, 9, 0.22))',
       }}
     />
   );

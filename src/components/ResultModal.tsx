@@ -44,19 +44,27 @@ export default function ResultModal({
       className={`fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 transition-opacity duration-500 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
-      onClick={onClose}
     >
       <div
-        className={`bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl border border-yellow-500/30 transform transition-all duration-700 ${
+        className={`cute-font relative bg-gradient-to-br from-white via-pink-50 to-amber-50 rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl border border-amber-200 transform transition-all duration-700 ${
           isVisible ? 'scale-100 translate-y-0' : 'scale-50 translate-y-20'
         }`}
         onClick={(event) => event.stopPropagation()}
       >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-4 top-4 z-20 h-9 w-9 rounded-full border border-amber-200 bg-white/80 text-lg font-bold text-amber-700 shadow transition hover:bg-amber-50"
+          aria-label="关闭结果"
+        >
+          ×
+        </button>
+
         <div className="text-center">
           <div className="mb-6 relative">
             <div className="absolute inset-0 bg-yellow-400/20 rounded-full blur-xl animate-pulse" />
             <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent relative z-10">
-              {title ?? '🎉 恭喜中奖！'}
+              {title ?? '恭喜中奖'}
             </h2>
           </div>
 
@@ -71,20 +79,15 @@ export default function ResultModal({
             </div>
           )}
 
-          <p className="text-gray-300 text-lg mb-6">
+          <p className="text-amber-800 text-lg mb-6">
             {description ?? (
               <>
-                获得第 <span className="text-yellow-400 font-bold text-2xl">{result.winningIndex + 1}</span> 号奖品
+                获得第 <span className="text-yellow-600 font-bold text-2xl">{result.winningIndex + 1}</span> 号奖品
               </>
             )}
           </p>
 
-          <button
-            onClick={onClose}
-            className="px-8 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-slate-900 font-bold rounded-full hover:from-yellow-300 hover:to-orange-400 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-orange-500/50"
-          >
-            太棒了！
-          </button>
+          <p className="text-xs font-bold text-amber-500">点击右上角 X 关闭结果</p>
         </div>
 
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-3xl pointer-events-none">

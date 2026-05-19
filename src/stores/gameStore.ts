@@ -39,6 +39,23 @@ export interface SpinHistoryEntry {
   createdAt: string;
 }
 
+export interface GiftAuditLogEntry {
+  id: string;
+  type: 'card_spin' | 'reward_unlocked' | 'reward_claimed' | 'archive' | 'reset';
+  archiveId: string;
+  archiveName: string;
+  playerId: string;
+  playerName: string;
+  season?: Season;
+  seasonName?: string;
+  cardLabel?: string;
+  rewardLabel?: string;
+  rewardStatus?: 'none' | 'wallpaper' | 'ultimate';
+  cardCount?: number;
+  note: string;
+  createdAt: string;
+}
+
 export interface SaveArchive {
   id: string;
   name: string;
@@ -49,6 +66,7 @@ export interface SaveArchive {
   cardSpins: number;
   spinHistory: SpinHistoryEntry[];
   lastSpin: SpinHistoryEntry | null;
+  auditLogs: GiftAuditLogEntry[];
   createdAt: string;
   updatedAt: string;
 }
@@ -98,6 +116,7 @@ interface GameState {
   cardSpins: number;
   spinHistory: SpinHistoryEntry[];
   lastSpin: SpinHistoryEntry | null;
+  auditLogs: GiftAuditLogEntry[];
   pendingReward: GameReward | null;
   showVideoReward: boolean;
 
@@ -120,6 +139,7 @@ type PersistedGameState = Partial<GameState> & {
 };
 
 const MAX_HISTORY = 30;
+const MAX_AUDIT_LOGS = 500;
 const EMPTY_CARD_COLLECTION: CardCollection = {
   spring: 0,
   summer: 0,
@@ -167,6 +187,7 @@ function createEmptyArchive(name?: string): SaveArchive {
     cardSpins: 0,
     spinHistory: [],
     lastSpin: null,
+    auditLogs: [],
     createdAt: now,
     updatedAt: now,
   };
@@ -174,6 +195,29 @@ function createEmptyArchive(name?: string): SaveArchive {
 
 function appendHistory(history: SpinHistoryEntry[], entry: SpinHistoryEntry): SpinHistoryEntry[] {
   return [entry, ...history].slice(0, MAX_HISTORY);
+}
+
+function appendAuditLogs(logs: GiftAuditLogEntry[], entries: GiftAuditLogEntry[]): GiftAuditLogEntry[] {
+  return [...entries, ...logs].slice(0, MAX_AUDIT_LOGS);
+}
+
+function createGiftAuditLog(
+  state: GameState,
+  type: GiftAuditLogEntry['type'],
+  note: string,
+  details: Partial<Omit<GiftAuditLogEntry, 'id' | 'type' | 'archiveId' | 'archiveName' | 'playerId' | 'playerName' | 'note' | 'createdAt'>> = {}
+): GiftAuditLogEntry {
+  return {
+    id: createId('gift-log'),
+    type,
+    archiveId: state.currentArchiveId,
+    archiveName: state.userProfile.nickname || '未命名存档',
+    playerId: state.userProfile.id,
+    playerName: state.userProfile.nickname,
+    note,
+    createdAt: new Date().toISOString(),
+    ...details,
+  };
 }
 
 function snapshotArchive(state: GameState, existing?: SaveArchive): SaveArchive {
@@ -189,6 +233,7 @@ function snapshotArchive(state: GameState, existing?: SaveArchive): SaveArchive 
     cardSpins: state.cardSpins,
     spinHistory: state.spinHistory,
     lastSpin: state.lastSpin,
+    auditLogs: state.auditLogs,
     createdAt: existing?.createdAt ?? state.userProfile.createdAt ?? now,
     updatedAt: now,
   };
@@ -215,6 +260,7 @@ function buildArchiveState(archive: SaveArchive) {
     cardSpins: archive.cardSpins,
     spinHistory: archive.spinHistory,
     lastSpin: archive.lastSpin,
+    auditLogs: archive.auditLogs ?? [],
     pendingReward: null,
     showVideoReward: false,
   };
@@ -252,6 +298,7 @@ function normalizePersistedState(value: unknown): Partial<GameState> {
     cardSpins: persistedState?.cardSpins ?? 0,
     spinHistory: persistedState?.spinHistory ?? [],
     lastSpin: persistedState?.lastSpin ?? null,
+    auditLogs: persistedState?.auditLogs ?? [],
     createdAt: userProfile.createdAt ?? now,
     updatedAt: now,
   };
@@ -306,8 +353,15 @@ export const useGameStore = create<GameState>()(
 
       saveCurrentArchive: () => {
         const state = get();
+        const log = createGiftAuditLog(state, 'archive', `保存积分卡存档：${state.userProfile.nickname}`);
+        const nextState = {
+          ...state,
+          auditLogs: appendAuditLogs(state.auditLogs, [log]),
+        };
+
         set({
-          archiveSlots: upsertCurrentArchive(state),
+          auditLogs: nextState.auditLogs,
+          archiveSlots: upsertCurrentArchive(nextState),
         });
       },
 
@@ -345,10 +399,16 @@ export const useGameStore = create<GameState>()(
           ...state,
           userProfile: nextUserProfile,
         };
+        const log = createGiftAuditLog(nextState, 'archive', `玩家名称更新为 ${nextNickname}`);
+        const nextStateWithLog = {
+          ...nextState,
+          auditLogs: appendAuditLogs(state.auditLogs, [log]),
+        };
 
         set({
           userProfile: nextUserProfile,
-          archiveSlots: upsertCurrentArchive(nextState),
+          auditLogs: nextStateWithLog.auditLogs,
+          archiveSlots: upsertCurrentArchive(nextStateWithLog),
         });
       },
 
@@ -402,6 +462,37 @@ export const useGameStore = create<GameState>()(
           rewardStatus: isUltimate ? 'ultimate' : isNewWallpaper ? 'wallpaper' : 'none',
           createdAt: new Date().toISOString(),
         };
+        const auditEntries: GiftAuditLogEntry[] = [
+          createGiftAuditLog(state, 'card_spin', `抽中 ${info.cardLabel}，当前进度 ${currentCount}/2`, {
+            season,
+            seasonName: info.name,
+            cardLabel: info.cardLabel,
+            rewardLabel: pendingReward?.wallpaperLabel,
+            rewardStatus: entry.rewardStatus,
+            cardCount: currentCount,
+          }),
+        ];
+
+        if (pendingReward) {
+          auditEntries.unshift(
+            createGiftAuditLog(
+              state,
+              'reward_unlocked',
+              pendingReward.type === 'ultimate'
+                ? `解锁终极奖励：3个Q版3D模型、电脑静态壁纸、Wallpaper动态壁纸`
+                : `解锁壁纸奖励：${pendingReward.wallpaperLabel}`,
+              {
+                season,
+                seasonName: info.name,
+                cardLabel: info.cardLabel,
+                rewardLabel: pendingReward.type === 'ultimate' ? `${info.name}终极奖励` : pendingReward.wallpaperLabel,
+                rewardStatus: pendingReward.type,
+                cardCount: currentCount,
+              }
+            )
+          );
+        }
+
         const nextState = {
           ...state,
           cardCollection: newCollection,
@@ -409,6 +500,7 @@ export const useGameStore = create<GameState>()(
           cardSpins: state.cardSpins + 1,
           spinHistory: appendHistory(state.spinHistory, entry),
           lastSpin: entry,
+          auditLogs: appendAuditLogs(state.auditLogs, auditEntries),
           pendingReward,
           showVideoReward: isUltimate,
         };
@@ -419,6 +511,7 @@ export const useGameStore = create<GameState>()(
           cardSpins: nextState.cardSpins,
           spinHistory: nextState.spinHistory,
           lastSpin: nextState.lastSpin,
+          auditLogs: nextState.auditLogs,
           pendingReward: nextState.pendingReward,
           showVideoReward: nextState.showVideoReward,
           archiveSlots: upsertCurrentArchive(nextState),
@@ -441,6 +534,15 @@ export const useGameStore = create<GameState>()(
 
       claimWallpaper: (season: Season) => {
         const state = get();
+        const info = getSeasonInfo(season);
+        const rewardLabel = state.pendingReward?.type === 'wallpaper' ? state.pendingReward.wallpaperLabel : info.wallpaperLabel;
+        const log = createGiftAuditLog(state, 'reward_claimed', `已领取壁纸奖励：${rewardLabel}`, {
+          season,
+          seasonName: info.name,
+          cardLabel: info.cardLabel,
+          rewardLabel,
+          rewardStatus: 'wallpaper',
+        });
         const nextState = {
           ...state,
           cardCollection: {
@@ -452,12 +554,14 @@ export const useGameStore = create<GameState>()(
             [season]: true,
           },
           pendingReward: null,
+          auditLogs: appendAuditLogs(state.auditLogs, [log]),
         };
 
         set({
           cardCollection: nextState.cardCollection,
           wallpaperCollection: nextState.wallpaperCollection,
           pendingReward: null,
+          auditLogs: nextState.auditLogs,
           archiveSlots: upsertCurrentArchive(nextState),
         });
       },
@@ -465,6 +569,14 @@ export const useGameStore = create<GameState>()(
       claimUltimateReward: () => {
         const state = get();
         const season = state.pendingReward?.season;
+        const info = season ? getSeasonInfo(season) : null;
+        const log = createGiftAuditLog(state, 'reward_claimed', '已领取终极奖励：3个Q版3D模型、电脑静态壁纸、Wallpaper动态壁纸', {
+          season,
+          seasonName: info?.name,
+          cardLabel: info?.cardLabel,
+          rewardLabel: info ? `${info.name}终极奖励` : '终极奖励',
+          rewardStatus: 'ultimate',
+        });
         const nextState = {
           ...state,
           cardCollection: season
@@ -475,18 +587,21 @@ export const useGameStore = create<GameState>()(
             : state.cardCollection,
           showVideoReward: false,
           pendingReward: null,
+          auditLogs: appendAuditLogs(state.auditLogs, [log]),
         };
 
         set({
           cardCollection: nextState.cardCollection,
           showVideoReward: false,
           pendingReward: null,
+          auditLogs: nextState.auditLogs,
           archiveSlots: upsertCurrentArchive(nextState),
         });
       },
 
       resetGame: () => {
         const state = get();
+        const log = createGiftAuditLog(state, 'reset', '积分卡收集进度已重置');
         const nextState = {
           ...state,
           cardCollection: { ...EMPTY_CARD_COLLECTION },
@@ -495,6 +610,7 @@ export const useGameStore = create<GameState>()(
           cardSpins: 0,
           spinHistory: [],
           lastSpin: null,
+          auditLogs: appendAuditLogs(state.auditLogs, [log]),
           pendingReward: null,
           showVideoReward: false,
         };
@@ -506,6 +622,7 @@ export const useGameStore = create<GameState>()(
           cardSpins: 0,
           spinHistory: [],
           lastSpin: null,
+          auditLogs: nextState.auditLogs,
           pendingReward: null,
           showVideoReward: false,
           archiveSlots: upsertCurrentArchive(nextState),
@@ -531,6 +648,7 @@ export const useGameStore = create<GameState>()(
         cardSpins: state.cardSpins,
         spinHistory: state.spinHistory,
         lastSpin: state.lastSpin,
+        auditLogs: state.auditLogs,
         pendingReward: state.pendingReward,
         showVideoReward: state.showVideoReward,
       }),
