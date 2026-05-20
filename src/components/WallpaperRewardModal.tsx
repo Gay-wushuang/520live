@@ -98,11 +98,11 @@ export default function WallpaperRewardModal({ reward }: WallpaperRewardModalPro
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-200/[0.18] via-transparent to-fuchsia-200/[0.14] opacity-90" />
                 <img
                   src={reward.computerWallpaper}
-                  alt="电脑静态壁纸"
+                  alt="夏秋双面折扇"
                   className="relative h-60 w-full rounded-2xl object-cover shadow-[0_18px_48px_rgba(0,0,0,0.28)] md:h-72"
                 />
                 <div className="absolute bottom-5 left-5 rounded-full border border-amber-100/30 bg-black/[0.62] px-4 py-1.5 text-sm font-black text-amber-100 backdrop-blur">
-                  电脑静态壁纸
+                  夏秋双面折扇
                 </div>
               </div>
             )}

@@ -18,7 +18,7 @@ const BOARD_LABELS: Record<BoardEventType, string> = {
   truth: '真心',
   lottery: '积分',
   special: '效果',
-  figure: '手办',
+  figure: '周边',
   chaos: '混乱',
 };
 
@@ -45,7 +45,8 @@ export default function GameBoard({ onPositionClick }: GameBoardProps) {
 
   return (
     <section className="w-full">
-      <div className="relative mx-auto aspect-square w-full max-w-4xl overflow-hidden rounded-2xl bg-slate-950 shadow-2xl">
+      <div className="relative mx-auto aspect-square w-full max-w-4xl overflow-hidden rounded-[28px] border border-white/80 bg-white/75 shadow-[0_22px_50px_rgba(180,83,9,0.14)]">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-100/35 via-pink-100/20 to-sky-100/30" />
         <img
           src="/大富翁棋盘.png"
           alt="大富翁棋盘"
@@ -112,10 +113,10 @@ export default function GameBoard({ onPositionClick }: GameBoardProps) {
 
       <div className="mt-4 grid grid-cols-2 gap-2 text-xs sm:grid-cols-4 lg:grid-cols-7">
         {Object.entries(EVENT_CONFIGS).map(([type, config]) => (
-          <div key={type} className="flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2 text-slate-100">
+          <div key={type} className="flex items-center gap-2 rounded-lg border border-amber-100 bg-white/80 px-3 py-2 text-amber-900 shadow-sm">
             <span className="h-3 w-3 rounded-sm" style={{ backgroundColor: config.color }} />
             <span className="min-w-0 flex-1 truncate">{config.name}</span>
-            <span className="font-bold">{positionCounts[type as BoardEventType]}</span>
+            <span className="font-black text-amber-600">{positionCounts[type as BoardEventType]}</span>
           </div>
         ))}
       </div>

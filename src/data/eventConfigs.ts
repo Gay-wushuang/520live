@@ -1,28 +1,28 @@
 export const MISFORTUNE_EVENTS = [
-  '下一条弹幕必须押韵',
-  '用五个字安利今天的直播间',
-  '给主播写一句反派登场台词',
-  '用三个关键词形容当前直播氛围',
-  '给主播起一个中二但可爱的称号',
-  '写一句可当直播间口号的弹幕',
+  '指定本场直播发的弹幕结尾必须带有指定字',
+  '直播间分享到班级、家族或好友群，并宣告：我是无双的狗',
+  '小黑屋体验3分钟',
+  '给VX/QQ最上面的异性发送：“520快乐”',
+  '给无双写一封100字极其肉麻的情书供大家欣赏',
+  '给大家献歌一首',
 ];
 
 export const ADVENTURE_EVENTS = [
-  '主播用反派声线读一句弹幕',
-  '主播为当前观众生成专属入场词',
-  '主播用新闻播报口吻复盘刚才的骰子',
+  '给无双发送一段文本，录制指定音声',
+  '给观众画一幅抽象头像画',
+  '主播用新闻播报/雌小鬼口吻复盘刚才的骰子',
   '主播即兴唱 20 秒指定关键词小曲',
   '主播接下来 5 分钟维持指定人设',
-  '主播给当前观众授予一个奇妙头衔',
+  '接下来10分钟主播随机切换声线',
 ];
 
 export const TRUTH_EVENTS = [
-  '你最喜欢的虚拟主播是？',
-  '你最喜欢主播哪种直播状态？',
-  '你希望直播间增加什么互动玩法？',
-  '哪一个直播瞬间让你最有印象？',
-  '你最想看主播挑战什么企划？',
-  '给主播一句不超过 12 字的建议',
+  '分享自己的暗恋经历',
+  '你最后一次撒谎是什么时候？为什么要撒谎？',
+  '你最尴尬的一次经历是什么',
+  '你曾经被别人误解过吗？说一下详情',
+  '你对异性的体型要求是多少？',
+  '你最喜欢的一位二次元异性角色是？什么魅力吸引了你',
 ];
 
 export const SPECIAL_EFFECTS = [
@@ -35,9 +35,9 @@ export const SPECIAL_EFFECTS = [
 ];
 
 export const FIGURE_OPTIONS = [
-  { name: '维什戴尔 Q版3D模型', icon: 'W', rarity: 'SSR' },
-  { name: '凯尔希 Q版3D模型', icon: 'K', rarity: 'SR' },
-  { name: '阿米娅 Q版3D模型', icon: 'A', rarity: 'SR' },
+  { name: '活动海报', icon: '海', rarity: '实体周边' },
+  { name: '夏秋双面折扇', icon: '扇', rarity: '实体周边' },
+  { name: '春冬双面抱枕', icon: '枕', rarity: '实体周边' },
 ] as const;
 
 function getRandomEvents<T>(events: T[], count: number): T[] {
@@ -50,7 +50,7 @@ const ALL_EVENTS = [
   ...ADVENTURE_EVENTS,
   ...TRUTH_EVENTS,
   ...SPECIAL_EFFECTS,
-  ...FIGURE_OPTIONS.map((figure) => `手办抽取：${figure.name}`),
+  ...FIGURE_OPTIONS.map((figure) => `周边抽取：${figure.name}`),
 ];
 
 export function generateChaosWheel(): string[] {

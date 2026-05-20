@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { SEASON_LIST } from '../data/seasons';
+import { exportAuditCsvFiles, mergeLogsById } from '../lib/exportLogs';
 import { useGameStore, type GiftAuditLogEntry } from '../stores/gameStore';
+import { useMonopolyStore } from '../stores/monopolyStore';
 
 const GIFT_LOG_TYPE_LABEL: Record<GiftAuditLogEntry['type'], string> = {
   card_spin: '抽卡',
@@ -48,6 +50,8 @@ export default function CollectionStatus() {
     spinHistory,
     auditLogs,
   } = useGameStore();
+  const monopolyLogs = useMonopolyStore((state) => state.logs);
+  const monopolyArchiveSlots = useMonopolyStore((state) => state.archiveSlots);
   const [nickname, setNicknameDraft] = useState(userProfile.nickname);
   const [archiveMessage, setArchiveMessage] = useState('已自动读取本地存档');
 
@@ -108,6 +112,17 @@ export default function CollectionStatus() {
     } catch {
       setArchiveMessage('复制失败，请检查浏览器剪贴板权限');
     }
+  };
+
+  const handleExportCsv = () => {
+    const cardLogsForExport = mergeLogsById(auditLogs, archiveSlots.flatMap((archive) => archive.auditLogs ?? []));
+    const monopolyLogsForExport = mergeLogsById(
+      monopolyLogs,
+      monopolyArchiveSlots.flatMap((archive) => archive.logs ?? [])
+    );
+
+    exportAuditCsvFiles({ cardLogs: cardLogsForExport, monopolyLogs: monopolyLogsForExport });
+    setArchiveMessage(`已导出 Sheet1/Sheet2 CSV：积分卡 ${cardLogsForExport.length} 条，大富翁 ${monopolyLogsForExport.length} 条`);
   };
 
   return (
@@ -298,13 +313,22 @@ export default function CollectionStatus() {
             <h4 className="text-sm font-black text-amber-900">下播核对日志</h4>
             <p className="text-xs font-bold text-amber-700/70">记录抽卡、奖励解锁、奖励领取和重置</p>
           </div>
-          <button
-            type="button"
-            onClick={handleCopyGiftLogs}
-            className="rounded-lg border border-amber-300 bg-white px-3 py-2 text-xs font-black text-amber-700 shadow-sm transition hover:bg-amber-50"
-          >
-            复制日志
-          </button>
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={handleCopyGiftLogs}
+              className="rounded-lg border border-amber-300 bg-white px-3 py-2 text-xs font-black text-amber-700 shadow-sm transition hover:bg-amber-50"
+            >
+              复制日志
+            </button>
+            <button
+              type="button"
+              onClick={handleExportCsv}
+              className="rounded-lg bg-amber-500 px-3 py-2 text-xs font-black text-white shadow-sm transition hover:bg-amber-400"
+            >
+              导出CSV
+            </button>
+          </div>
         </div>
 
         <div className="max-h-44 space-y-2 overflow-y-auto pr-1">

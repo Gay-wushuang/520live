@@ -47,12 +47,12 @@ export default function FigureWheel({ onComplete, onClose }: FigureWheelProps) {
           type="button"
           onClick={onClose}
           className="absolute right-4 top-4 z-20 h-9 w-9 rounded-full border border-pink-200 bg-white/80 text-lg font-bold text-violet-700 shadow transition hover:bg-pink-50"
-          aria-label="关闭手办轮盘"
+          aria-label="关闭实体周边轮盘"
         >
           ×
         </button>
 
-        <h2 className="cute-font mb-5 pr-10 text-center text-3xl font-black text-purple-700">手办抽取轮盘</h2>
+        <h2 className="cute-font mb-5 pr-10 text-center text-3xl font-black text-purple-700">实体周边抽取轮盘</h2>
 
         <div className="relative mx-auto h-80 w-80">
           <div className="absolute left-1/2 top-0 z-20 -translate-x-1/2 -translate-y-5">
@@ -85,22 +85,25 @@ export default function FigureWheel({ onComplete, onClose }: FigureWheelProps) {
                   <g key={option.name}>
                     <path
                       d={`M 100 100 L ${startX} ${startY} A 96 96 0 0 1 ${endX} ${endY} Z`}
-                      fill={index === 0 ? '#FDE68A' : index === 1 ? '#DDD6FE' : '#BAE6FD'}
+                      fill={['#DCFCE7', '#BAE6FD', '#FDE68A', '#DDD6FE'][index % 4]}
                       stroke="#fff"
                       strokeWidth="2"
                     />
-                    <text x={labelX} y={labelY - 5} fill="#6D28D9" fontSize="20" fontWeight="900" textAnchor="middle" style={{ fontFamily: 'var(--cute-font)' }}>
+                    <text x={labelX} y={labelY - 18} fill="#6D28D9" fontSize="16" fontWeight="900" textAnchor="middle" style={{ fontFamily: 'var(--cute-font)' }}>
                       {option.icon}
                     </text>
-                    <text x={labelX} y={labelY + 14} fill="#7C3AED" fontSize="8" fontWeight="800" textAnchor="middle" style={{ fontFamily: 'var(--cute-font)' }}>
+                    <text x={labelX} y={labelY + 1} fill="#5B21B6" fontSize="9" fontWeight="900" textAnchor="middle" style={{ fontFamily: 'var(--cute-font)' }}>
+                      {option.name}
+                    </text>
+                    <text x={labelX} y={labelY + 15} fill="#7C3AED" fontSize="6.5" fontWeight="800" textAnchor="middle" style={{ fontFamily: 'var(--cute-font)' }}>
                       {option.rarity}
                     </text>
                   </g>
                 );
               })}
               <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#7c3aed" strokeWidth="4" />
-              <text x="100" y="106" textAnchor="middle" fontSize="18" fontWeight="900" fill="#7c3aed">
-                3D
+              <text x="100" y="106" textAnchor="middle" fontSize="16" fontWeight="900" fill="#7c3aed">
+                周边
               </text>
             </svg>
           </div>
@@ -109,7 +112,7 @@ export default function FigureWheel({ onComplete, onClose }: FigureWheelProps) {
         <div className="mt-6 min-h-24 text-center">
           {isSpinning && (
             <div className="cute-font inline-flex items-center rounded-full border border-purple-200 bg-white/75 px-5 py-2 text-sm font-bold text-purple-700 shadow">
-              抽取手办中...
+              抽取周边中...
             </div>
           )}
 

@@ -479,7 +479,7 @@ export const useGameStore = create<GameState>()(
               state,
               'reward_unlocked',
               pendingReward.type === 'ultimate'
-                ? `解锁终极奖励：3个Q版3D模型、电脑静态壁纸、Wallpaper动态壁纸`
+                ? `解锁终极奖励：3个Q版3D模型、夏秋双面折扇、Wallpaper动态壁纸`
                 : `解锁壁纸奖励：${pendingReward.wallpaperLabel}`,
               {
                 season,
@@ -570,7 +570,7 @@ export const useGameStore = create<GameState>()(
         const state = get();
         const season = state.pendingReward?.season;
         const info = season ? getSeasonInfo(season) : null;
-        const log = createGiftAuditLog(state, 'reward_claimed', '已领取终极奖励：3个Q版3D模型、电脑静态壁纸、Wallpaper动态壁纸', {
+        const log = createGiftAuditLog(state, 'reward_claimed', '已领取终极奖励：3个Q版3D模型、夏秋双面折扇、Wallpaper动态壁纸', {
           season,
           seasonName: info?.name,
           cardLabel: info?.cardLabel,

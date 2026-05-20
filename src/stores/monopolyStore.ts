@@ -97,12 +97,12 @@ export const EVENT_CONFIGS: Record<
     summary: '获得增益或移动效果',
   },
   figure: {
-    name: '手办抽取轮盘',
-    icon: '模',
+    name: '实体周边抽取轮盘',
+    icon: '周',
     color: '#7C3AED',
     target: 'audience',
     positions: [5, 12, 19, 26],
-    summary: '三款 Q 版 3D 模型三抽一',
+    summary: '活动海报、双面折扇、双面抱枕三抽一',
   },
   chaos: {
     name: '混乱轮盘',

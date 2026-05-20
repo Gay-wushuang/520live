@@ -12,7 +12,7 @@ type Particle = {
   opacity: number;
 };
 
-const ULTIMATE_REWARD_LABELS = ['3个Q版3D模型', '电脑静态壁纸', 'Wallpaper动态壁纸'];
+const ULTIMATE_REWARD_LABELS = ['3个Q版3D模型', '夏秋双面折扇', 'Wallpaper动态壁纸'];
 
 export default function VideoRewardPlayer() {
   const videoRef = useRef<HTMLVideoElement>(null);

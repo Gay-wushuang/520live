@@ -11,6 +11,8 @@ import {
   SPECIAL_EFFECTS,
   TRUTH_EVENTS,
 } from '../data/eventConfigs';
+import { exportAuditCsvFiles, mergeLogsById } from '../lib/exportLogs';
+import { useGameStore } from '../stores/gameStore';
 import { EVENT_CONFIGS, useMonopolyStore } from '../stores/monopolyStore';
 import type { ActiveEffect, BoardEventType, MonopolyLogEntry } from '../types/monopoly';
 
@@ -176,6 +178,8 @@ export default function MonopolyGame() {
     switchArchive,
     saveCurrentArchive,
   } = useMonopolyStore();
+  const cardAuditLogs = useGameStore((state) => state.auditLogs);
+  const cardArchiveSlots = useGameStore((state) => state.archiveSlots);
 
   const currentPlayer = players[currentPlayerIndex];
   const displayDiceValues = isRollingDice ? rollingDiceValues : lastDiceValues;
@@ -318,6 +322,17 @@ export default function MonopolyGame() {
     }
   }, [logs]);
 
+  const handleExportCsv = useCallback(() => {
+    const cardLogsForExport = mergeLogsById(
+      cardAuditLogs,
+      cardArchiveSlots.flatMap((archive) => archive.auditLogs ?? [])
+    );
+    const monopolyLogsForExport = mergeLogsById(logs, archiveSlots.flatMap((archive) => archive.logs ?? []));
+
+    exportAuditCsvFiles({ cardLogs: cardLogsForExport, monopolyLogs: monopolyLogsForExport });
+    setArchiveMessage(`已导出 Sheet1/Sheet2 CSV：积分卡 ${cardLogsForExport.length} 条，大富翁 ${monopolyLogsForExport.length} 条`);
+  }, [archiveSlots, cardArchiveSlots, cardAuditLogs, logs]);
+
   const activeEventConfig =
     activeEventModal && activeEventModal !== 'lottery' && activeEventModal !== 'figure'
       ? EVENT_WHEEL_PROPS[activeEventModal]
@@ -331,24 +346,35 @@ export default function MonopolyGame() {
   }, [activeEventModal]);
 
   return (
-    <main className="cute-font min-h-screen bg-slate-950 px-4 py-5 text-white">
-      <div className="mx-auto max-w-7xl">
-        <header className="mb-5 flex flex-col gap-3 border-b border-white/10 pb-4 md:flex-row md:items-end md:justify-between">
+    <main className="cute-font min-h-screen bg-[radial-gradient(circle_at_top,#fff7ed_0%,#fdf2f8_42%,#eef6ff_100%)] px-4 py-5 text-amber-950">
+      <div
+        className="fixed inset-0 pointer-events-none opacity-35"
+        style={{
+          backgroundImage: `linear-gradient(rgba(251, 191, 36, 0.18) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(244, 114, 182, 0.14) 1px, transparent 1px)`,
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <header className="mb-5 flex flex-col gap-3 border-b border-amber-200/80 pb-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <h1 className="text-3xl font-black text-yellow-200 md:text-4xl">大富翁互动系统</h1>
-            <p className="mt-2 text-sm text-slate-300">28 格棋盘，七类轮盘各 4 格，按中心对称分布。</p>
+            <h1 className="bg-gradient-to-r from-amber-600 via-rose-500 to-violet-500 bg-clip-text text-3xl font-black text-transparent md:text-4xl">
+              大富翁互动系统
+            </h1>
+            <p className="mt-2 text-sm font-bold text-amber-700/75">28 格棋盘，七类轮盘各 4 格，按中心对称分布。</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Link
               to="/card-wheel"
-              className="rounded-lg border border-amber-300/50 bg-amber-400/10 px-4 py-2 text-sm font-bold text-amber-100 transition hover:bg-amber-400/20"
+              className="rounded-full border border-amber-200 bg-white/85 px-4 py-2 text-sm font-black text-amber-800 shadow-sm transition hover:bg-white"
             >
               打开积分抽奖
             </Link>
             <button
               type="button"
               onClick={resetGame}
-              className="rounded-lg border border-red-300/40 bg-red-400/10 px-4 py-2 text-sm font-bold text-red-100 transition hover:bg-red-400/20"
+              className="rounded-full border border-rose-200 bg-rose-50 px-4 py-2 text-sm font-black text-rose-700 shadow-sm transition hover:bg-white"
             >
               重置棋盘
             </button>
@@ -357,14 +383,14 @@ export default function MonopolyGame() {
 
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-[320px_1fr]">
           <aside className="order-2 space-y-4 lg:order-1">
-            <section className="rounded-2xl border border-violet-300/20 bg-white/10 p-5 shadow-xl backdrop-blur">
+            <section className="rounded-2xl border border-amber-200 bg-white/85 p-5 shadow-xl shadow-amber-900/10 backdrop-blur">
               <div className="flex items-center justify-between gap-3">
-                <h2 className="text-lg font-bold text-violet-100">观众档案</h2>
-                <span className="rounded-full bg-violet-300/[0.14] px-3 py-1 text-xs font-bold text-violet-100">
+                <h2 className="text-lg font-black text-amber-900">观众档案</h2>
+                <span className="rounded-full bg-violet-100 px-3 py-1 text-xs font-black text-violet-700">
                   {players.length} 位
                 </span>
               </div>
-              <div className="mt-4 rounded-xl border border-violet-300/20 bg-slate-950/50 p-4">
+              <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50/80 p-4">
                 <input
                   value={currentPlayer?.name ?? ''}
                   onChange={(event) => {
@@ -372,13 +398,13 @@ export default function MonopolyGame() {
                       renamePlayer(currentPlayer.id, event.target.value);
                     }
                   }}
-                  className="w-full rounded-lg border border-violet-300/20 bg-white/10 px-3 py-2 text-2xl font-black text-white outline-none transition focus:border-violet-200"
+                  className="w-full rounded-lg border border-amber-200 bg-white/90 px-3 py-2 text-2xl font-black text-amber-950 outline-none transition focus:border-rose-300 focus:ring-2 focus:ring-rose-100"
                   aria-label="当前观众昵称"
                 />
-                <p className="mt-2 text-sm text-slate-300">回合：{currentTurn + 1}</p>
-                <p className="text-sm text-slate-300">位置：第 {(currentPlayer?.position ?? 0) + 1} 格</p>
-                <p className="text-sm text-slate-300">下次骰子数：{currentPlayer?.diceCount ?? 1}</p>
-                <p className="text-sm text-slate-300">
+                <p className="mt-2 text-sm font-bold text-amber-700">回合：{currentTurn + 1}</p>
+                <p className="text-sm font-bold text-amber-700">位置：第 {(currentPlayer?.position ?? 0) + 1} 格</p>
+                <p className="text-sm font-bold text-amber-700">下次骰子数：{currentPlayer?.diceCount ?? 1}</p>
+                <p className="text-sm font-bold text-amber-700">
                   移动方向：{(currentPlayer?.moveDirection ?? 1) === 1 ? '前进' : '后退'}
                 </p>
               </div>
@@ -386,7 +412,7 @@ export default function MonopolyGame() {
               {currentPlayer?.activeEffects.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-2">
                   {currentPlayer.activeEffects.map((effect, index) => (
-                    <span key={`${effect.type}-${index}`} className="rounded-full bg-cyan-300/[0.15] px-3 py-1 text-xs font-bold text-cyan-100">
+                    <span key={`${effect.type}-${index}`} className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-black text-cyan-700">
                       {effect.description}
                     </span>
                   ))}
@@ -394,12 +420,12 @@ export default function MonopolyGame() {
               )}
 
               {canChooseDirection && (
-                <div className="mt-3 grid grid-cols-2 gap-2 rounded-xl border border-cyan-200/20 bg-cyan-200/10 p-2">
+                <div className="mt-3 grid grid-cols-2 gap-2 rounded-xl border border-cyan-200 bg-cyan-50 p-2">
                   <button
                     type="button"
                     onClick={() => setMoveDirection(1)}
                     className={`rounded-lg px-3 py-2 text-sm font-black transition ${
-                      currentPlayer?.moveDirection === 1 ? 'bg-cyan-200 text-slate-950' : 'bg-white/10 text-cyan-100 hover:bg-white/15'
+                      currentPlayer?.moveDirection === 1 ? 'bg-cyan-300 text-cyan-950' : 'bg-white text-cyan-700 hover:bg-cyan-100'
                     }`}
                   >
                     前进
@@ -408,7 +434,7 @@ export default function MonopolyGame() {
                     type="button"
                     onClick={() => setMoveDirection(-1)}
                     className={`rounded-lg px-3 py-2 text-sm font-black transition ${
-                      currentPlayer?.moveDirection === -1 ? 'bg-cyan-200 text-slate-950' : 'bg-white/10 text-cyan-100 hover:bg-white/15'
+                      currentPlayer?.moveDirection === -1 ? 'bg-cyan-300 text-cyan-950' : 'bg-white text-cyan-700 hover:bg-cyan-100'
                     }`}
                   >
                     后退
@@ -420,7 +446,7 @@ export default function MonopolyGame() {
                 <select
                   value={currentArchiveId}
                   onChange={(event) => handleSwitchArchive(event.target.value)}
-                  className="h-10 w-full rounded-lg border border-violet-300/20 bg-slate-950/70 px-3 text-sm font-bold text-violet-50 outline-none focus:border-violet-200"
+                  className="h-10 w-full rounded-lg border border-amber-200 bg-white/90 px-3 text-sm font-bold text-amber-900 outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-100"
                   aria-label="切换观众档案"
                 >
                   {archiveSlots.map((archive) => (
@@ -433,26 +459,26 @@ export default function MonopolyGame() {
                   <button
                     type="button"
                     onClick={handleSaveArchive}
-                    className="h-10 rounded-lg bg-violet-300 px-3 text-sm font-black text-slate-950 transition hover:bg-violet-200"
+                    className="h-10 rounded-lg bg-amber-400 px-3 text-sm font-black text-amber-950 shadow-sm transition hover:bg-amber-300"
                   >
                     保存
                   </button>
                   <button
                     type="button"
                     onClick={handleReadArchive}
-                    className="h-10 rounded-lg border border-violet-200/30 bg-white/10 px-3 text-sm font-black text-violet-50 transition hover:bg-white/15"
+                    className="h-10 rounded-lg border border-amber-200 bg-white px-3 text-sm font-black text-amber-700 shadow-sm transition hover:bg-amber-50"
                   >
                     读取
                   </button>
                   <button
                     type="button"
                     onClick={handleCreateArchive}
-                    className="h-10 rounded-lg border border-violet-200/30 bg-white/10 px-3 text-sm font-black text-violet-50 transition hover:bg-white/15"
+                    className="h-10 rounded-lg border border-rose-200 bg-white px-3 text-sm font-black text-rose-600 shadow-sm transition hover:bg-rose-50"
                   >
                     新档案
                   </button>
                 </div>
-                <p className="text-xs font-bold text-violet-200/80">{archiveMessage}</p>
+                <p className="text-xs font-bold text-amber-700/75">{archiveMessage}</p>
               </div>
 
               <div className="mt-4 space-y-2">
@@ -464,8 +490,8 @@ export default function MonopolyGame() {
                         onClick={() => setCurrentPlayer(index)}
                         className={`min-w-0 rounded-lg border px-3 py-2 text-left text-sm font-bold transition ${
                           index === currentPlayerIndex
-                            ? 'border-yellow-200 bg-yellow-200 text-slate-950'
-                            : 'border-white/10 bg-white/10 text-slate-100 hover:bg-white/15'
+                            ? 'border-amber-300 bg-amber-200 text-amber-950'
+                            : 'border-amber-200 bg-white/80 text-amber-800 hover:bg-amber-50'
                         }`}
                       >
                         <span className="block truncate">{player.name}</span>
@@ -474,7 +500,7 @@ export default function MonopolyGame() {
                       <button
                         type="button"
                         onClick={() => removePlayer(player.id)}
-                        className="h-full rounded-lg border border-red-300/20 bg-red-400/10 px-3 text-sm font-black text-red-100 transition hover:bg-red-400/20"
+                        className="h-full rounded-lg border border-rose-200 bg-rose-50 px-3 text-sm font-black text-rose-600 transition hover:bg-rose-100"
                         aria-label={`删除 ${player.name}`}
                       >
                         ×
@@ -492,14 +518,14 @@ export default function MonopolyGame() {
                         handleAddPlayer();
                       }
                     }}
-                    className="h-10 min-w-0 rounded-lg border border-violet-300/20 bg-slate-950/70 px-3 text-sm font-bold text-white outline-none focus:border-violet-200"
+                    className="h-10 min-w-0 rounded-lg border border-amber-200 bg-white/90 px-3 text-sm font-bold text-amber-900 outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-100"
                     placeholder="新增观众昵称"
                     aria-label="新增观众昵称"
                   />
                   <button
                     type="button"
                     onClick={handleAddPlayer}
-                    className="h-10 rounded-lg bg-cyan-300 px-3 text-sm font-black text-slate-950 transition hover:bg-cyan-200"
+                    className="h-10 rounded-lg bg-cyan-300 px-3 text-sm font-black text-cyan-950 transition hover:bg-cyan-200"
                   >
                     添加
                   </button>
@@ -508,75 +534,84 @@ export default function MonopolyGame() {
                 <textarea
                   value={importText}
                   onChange={(event) => setImportText(event.target.value)}
-                  className="h-20 w-full resize-none rounded-lg border border-violet-300/20 bg-slate-950/70 px-3 py-2 text-sm font-bold text-white outline-none focus:border-violet-200"
+                  className="h-20 w-full resize-none rounded-lg border border-amber-200 bg-white/90 px-3 py-2 text-sm font-bold text-amber-900 outline-none focus:border-rose-300 focus:ring-2 focus:ring-rose-100"
                   placeholder="批量导入观众：每行一个昵称，或用逗号分隔"
                   aria-label="批量导入观众"
                 />
                 <button
                   type="button"
                   onClick={handleImportPlayers}
-                  className="h-10 w-full rounded-lg border border-cyan-200/40 bg-cyan-300/15 text-sm font-black text-cyan-100 transition hover:bg-cyan-300/20"
+                  className="h-10 w-full rounded-lg border border-cyan-200 bg-cyan-50 text-sm font-black text-cyan-700 transition hover:bg-cyan-100"
                 >
                   导入观众名单
                 </button>
               </div>
             </section>
 
-            <section className="rounded-2xl border border-cyan-300/20 bg-white/10 p-5 shadow-xl backdrop-blur">
+            <section className="rounded-2xl border border-cyan-200 bg-white/85 p-5 shadow-xl shadow-cyan-900/10 backdrop-blur">
               <div className="mb-3 flex items-start justify-between gap-3">
                 <div>
-                  <h2 className="text-lg font-bold text-cyan-100">下播核对日志</h2>
-                  <p className="mt-1 text-xs font-bold text-cyan-100/70">记录观众、骰子、移动、事件和效果</p>
+                  <h2 className="text-lg font-black text-cyan-800">下播核对日志</h2>
+                  <p className="mt-1 text-xs font-bold text-cyan-700/70">记录观众、骰子、移动、事件和效果</p>
                 </div>
-                <button
-                  type="button"
-                  onClick={handleCopyMonopolyLogs}
-                  className="rounded-lg border border-cyan-200/40 bg-cyan-300/15 px-3 py-2 text-xs font-black text-cyan-100 transition hover:bg-cyan-300/20"
-                >
-                  复制
-                </button>
+                <div className="flex flex-wrap gap-2">
+                  <button
+                    type="button"
+                    onClick={handleCopyMonopolyLogs}
+                    className="rounded-lg border border-cyan-200 bg-white px-3 py-2 text-xs font-black text-cyan-700 shadow-sm transition hover:bg-cyan-50"
+                  >
+                    复制
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleExportCsv}
+                    className="rounded-lg bg-cyan-500 px-3 py-2 text-xs font-black text-white shadow-sm transition hover:bg-cyan-400"
+                  >
+                    导出CSV
+                  </button>
+                </div>
               </div>
 
               <div className="max-h-44 space-y-2 overflow-y-auto pr-1">
                 {logs.length === 0 ? (
-                  <div className="rounded-lg border border-dashed border-cyan-200/25 bg-cyan-300/10 px-3 py-3 text-xs font-bold text-cyan-100">
+                  <div className="rounded-lg border border-dashed border-cyan-200 bg-cyan-50 px-3 py-3 text-xs font-bold text-cyan-700">
                     暂无日志，开始行动后会自动记录。
                   </div>
                 ) : (
                   logs.slice(0, 8).map((log) => (
-                    <div key={log.id} className="rounded-lg border border-white/10 bg-slate-950/[0.45] px-3 py-2 text-xs">
-                      <div className="flex flex-wrap items-center justify-between gap-2 font-black text-cyan-100">
+                    <div key={log.id} className="rounded-lg border border-cyan-100 bg-white/80 px-3 py-2 text-xs">
+                      <div className="flex flex-wrap items-center justify-between gap-2 font-black text-cyan-800">
                         <span>{MONOPOLY_LOG_TYPE_LABEL[log.type]} · {log.playerName ?? '系统'}</span>
-                        <span className="text-cyan-200/70">{formatLogTime(log.createdAt)}</span>
+                        <span className="text-cyan-600/70">{formatLogTime(log.createdAt)}</span>
                       </div>
-                      <p className="mt-1 font-bold text-slate-300">{log.details}</p>
+                      <p className="mt-1 font-bold text-gray-600">{log.details}</p>
                     </div>
                   ))
                 )}
               </div>
             </section>
 
-            <section className="rounded-2xl border border-white/10 bg-white/10 p-5 shadow-xl backdrop-blur">
-              <h2 className="text-lg font-bold text-slate-100">轮盘说明</h2>
+            <section className="rounded-2xl border border-amber-200 bg-white/85 p-5 shadow-xl shadow-amber-900/10 backdrop-blur">
+              <h2 className="text-lg font-black text-amber-900">轮盘说明</h2>
               <div className="mt-3 space-y-2">
                 {Object.entries(EVENT_CONFIGS).map(([type, config]) => (
                   <div key={type} className="grid grid-cols-[18px_1fr_auto] items-center gap-2 text-sm">
                     <span className="h-4 w-4 rounded" style={{ backgroundColor: config.color }} />
-                    <span className="truncate text-slate-200">{config.name}</span>
-                    <span className="text-xs text-slate-400">{config.positions.length} 格</span>
+                    <span className="truncate font-bold text-amber-800">{config.name}</span>
+                    <span className="text-xs font-black text-amber-500">{config.positions.length} 格</span>
                   </div>
                 ))}
               </div>
             </section>
           </aside>
 
-          <section className="order-1 rounded-2xl border border-violet-300/20 bg-white/5 p-4 shadow-xl backdrop-blur lg:order-2">
+          <section className="order-1 rounded-[28px] border border-white/80 bg-white/70 p-4 shadow-[0_22px_50px_rgba(180,83,9,0.14)] backdrop-blur lg:order-2">
             <div className="mb-4 grid gap-4 xl:grid-cols-[260px_1fr]">
-              <div className="rounded-2xl border border-yellow-300/25 bg-yellow-300/10 p-3 shadow-xl shadow-yellow-900/10 backdrop-blur">
+              <div className="rounded-2xl border border-amber-200 bg-amber-50/85 p-3 shadow-lg shadow-amber-900/10 backdrop-blur">
                 <div className="mb-2 flex items-center justify-between">
-                  <h2 className="text-lg font-black text-yellow-100">六面骰</h2>
+                  <h2 className="text-lg font-black text-amber-900">六面骰</h2>
                   {lastDiceResult !== null && (
-                    <span className="rounded-full bg-yellow-200 px-3 py-1 text-sm font-black text-slate-950">
+                    <span className="rounded-full bg-amber-300 px-3 py-1 text-sm font-black text-amber-950">
                       点数 {lastDiceResult}
                     </span>
                   )}
@@ -584,19 +619,19 @@ export default function MonopolyGame() {
                 <DiceBox isRolling={isRollingDice} values={displayDiceValues} />
               </div>
 
-              <div className="flex flex-col justify-between gap-4 rounded-2xl border border-white/10 bg-slate-950/45 p-4">
+              <div className="flex flex-col justify-between gap-4 rounded-2xl border border-amber-200 bg-white/80 p-4 shadow-lg shadow-amber-900/10">
                 <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-xl border border-violet-300/20 bg-white/10 px-4 py-3">
-                    <p className="text-xs font-bold text-slate-400">当前观众</p>
-                    <p className="mt-1 truncate text-2xl font-black text-white">{currentPlayer?.name ?? '观众'}</p>
+                  <div className="rounded-xl border border-violet-200 bg-violet-50 px-4 py-3">
+                    <p className="text-xs font-bold text-violet-500">当前观众</p>
+                    <p className="mt-1 truncate text-2xl font-black text-violet-900">{currentPlayer?.name ?? '观众'}</p>
                   </div>
-                  <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/10 px-4 py-3">
-                    <p className="text-xs font-bold text-cyan-100/70">位置</p>
-                    <p className="mt-1 text-2xl font-black text-cyan-100">第 {(currentPlayer?.position ?? 0) + 1} 格</p>
+                  <div className="rounded-xl border border-cyan-200 bg-cyan-50 px-4 py-3">
+                    <p className="text-xs font-bold text-cyan-600/70">位置</p>
+                    <p className="mt-1 text-2xl font-black text-cyan-800">第 {(currentPlayer?.position ?? 0) + 1} 格</p>
                   </div>
-                  <div className="rounded-xl border border-amber-300/20 bg-amber-300/10 px-4 py-3">
-                    <p className="text-xs font-bold text-amber-100/70">下次移动</p>
-                    <p className="mt-1 text-2xl font-black text-amber-100">
+                  <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
+                    <p className="text-xs font-bold text-amber-600/70">下次移动</p>
+                    <p className="mt-1 text-2xl font-black text-amber-800">
                       {(currentPlayer?.moveDirection ?? 1) === 1 ? '前进' : '后退'} · {currentPlayer?.diceCount ?? 1} 骰
                     </p>
                   </div>
@@ -608,8 +643,8 @@ export default function MonopolyGame() {
                   disabled={isRollingDice || gamePhase !== 'waiting'}
                   className={`min-h-14 rounded-xl px-6 py-4 text-xl font-black transition ${
                     isRollingDice || gamePhase !== 'waiting'
-                      ? 'cursor-not-allowed bg-slate-700 text-slate-400'
-                      : 'bg-yellow-400 text-slate-950 shadow-lg shadow-yellow-500/20 hover:bg-yellow-300'
+                      ? 'cursor-not-allowed bg-gray-200 text-gray-500'
+                      : 'bg-gradient-to-r from-amber-400 via-rose-400 to-violet-400 text-white shadow-xl shadow-rose-300/30 hover:brightness-105'
                   }`}
                 >
                   {isRollingDice ? '掷骰中...' : '掷骰子前进'}
@@ -624,7 +659,7 @@ export default function MonopolyGame() {
                 <button
                   type="button"
                   onClick={handlePendingEvent}
-                  className="rounded-xl bg-fuchsia-500 px-8 py-4 text-lg font-black text-white shadow-xl shadow-fuchsia-500/20 transition hover:bg-fuchsia-400"
+                  className="rounded-xl bg-gradient-to-r from-rose-400 to-violet-400 px-8 py-4 text-lg font-black text-white shadow-xl shadow-rose-300/30 transition hover:brightness-105"
                 >
                   触发事件：{EVENT_CONFIGS[pendingEvent.position.type].name}
                 </button>
@@ -632,13 +667,13 @@ export default function MonopolyGame() {
             )}
 
             {lastEventResult && (
-              <div className="mt-4 rounded-xl border border-emerald-300/25 bg-emerald-300/10 px-4 py-3 text-center text-sm font-bold text-emerald-100">
+              <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-center text-sm font-bold text-emerald-700">
                 上次事件：{lastEventResult}
               </div>
             )}
 
             {lastEffectMessage && (
-              <div className="mt-3 rounded-xl border border-cyan-300/25 bg-cyan-300/10 px-4 py-3 text-center text-sm font-bold text-cyan-100">
+              <div className="mt-3 rounded-xl border border-cyan-200 bg-cyan-50 px-4 py-3 text-center text-sm font-bold text-cyan-700">
                 系统提示：{lastEffectMessage}
               </div>
             )}
