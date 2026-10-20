@@ -1,0 +1,171 @@
+{
+  "file": "ui-audit/psd/pilot/CardWheel-Editable-v2.psd",
+  "bytes": 23579934,
+  "width": 1440,
+  "height": 900,
+  "colorMode": 3,
+  "counts": {
+    "groups": 8,
+    "text": 14,
+    "shape": 20,
+    "smartObject": 4,
+    "raster": 1,
+    "hiddenReference": 1,
+    "total": 47
+  },
+  "groupNames": [
+    "00_BG",
+    "01_HEADER",
+    "02_WHEEL_STAGE",
+    "03_ACTIONS",
+    "04_COLLECTION / Visible top",
+    "REFERENCE / Hidden"
+  ],
+  "textNames": [
+    "Back text",
+    "Title / 积分卡转盘",
+    "Subtitle",
+    "Label / 冬季",
+    "Label / 春季",
+    "Label / 秋季",
+    "Label / 夏季",
+    "Hub / 抽卡",
+    "Button label / 抽取积分卡",
+    "Button label / 重置游戏",
+    "Name input text",
+    "Archive selector text",
+    "Archive status",
+    "Collection title"
+  ],
+  "shapeNames": [
+    "BG / Base radial",
+    "BG / Grid H",
+    "BG / Grid V",
+    "Back pill / Shape",
+    "Stage / Glass panel",
+    "Stage / Glow",
+    "Sector / Winter",
+    "Sector / Autumn",
+    "Sector / Summer",
+    "Sector / Spring",
+    "Wheel / Border rings",
+    "Wheel / Border rings highlight",
+    "Wheel / Center hub",
+    "Wheel / Center hub ring",
+    "Pointer / Main",
+    "Pointer / Highlight",
+    "Pointer / Pin",
+    "Primary button / Shape",
+    "Secondary button / Shape",
+    "Collection / Visible panel top"
+  ],
+  "smartObjectNames": [
+    "Card image / Winter / Smart Object",
+    "Card image / Autumn / Smart Object",
+    "Card image / Summer / Smart Object",
+    "Card image / Spring / Smart Object"
+  ],
+  "rasterNames": [
+    "REFERENCE / CARD-02.desktop.png / LOCK MANUALLY"
+  ],
+  "offCanvas": [
+    {
+      "name": "BG / Base radial",
+      "bounds": [
+        -1,
+        -1,
+        1441,
+        901
+      ]
+    },
+    {
+      "name": "BG / Grid H",
+      "bounds": [
+        -1,
+        -1,
+        1441,
+        898
+      ]
+    },
+    {
+      "name": "BG / Grid V",
+      "bounds": [
+        -1,
+        -1,
+        1430,
+        901
+      ]
+    },
+    {
+      "name": "Collection / Visible panel top",
+      "bounds": [
+        142,
+        832,
+        1297,
+        901
+      ]
+    },
+    {
+      "name": "Archive status",
+      "bounds": [
+        172,
+        892,
+        386,
+        905
+      ]
+    }
+  ],
+  "emptyTextLayers": [],
+  "fullCanvasVisibleRaster": [],
+  "tree": [
+    "- 00_BG [GROUP]",
+    "  - BG / Base radial [SHAPE]",
+    "  - BG / Grid H [SHAPE]",
+    "  - BG / Grid V [SHAPE]",
+    "- 01_HEADER [GROUP]",
+    "  - Back pill / Shape [SHAPE]",
+    "  - Back text [TEXT]",
+    "  - Title / 积分卡转盘 [TEXT]",
+    "  - Subtitle [TEXT]",
+    "- 02_WHEEL_STAGE [GROUP]",
+    "  - Stage / Glass panel [SHAPE]",
+    "  - Stage / Glow [SHAPE]",
+    "  - Wheel / Editable parts [GROUP]",
+    "    - Sector / Winter [SHAPE]",
+    "    - Sector / Autumn [SHAPE]",
+    "    - Sector / Summer [SHAPE]",
+    "    - Sector / Spring [SHAPE]",
+    "    - Wheel / Border rings [SHAPE]",
+    "    - Wheel / Border rings highlight [SHAPE]",
+    "    - Card image / Winter / Smart Object [SMART_OBJECT]",
+    "    - Card image / Autumn / Smart Object [SMART_OBJECT]",
+    "    - Card image / Summer / Smart Object [SMART_OBJECT]",
+    "    - Card image / Spring / Smart Object [SMART_OBJECT]",
+    "    - Label / 冬季 [TEXT]",
+    "    - Label / 春季 [TEXT]",
+    "    - Label / 秋季 [TEXT]",
+    "    - Label / 夏季 [TEXT]",
+    "    - Wheel / Center hub [SHAPE]",
+    "    - Wheel / Center hub ring [SHAPE]",
+    "    - Hub / 抽卡 [TEXT]",
+    "  - Pointer / Vectors [GROUP]",
+    "    - Pointer / Main [SHAPE]",
+    "    - Pointer / Highlight [SHAPE]",
+    "    - Pointer / Pin [SHAPE]",
+    "- 03_ACTIONS [GROUP]",
+    "  - Primary button / Shape [SHAPE]",
+    "  - Button label / 抽取积分卡 [TEXT]",
+    "  - Secondary button / Shape [SHAPE]",
+    "  - Button label / 重置游戏 [TEXT]",
+    "- 04_COLLECTION / Visible top [GROUP]",
+    "  - Collection / Visible panel top [SHAPE]",
+    "  - Name input text [TEXT]",
+    "  - Archive selector text [TEXT]",
+    "  - Archive status [TEXT]",
+    "  - Collection title [TEXT]",
+    "- REFERENCE / Hidden [GROUP]",
+    "  - REFERENCE / CARD-02.desktop.png / LOCK MANUALLY [RASTER]"
+  ],
+  "result": "PASS",
+  "failures": []
+}
