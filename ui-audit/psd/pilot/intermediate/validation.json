@@ -1,0 +1,70 @@
+{
+  "psd": {
+    "width": 1440,
+    "height": 900,
+    "bytes": 5760177,
+    "counts": {
+      "groups": 7,
+      "text": 14,
+      "raster": 18,
+      "hiddenReference": 1,
+      "total": 39
+    }
+  },
+  "comparison": {
+    "dimensions": [
+      1440,
+      900
+    ],
+    "figmaVsReference": {
+      "meanAbsoluteRgbError": 9.36,
+      "changedPixelRatioOver12PerChannel": 0.1137
+    },
+    "psdCompositeVsReference": {
+      "meanAbsoluteRgbError": 8.39,
+      "changedPixelRatioOver12PerChannel": 0.1228
+    },
+    "note": "Figma semantic reconstruction vs CARD-02 reference; full-page pixel difference includes intentional partial collection simplification and font/rendering differences."
+  },
+  "tree": [
+    "- 00_BG [GROUP]",
+    "  - BG / Base radial + grid [RASTER]",
+    "- 01_HEADER [GROUP]",
+    "  - Back pill / Shape [RASTER]",
+    "  - Back text [TEXT]",
+    "  - Title / 积分卡转盘 [TEXT]",
+    "  - Subtitle [TEXT]",
+    "- 02_WHEEL_STAGE [GROUP]",
+    "  - Stage / Glass panel [RASTER]",
+    "  - Wheel / Editable parts [GROUP]",
+    "    - Sector / Winter [RASTER]",
+    "    - Sector / Autumn [RASTER]",
+    "    - Sector / Summer [RASTER]",
+    "    - Sector / Spring [RASTER]",
+    "    - Wheel / Border rings [RASTER]",
+    "    - Card image / Winter / source PNG [RASTER]",
+    "    - Card image / Autumn / source PNG [RASTER]",
+    "    - Card image / Summer / source PNG [RASTER]",
+    "    - Card image / Spring / source PNG [RASTER]",
+    "    - Label / 冬季 [TEXT]",
+    "    - Label / 春季 [TEXT]",
+    "    - Label / 秋季 [TEXT]",
+    "    - Label / 夏季 [TEXT]",
+    "    - Wheel / Center hub [RASTER]",
+    "    - Hub / 抽卡 [TEXT]",
+    "  - Pointer / Main + highlight + pin [RASTER]",
+    "- 03_ACTIONS [GROUP]",
+    "  - Primary button / Shape [RASTER]",
+    "  - Button label / 抽取积分卡 [TEXT]",
+    "  - Secondary button / Shape [RASTER]",
+    "  - Button label / 重置游戏 [TEXT]",
+    "- 04_COLLECTION / Visible top [GROUP]",
+    "  - Collection / Visible panel top [RASTER]",
+    "  - Collection title [TEXT]",
+    "  - Archive status [TEXT]",
+    "  - Archive selector text [TEXT]",
+    "  - Name input text [TEXT]",
+    "- REFERENCE / Hidden [GROUP]",
+    "  - REFERENCE / CARD-02.desktop.png / LOCK MANUALLY [RASTER]"
+  ]
+}

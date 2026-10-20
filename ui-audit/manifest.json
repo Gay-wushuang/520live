@@ -1,0 +1,1845 @@
+{
+  "meta": {
+    "project": "520live",
+    "commit": "8dcf2151799088d97d6c53f5751a86b1b9a347dc",
+    "capturedAt": "2026-10-20T01:37:16.337Z",
+    "baseUrl": "http://127.0.0.1:5173",
+    "playwright": "1.64.1",
+    "browser": "chromium",
+    "deviceScaleFactor": 1,
+    "browserZoom": 1,
+    "colorScheme": "light",
+    "reducedMotion": "no-preference",
+    "isolatedContext": true,
+    "seeded": true,
+    "declaredCandidateCount": 44,
+    "candidateCount": 46,
+    "successfulCandidateCount": 45,
+    "blockedCandidateCount": 1,
+    "errorCandidateCount": 0,
+    "screenshotFileCount": 49
+  },
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    },
+    "tablet": {
+      "width": 768,
+      "height": 1024
+    },
+    "wide": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "candidates": [
+    {
+      "id": "MON-01",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "初始态：1 位观众、0 日志、掷骰按钮可用",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-01.desktop.png",
+        "screenshots/mobile/MON-01.mobile.png",
+        "screenshots/desktop/MON-01.tablet.png"
+      ]
+    },
+    {
+      "id": "MON-02",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "掷骰中禁用态与骰子提示",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-02.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-03",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "棋子逐格移动中，按钮禁用",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-03.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-04",
+      "area": "monopoly",
+      "class": "data",
+      "expected": "厄运事件待触发按钮与目标格高亮",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-04.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-05",
+      "area": "monopoly",
+      "class": "data",
+      "expected": "事件完成后的上次事件横幅",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-05.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-06",
+      "area": "monopoly",
+      "class": "data",
+      "expected": "特殊效果系统提示与效果 chip",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-06.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-07",
+      "area": "monopoly",
+      "class": "data",
+      "expected": "当前观众激活效果胶囊",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-07.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-08",
+      "area": "monopoly",
+      "class": "data",
+      "expected": "前进/后退方向选择器",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-08.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-09",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "三位观众列表、当前项高亮与删除控件",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-09.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-10",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "日志面板空态",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-10.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-11",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "日志面板含骰子、移动或事件记录",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-11.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-12",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "新建后档案下拉含两项",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-12.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-13",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "读取成功与空日志复制反馈（同一候选状态的文本变体）",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-13.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-14",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "轮盘说明 7 行图例",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-14.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-15",
+      "area": "monopoly",
+      "class": "data",
+      "expected": "宽屏棋盘目标格 ring 高亮",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-15.wide.png"
+      ]
+    },
+    {
+      "id": "MON-16",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "棋盘同时显示 P1、P2 棋子",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-16.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-17",
+      "area": "monopoly",
+      "class": "auto",
+      "expected": "删除唯一观众被拒并显示系统提示",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-17.desktop.png"
+      ]
+    },
+    {
+      "id": "MON-wide",
+      "area": "monopoly",
+      "class": "data",
+      "expected": "宽屏完整两栏、棋盘、系统提示和效果胶囊",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/MON-wide.wide.full.png"
+      ]
+    },
+    {
+      "id": "CARD-01",
+      "area": "card",
+      "class": "auto",
+      "expected": "积分卡图片加载中 spinner",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CARD-01.desktop.png",
+        "screenshots/mobile/CARD-01.mobile.png"
+      ]
+    },
+    {
+      "id": "CARD-02",
+      "area": "card",
+      "class": "auto",
+      "expected": "转盘就绪、抽取按钮可用",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CARD-02.desktop.png",
+        "screenshots/mobile/CARD-02.mobile.png"
+      ]
+    },
+    {
+      "id": "CARD-03",
+      "area": "card",
+      "class": "auto",
+      "expected": "抽取中禁用态",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CARD-03.desktop.png"
+      ]
+    },
+    {
+      "id": "CARD-04",
+      "area": "card",
+      "class": "data",
+      "expected": "命中横幅与无奖励抽卡结果弹窗",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CARD-04.desktop.png"
+      ]
+    },
+    {
+      "id": "CARD-05",
+      "area": "card",
+      "class": "auto",
+      "expected": "移动端整体与初始 0/2 收集状态",
+      "status": "ok",
+      "files": [
+        "screenshots/mobile/CARD-05.mobile.png"
+      ]
+    },
+    {
+      "id": "CS-01",
+      "area": "card",
+      "class": "auto",
+      "expected": "单存档档案头",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-01.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-02",
+      "area": "card",
+      "class": "data",
+      "expected": "统计非零状态（另验证初始值为 0）",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-02.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-03",
+      "area": "card",
+      "class": "auto",
+      "expected": "四季卡 0/2 与 0% 进度",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-03.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-04",
+      "area": "card",
+      "class": "data",
+      "expected": "春季 1/2、进度 50%",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-04.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-05",
+      "area": "card",
+      "class": "data",
+      "expected": "春季 2/2 待领取样式",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-05.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-06",
+      "area": "card",
+      "class": "data",
+      "expected": "四季壁纸已解锁与终极奖励目标",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-06.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-07",
+      "area": "card",
+      "class": "data",
+      "expected": "最近四条历史 chips",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-07.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-08",
+      "area": "card",
+      "class": "auto",
+      "expected": "积分卡日志空态",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-08.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-09",
+      "area": "card",
+      "class": "data",
+      "expected": "积分卡日志列表",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-09.desktop.png"
+      ]
+    },
+    {
+      "id": "CS-10",
+      "area": "card",
+      "class": "auto",
+      "expected": "新建后存档下拉含两项",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/CS-10.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-EVT-01",
+      "area": "overlay",
+      "class": "data",
+      "expected": "厄运轮盘旋转中",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-EVT-01.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-EVT-02",
+      "area": "overlay",
+      "class": "data",
+      "expected": "厄运轮盘结果卡",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-EVT-02.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-EVT-03",
+      "area": "overlay",
+      "class": "data",
+      "expected": "冒险事件轮盘结果",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-EVT-03.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-EVT-04",
+      "area": "overlay",
+      "class": "data",
+      "expected": "真心话轮盘结果与长文案",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-EVT-04.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-EVT-05",
+      "area": "overlay",
+      "class": "data",
+      "expected": "特殊效果轮盘结果",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-EVT-05.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-EVT-06",
+      "area": "overlay",
+      "class": "data",
+      "expected": "混乱轮盘 8 动态扇区结果",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-EVT-06.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-FIG-01",
+      "area": "overlay",
+      "class": "data",
+      "expected": "实体周边轮盘旋转中",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-FIG-01.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-FIG-02",
+      "area": "overlay",
+      "class": "data",
+      "expected": "实体周边轮盘结果",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-FIG-02.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-RES-01",
+      "area": "overlay",
+      "class": "data",
+      "expected": "无配对奖励的抽卡结果弹窗",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-RES-01.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-WALL-01",
+      "area": "overlay",
+      "class": "data",
+      "expected": "首次配对的壁纸奖励弹窗",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-WALL-01.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-WALL-02",
+      "area": "overlay",
+      "class": "blocked",
+      "status": "skipped",
+      "expected": "终极奖励双图壁纸弹窗",
+      "reason": "源码实证不可达：CardWheelPage 仅在 pendingReward && !showVideoReward 时渲染 WallpaperRewardModal，而 gameStore.addCard 在 ultimate 时同步设置 showVideoReward=true。"
+    },
+    {
+      "id": "OVL-VID-01",
+      "area": "overlay",
+      "class": "data",
+      "expected": "终极视频全屏播放层",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-VID-01.desktop.png"
+      ]
+    },
+    {
+      "id": "OVL-VID-02",
+      "area": "overlay",
+      "class": "data",
+      "expected": "终极视频加载 spinner 瞬间",
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-VID-02.desktop.png"
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "id": "MON-01",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "初始态：1 位观众、0 日志、掷骰按钮可用",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-01.desktop.png",
+      "status": "ok",
+      "hash": "sha256:1da85d3f8ce4758d8bce7547d5faf91e63180226e22cc282ce6be3a0e1947c11",
+      "width": 1440,
+      "height": 900,
+      "bytes": 981066,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:34:58.501Z"
+    },
+    {
+      "id": "MON-01",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "初始态：1 位观众、0 日志、掷骰按钮可用",
+      "class": "auto",
+      "viewport": "mobile",
+      "viewportSize": [
+        390,
+        844
+      ],
+      "file": "screenshots/mobile/MON-01.mobile.png",
+      "status": "ok",
+      "hash": "sha256:66fd2d7f34fa0b3f2cc9e43b57ac321c29601d1b502fd39d3de22747f10f2800",
+      "width": 390,
+      "height": 844,
+      "bytes": 125729,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        390,
+        2521
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:34:59.341Z"
+    },
+    {
+      "id": "MON-01",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "初始态：1 位观众、0 日志、掷骰按钮可用",
+      "class": "auto",
+      "viewport": "tablet",
+      "viewportSize": [
+        768,
+        1024
+      ],
+      "file": "screenshots/desktop/MON-01.tablet.png",
+      "status": "ok",
+      "hash": "sha256:2841a3ae5c70c093b74f95e6dab35ccda42149cae563f4b3e51c3e8cac515632",
+      "width": 768,
+      "height": 1024,
+      "bytes": 658996,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        768,
+        2595
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:34:59.707Z"
+    },
+    {
+      "id": "MON-02",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "掷骰中禁用态与骰子提示",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-02.desktop.png",
+      "status": "ok",
+      "hash": "sha256:1db572f7605d98d6972358da6884b1f2628d5fe98037b1b2a1c9a4a6f65014ae",
+      "width": 1440,
+      "height": 900,
+      "bytes": 964858,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:00.167Z"
+    },
+    {
+      "id": "MON-03",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "棋子逐格移动中，按钮禁用",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-03.desktop.png",
+      "status": "ok",
+      "hash": "sha256:d6873369e28202c5fbc2365cee264c7b6b21013e7179a85eb96368ef80f49bd4",
+      "width": 1440,
+      "height": 900,
+      "bytes": 964513,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:00.915Z"
+    },
+    {
+      "id": "MON-04",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "厄运事件待触发按钮与目标格高亮",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-04.desktop.png",
+      "status": "ok",
+      "hash": "sha256:d5454e5da3aa1db5e6495608281a6af54104d6a02d24262acc665c3ba4fec4fb",
+      "width": 1440,
+      "height": 900,
+      "bytes": 960393,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1507
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:03.220Z"
+    },
+    {
+      "id": "MON-05",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "事件完成后的上次事件横幅",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-05.desktop.png",
+      "status": "ok",
+      "hash": "sha256:7a58ebc6848a4dcd81a491400f610c4303d09715a3d60c30f98315173a125558",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1308492,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1489
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:06.186Z"
+    },
+    {
+      "id": "MON-06",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "特殊效果系统提示与效果 chip",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-06.desktop.png",
+      "status": "ok",
+      "hash": "sha256:1f7c5bb4eee53c12dd7e94caf5c4128405dcca552f4c5ad4cda5d7ef5bab5538",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1234395,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1547
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:13.390Z"
+    },
+    {
+      "id": "MON-07",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "当前观众激活效果胶囊",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-07.desktop.png",
+      "status": "ok",
+      "hash": "sha256:e0c77a44505c32a5282ffe70f68a42bbd5911dae2fee54bf19f7ab143ade753b",
+      "width": 1440,
+      "height": 900,
+      "bytes": 981053,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:20.645Z"
+    },
+    {
+      "id": "MON-08",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "前进/后退方向选择器",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-08.desktop.png",
+      "status": "ok",
+      "hash": "sha256:d52daa9aee6d5a646a15375dac31340ee9f69b398516ec8fa006fd2195bb3654",
+      "width": 1440,
+      "height": 900,
+      "bytes": 972988,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1485
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:21.387Z"
+    },
+    {
+      "id": "MON-09",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "三位观众列表、当前项高亮与删除控件",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-09.desktop.png",
+      "status": "ok",
+      "hash": "sha256:a34f89d4bb14b459984efb173e00b1eb1bdfc74cd237c6df7273551556acf0f2",
+      "width": 1440,
+      "height": 900,
+      "bytes": 975581,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1485
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:22.170Z"
+    },
+    {
+      "id": "MON-10",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "日志面板空态",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-10.desktop.png",
+      "status": "ok",
+      "hash": "sha256:1da85d3f8ce4758d8bce7547d5faf91e63180226e22cc282ce6be3a0e1947c11",
+      "width": 1440,
+      "height": 900,
+      "bytes": 981066,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:22.993Z"
+    },
+    {
+      "id": "MON-11",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "日志面板含骰子、移动或事件记录",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-11.desktop.png",
+      "status": "ok",
+      "hash": "sha256:d5454e5da3aa1db5e6495608281a6af54104d6a02d24262acc665c3ba4fec4fb",
+      "width": 1440,
+      "height": 900,
+      "bytes": 960393,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1507
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:23.736Z"
+    },
+    {
+      "id": "MON-12",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "新建后档案下拉含两项",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-12.desktop.png",
+      "status": "ok",
+      "hash": "sha256:235230af4b03284c244490433f66637cabdcafffaf9d357cac95266b877f87cf",
+      "width": 1440,
+      "height": 900,
+      "bytes": 979944,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:26.853Z"
+    },
+    {
+      "id": "MON-13",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "读取成功与空日志复制反馈（同一候选状态的文本变体）",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-13.desktop.png",
+      "status": "ok",
+      "hash": "sha256:21248ccb81f6fd77caa7744b92902cdcc94c4a7a5f334d938bf97da8a9529862",
+      "width": 1440,
+      "height": 900,
+      "bytes": 980628,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:27.656Z"
+    },
+    {
+      "id": "MON-14",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "轮盘说明 7 行图例",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-14.desktop.png",
+      "status": "ok",
+      "hash": "sha256:1da85d3f8ce4758d8bce7547d5faf91e63180226e22cc282ce6be3a0e1947c11",
+      "width": 1440,
+      "height": 900,
+      "bytes": 981066,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:28.493Z"
+    },
+    {
+      "id": "MON-15",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "宽屏棋盘目标格 ring 高亮",
+      "class": "data",
+      "viewport": "wide",
+      "viewportSize": [
+        1920,
+        1080
+      ],
+      "file": "screenshots/desktop/MON-15.wide.png",
+      "status": "ok",
+      "hash": "sha256:7ab07d459c2e128482cc379d90ad3b89419ae5abb9f2ae166c2691306c0c61bd",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 1475354,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1920,
+        1507
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:29.214Z"
+    },
+    {
+      "id": "MON-16",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "棋盘同时显示 P1、P2 棋子",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-16.desktop.png",
+      "status": "ok",
+      "hash": "sha256:736f934679b0899a2518c989ece241c8f7b878cb02331ec88cf11e5cf982c23f",
+      "width": 1440,
+      "height": 900,
+      "bytes": 977823,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1485
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:32.562Z"
+    },
+    {
+      "id": "MON-17",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "删除唯一观众被拒并显示系统提示",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/MON-17.desktop.png",
+      "status": "ok",
+      "hash": "sha256:b3aaec76394c5ce0ad071bc905a7b58bd7d9f9263383e3e0ee0a822df4939b99",
+      "width": 1440,
+      "height": 900,
+      "bytes": 979257,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1485
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:33.376Z"
+    },
+    {
+      "id": "MON-wide",
+      "area": "monopoly",
+      "route": "/",
+      "action": "action",
+      "expected": "宽屏完整两栏、棋盘、系统提示和效果胶囊",
+      "class": "data",
+      "viewport": "wide",
+      "viewportSize": [
+        1920,
+        1080
+      ],
+      "file": "screenshots/desktop/MON-wide.wide.full.png",
+      "status": "ok",
+      "hash": "sha256:a0101b36a2da5046d8661619594cd0e7148a9f93e1adf386ee28ef3f09e9f2c8",
+      "width": 1920,
+      "height": 1427,
+      "bytes": 1996769,
+      "fullPage": true,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1920,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:34.201Z"
+    },
+    {
+      "id": "CARD-01",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "积分卡图片加载中 spinner",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CARD-01.desktop.png",
+      "status": "ok",
+      "hash": "sha256:c2429f48fdeb0162c1af8102fe53a34a0e59362d2bd8b6e47f3c443710b5c065",
+      "width": 1440,
+      "height": 900,
+      "bytes": 438544,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:35.298Z"
+    },
+    {
+      "id": "CARD-01",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "积分卡图片加载中 spinner",
+      "class": "auto",
+      "viewport": "mobile",
+      "viewportSize": [
+        390,
+        844
+      ],
+      "file": "screenshots/mobile/CARD-01.mobile.png",
+      "status": "ok",
+      "hash": "sha256:decdf5b44ca200e1a6515541206f08fabfde3902f20c561d9ffcad6ec81c9a73",
+      "width": 390,
+      "height": 844,
+      "bytes": 121079,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        390,
+        2573
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:36.152Z"
+    },
+    {
+      "id": "CARD-02",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "转盘就绪、抽取按钮可用",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CARD-02.desktop.png",
+      "status": "ok",
+      "hash": "sha256:5cf7692c9ed66b6385e71d2d486b054e54951edfa4720817e9f77e290822412e",
+      "width": 1440,
+      "height": 900,
+      "bytes": 665623,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:36.742Z"
+    },
+    {
+      "id": "CARD-02",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "转盘就绪、抽取按钮可用",
+      "class": "auto",
+      "viewport": "mobile",
+      "viewportSize": [
+        390,
+        844
+      ],
+      "file": "screenshots/mobile/CARD-02.mobile.png",
+      "status": "ok",
+      "hash": "sha256:f55f0aaaa74f28514997108bb67fdcb7ce8424b98e4a4b7998a00b80f8c5dcb7",
+      "width": 390,
+      "height": 844,
+      "bytes": 224966,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        390,
+        2397
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:37.666Z"
+    },
+    {
+      "id": "CARD-03",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "抽取中禁用态",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CARD-03.desktop.png",
+      "status": "ok",
+      "hash": "sha256:41b15758af3ba2da553730e95221025882867ec6a5cbdb85a7219ef469282096",
+      "width": 1440,
+      "height": 900,
+      "bytes": 673475,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1553
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:38.338Z"
+    },
+    {
+      "id": "CARD-04",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "命中横幅与无奖励抽卡结果弹窗",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CARD-04.desktop.png",
+      "status": "ok",
+      "hash": "sha256:d55e4ae1613cc4b35d584885560e5b26267fb74740758ef20c76e6eba4eb7e5e",
+      "width": 1440,
+      "height": 900,
+      "bytes": 460050,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1624
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:40.470Z"
+    },
+    {
+      "id": "CARD-05",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "移动端整体与初始 0/2 收集状态",
+      "class": "auto",
+      "viewport": "mobile",
+      "viewportSize": [
+        390,
+        844
+      ],
+      "file": "screenshots/mobile/CARD-05.mobile.png",
+      "status": "ok",
+      "hash": "sha256:f55f0aaaa74f28514997108bb67fdcb7ce8424b98e4a4b7998a00b80f8c5dcb7",
+      "width": 390,
+      "height": 844,
+      "bytes": 224966,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        390,
+        2397
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:46.778Z"
+    },
+    {
+      "id": "CS-01",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "单存档档案头",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-01.desktop.png",
+      "status": "ok",
+      "hash": "sha256:7bfd5e3d7d4b3cbedd58e7a634e2dee44b4253064d5a8760893c6947a7579aac",
+      "width": 1440,
+      "height": 900,
+      "bytes": 667618,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:47.445Z"
+    },
+    {
+      "id": "CS-02",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "统计非零状态（另验证初始值为 0）",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-02.desktop.png",
+      "status": "ok",
+      "hash": "sha256:14dd79d0304bd0f94903fbededf1a677c118f9d32739b2e0cc37b84b6bb1679a",
+      "width": 1440,
+      "height": 900,
+      "bytes": 661323,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1746
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:48.430Z"
+    },
+    {
+      "id": "CS-03",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "四季卡 0/2 与 0% 进度",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-03.desktop.png",
+      "status": "ok",
+      "hash": "sha256:31a847cf047cab78b8ddf286abb3ea29878b84afb307533b98504b7563abc9ef",
+      "width": 1440,
+      "height": 900,
+      "bytes": 667661,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:49.509Z"
+    },
+    {
+      "id": "CS-04",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "春季 1/2、进度 50%",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-04.desktop.png",
+      "status": "ok",
+      "hash": "sha256:a958c77eb73ce1ca8ea2377e9c984dfa671cf027fb862eb2eb33f14732788df2",
+      "width": 1440,
+      "height": 900,
+      "bytes": 667443,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:50.497Z"
+    },
+    {
+      "id": "CS-05",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "春季 2/2 待领取样式",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-05.desktop.png",
+      "status": "ok",
+      "hash": "sha256:ca460b642006f562bd981a05f3429192141e06b731668975cf596c47199b964d",
+      "width": 1440,
+      "height": 900,
+      "bytes": 667851,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:51.511Z"
+    },
+    {
+      "id": "CS-06",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "四季壁纸已解锁与终极奖励目标",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-06.desktop.png",
+      "status": "ok",
+      "hash": "sha256:dd0823ca63f0b216bc1e728f30e1ec2b14f45e401f17969f502b7f4c4535019d",
+      "width": 1440,
+      "height": 900,
+      "bytes": 667614,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:52.522Z"
+    },
+    {
+      "id": "CS-07",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "最近四条历史 chips",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-07.desktop.png",
+      "status": "ok",
+      "hash": "sha256:8f3b66781455cd3812074c32af465e44462e1eaefe44e816fc4a748b9edc1943",
+      "width": 1440,
+      "height": 900,
+      "bytes": 661286,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1746
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:53.486Z"
+    },
+    {
+      "id": "CS-08",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "积分卡日志空态",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-08.desktop.png",
+      "status": "ok",
+      "hash": "sha256:d13588955df935e12498cc71600d045051eee278731701d0cd610b823490c31d",
+      "width": 1440,
+      "height": 900,
+      "bytes": 667622,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:54.505Z"
+    },
+    {
+      "id": "CS-09",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "积分卡日志列表",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-09.desktop.png",
+      "status": "ok",
+      "hash": "sha256:fdea942d50166f0fab557f13e3165d3848050266643a1ac9ca1730d07a6a5197",
+      "width": 1440,
+      "height": 900,
+      "bytes": 661253,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1746
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:55.494Z"
+    },
+    {
+      "id": "CS-10",
+      "area": "card",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "新建后存档下拉含两项",
+      "class": "auto",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/CS-10.desktop.png",
+      "status": "ok",
+      "hash": "sha256:9ba92148f6c330750e96f0e868711c96226217038046e5b8cd70b3d2429fd90b",
+      "width": 1440,
+      "height": 900,
+      "bytes": 384039,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1555
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:56.507Z"
+    },
+    {
+      "id": "OVL-EVT-01",
+      "area": "overlay",
+      "route": "/",
+      "action": "action",
+      "expected": "厄运轮盘旋转中",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-EVT-01.desktop.png",
+      "status": "ok",
+      "hash": "sha256:65cd96e4e2775e6e1084e5f6563e49f4362e994f4c085f695ac857573a12b992",
+      "width": 1440,
+      "height": 900,
+      "bytes": 437401,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:35:57.589Z"
+    },
+    {
+      "id": "OVL-EVT-02",
+      "area": "overlay",
+      "route": "/",
+      "action": "action",
+      "expected": "厄运轮盘结果卡",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-EVT-02.desktop.png",
+      "status": "ok",
+      "hash": "sha256:0ef696665b92ca4af90cffb9b6ad3558f5c452aad3dad2242c97ba820e336f9f",
+      "width": 1440,
+      "height": 900,
+      "bytes": 427955,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1489
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:01.106Z"
+    },
+    {
+      "id": "OVL-EVT-03",
+      "area": "overlay",
+      "route": "/",
+      "action": "action",
+      "expected": "冒险事件轮盘结果",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-EVT-03.desktop.png",
+      "status": "ok",
+      "hash": "sha256:5cf7133bd7338c4d32a214ff07c2ded7dbded30f8b0f7c6889a6cd5d1665f28e",
+      "width": 1440,
+      "height": 900,
+      "bytes": 420432,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1489
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:08.117Z"
+    },
+    {
+      "id": "OVL-EVT-04",
+      "area": "overlay",
+      "route": "/",
+      "action": "action",
+      "expected": "真心话轮盘结果与长文案",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-EVT-04.desktop.png",
+      "status": "ok",
+      "hash": "sha256:7680da871fb33997c4d0453d8b377b02d80a378f56d930ee6640691b73eb531d",
+      "width": 1440,
+      "height": 900,
+      "bytes": 416127,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1489
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:15.163Z"
+    },
+    {
+      "id": "OVL-EVT-05",
+      "area": "overlay",
+      "route": "/",
+      "action": "action",
+      "expected": "特殊效果轮盘结果",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-EVT-05.desktop.png",
+      "status": "ok",
+      "hash": "sha256:7cb0fd05148cd5701cd7d381f8bc8d6740b0eb6193a85dd2c8c45eaab5d4fe38",
+      "width": 1440,
+      "height": 900,
+      "bytes": 390036,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1547
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:22.209Z"
+    },
+    {
+      "id": "OVL-EVT-06",
+      "area": "overlay",
+      "route": "/",
+      "action": "action",
+      "expected": "混乱轮盘 8 动态扇区结果",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-EVT-06.desktop.png",
+      "status": "ok",
+      "hash": "sha256:9b2343b10f3948b1090b081c2737eecefe7c1e857d6fabe7d059cd6bc152716d",
+      "width": 1440,
+      "height": 900,
+      "bytes": 414463,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1489
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:29.199Z"
+    },
+    {
+      "id": "OVL-FIG-01",
+      "area": "overlay",
+      "route": "/",
+      "action": "action",
+      "expected": "实体周边轮盘旋转中",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-FIG-01.desktop.png",
+      "status": "ok",
+      "hash": "sha256:b979462d54a244783ca81a729225a9988ff6daa264584a2384a6b17bda1ddec2",
+      "width": 1440,
+      "height": 900,
+      "bytes": 310340,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1427
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:36.206Z"
+    },
+    {
+      "id": "OVL-FIG-02",
+      "area": "overlay",
+      "route": "/",
+      "action": "action",
+      "expected": "实体周边轮盘结果",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-FIG-02.desktop.png",
+      "status": "ok",
+      "hash": "sha256:00328fcfe0384cb51884a72decb8d6c717088d2c139026e7890a13e129f8f147",
+      "width": 1440,
+      "height": 900,
+      "bytes": 287392,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1489
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:39.636Z"
+    },
+    {
+      "id": "OVL-RES-01",
+      "area": "overlay",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "无配对奖励的抽卡结果弹窗",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-RES-01.desktop.png",
+      "status": "ok",
+      "hash": "sha256:c9022a249375bf84cf6e2062779b87e1996a9c0eb5972a1d061a84d01c3b4304",
+      "width": 1440,
+      "height": 900,
+      "bytes": 461405,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1624
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:46.058Z"
+    },
+    {
+      "id": "OVL-WALL-01",
+      "area": "overlay",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "首次配对的壁纸奖励弹窗",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-WALL-01.desktop.png",
+      "status": "ok",
+      "hash": "sha256:4f731d51ecc424a955d972e971dba3b6e6969755f863c60c106d5a103246b0d6",
+      "width": 1440,
+      "height": 900,
+      "bytes": 916322,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1686
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:52.245Z"
+    },
+    {
+      "id": "OVL-VID-01",
+      "area": "overlay",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "终极视频全屏播放层",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-VID-01.desktop.png",
+      "status": "ok",
+      "hash": "sha256:8c61fcd7c5ca62ce9e146b01c974dcece21ad7c754978676136f4678da98ec2f",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1158594,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1686
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:36:58.568Z"
+    },
+    {
+      "id": "OVL-VID-02",
+      "area": "overlay",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "终极视频加载 spinner 瞬间",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-VID-02.desktop.png",
+      "status": "ok",
+      "hash": "sha256:795d3485042078e3ce4d9fd0637fcf55c374d0217b7ebe6cd5a880016e5f29d2",
+      "width": 1440,
+      "height": 900,
+      "bytes": 991636,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1686
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-20T01:37:05.307Z"
+    },
+    {
+      "id": "OVL-WALL-02",
+      "area": "overlay",
+      "class": "blocked",
+      "status": "skipped",
+      "expected": "终极奖励双图壁纸弹窗",
+      "reason": "源码实证不可达：CardWheelPage 仅在 pendingReward && !showVideoReward 时渲染 WallpaperRewardModal，而 gameStore.addCard 在 ultimate 时同步设置 showVideoReward=true。",
+      "route": "/card-wheel"
+    }
+  ],
+  "overviews": [
+    "screenshots/overview/MON.png",
+    "screenshots/overview/CARD.png",
+    "screenshots/overview/OVERLAY.png",
+    "screenshots/overview/MOBILE.png",
+    "screenshots/overview/ALL.png"
+  ]
+}
