@@ -3,7 +3,7 @@
 **仓库**：`https://github.com/Gay-wushuang/520live`
 **基线 commit**：`b8ad051a101010cb0e47f78acfc91b7dc5e1c831`
 **证据/脚本 commit**：`63b772f11045bce7d7b451bc3193405bba7877ec`
-**报告 commit**：本文件所在提交（`docs(ui-audit): PSD Pilot v2.1 最终证据 Gate 报告`）
+**报告 commit**：`88488f0f22157d2b5fd875da97a826f9531ddeba`（本文件主体；§11「实际 Diff」为紧随其后的追加提交）
 **验收对象**：`ui-audit/psd/pilot/CardWheel-Editable-v2.psd`
 — 23,579,934 bytes，SHA256 `7583EEEFF1BC29796C42EA822532553BA45EF7D24115E378193696A6182D198A`
 **验收环境**：Windows + Adobe Photoshop **25.11.0**（COM / ExtendScript，真实进程；`E:\Adode\Ps\Adobe Photoshop 2024\Photoshop.exe`）
@@ -250,3 +250,29 @@ v2 报告中的 `PSD_PILOT_ACCEPTED` 结论在**补齐证据后**依然成立，
 - `run-phaseC-acceptance.ps1`（新增，COM 调用程序）
 - `verify-pixel-diff-v21.mjs`（新增，逐像素证据核验）
 - `make-spring-marker.mjs`（新增，标记图生成）
+
+---
+
+## 11. 实际 Diff（相对基线 `b8ad051`）
+
+```bash
+git diff --name-status b8ad051..HEAD
+```
+
+共 **19 个文件**（1 个修改脚本、1 个修改报告、17 个新增），全部位于 `ui-audit/psd/`：
+
+| 类型 | 路径 |
+|---|---|
+| M | `pilot/intermediate/pilot-phaseC-acceptance.jsx`（删除硬编码、重写为可失败断言） |
+| A | `pilot/intermediate/run-phaseC-acceptance.ps1`（COM 调用程序） |
+| A | `pilot/intermediate/verify-pixel-diff-v21.mjs`（逐像素核验） |
+| A | `pilot/intermediate/make-spring-marker.mjs` + `card-spring-marker.png`（替换素材） |
+| A | `pilot/intermediate/acceptance-v21/*`（日志 3 份、结果 JSON 2 份、整页合成图 5 张、证据图 2 张、`.gitignore`） |
+| M | `psd-pilot-v2-report.md`（本文件） |
+
+**未改动**（`git diff` 为空）：`src/**`、`ui-audit/screenshots/**`、`ui-audit/manifest.json`、`ui-audit/design-source/**`、`ui-audit/psd/pilot/CardWheel-Editable-v2.psd`、`ui-audit/psd/pilot/CardWheel-Reference.png`。
+
+提交：
+- `63b772f` — `test(ui-audit): PSD Pilot v2.1 最终证据 Gate（实测 SO 尺寸/替换像素/重开持久性）`
+- `88488f0` — `docs(ui-audit): PSD Pilot v2.1 最终证据 Gate 报告（真实统计与新 Gate）`
+- 本条「实际 Diff」为报告追加提交（`git log` 中紧随其后）
