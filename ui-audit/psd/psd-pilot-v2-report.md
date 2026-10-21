@@ -3,7 +3,7 @@
 **仓库**：`https://github.com/Gay-wushuang/520live`
 **基线 commit**：`b8ad051a101010cb0e47f78acfc91b7dc5e1c831`
 **证据/脚本 commit**：`63b772f11045bce7d7b451bc3193405bba7877ec`
-**报告 commit**：`88488f0f22157d2b5fd875da97a826f9531ddeba`（本文件主体；§11「实际 Diff」为紧随其后的追加提交）
+**报告 commit**：`88488f0f22157d2b5fd875da97a826f9531ddeba`（主体）；其后为两个小追加提交（§11「实际 Diff」、证据哈希校正）
 **验收对象**：`ui-audit/psd/pilot/CardWheel-Editable-v2.psd`
 — 23,579,934 bytes，SHA256 `7583EEEFF1BC29796C42EA822532553BA45EF7D24115E378193696A6182D198A`
 **验收环境**：Windows + Adobe Photoshop **25.11.0**（COM / ExtendScript，真实进程；`E:\Adode\Ps\Adobe Photoshop 2024\Photoshop.exe`）
@@ -227,11 +227,11 @@ v2 报告中的 `PSD_PILOT_ACCEPTED` 结论在**补齐证据后**依然成立，
 
 | 文件 | 字节 | SHA256 |
 |---|---|---|
-| `acceptance.log` | 4,221 | `EA28241FF8AC2EE08DD7B2C1AC1E54DA8648D2436BF342B6E61DA45A2F84DB78` |
+| `acceptance.log` | 4,167 | `8B400E84119800EC215C5FCB40E69CF7B6C95449ECEC3A1A9FD8A0FC7B6DD61D` |
 | `acceptance-result.json` | 20,716 | `FE6C430B62DED12837BD75E38ED0513215A76887AA19119FC84C71B6431ADDBC` |
-| `runner.log` | 2,857 | `1C83C3138AD2FCC3666D89561B1E7F507E8C874F07A2432ABE09D4B7BEA54374` |
+| `runner.log` | 2,812 | `51B654E5CBDFFE1B3BCAE16CBE571C8739647712891E0BCEECDF2CB0F6192F1D` |
 | `pixel-diff-report.json` | 10,008 | `B8C74DC2F305D28A16D3B9564466643743EA197807AD0B9FA85F8ED56E279613` |
-| `negative-controls.log` | 1,163 | `421B09CDB358EC7CFE407A7BB895923BF38612B71EAEEBF91E98C5B259663AA7` |
+| `negative-controls.log` | 1,144 | `223F3AD965A82766F94A11970A62E74647E5041AA782E956275F7F4B84806867` |
 | `v21-01-open.png` | 3,896,918 | `4B94C8FA862514792A479C2430BE1CE8E2B5A497AFBD216FF48E9E98C54324EB` |
 | `v21-02-post-replace.png` | 3,893,631 | `191AC166D2F407B7721E05C034AEAB9382C1DCFA0EC80A183D8674C16B92D223` |
 | `v21-03-reopened.png` | 3,893,631 | `F2FDC6303B71B3399CE928F5294908DD141D9039148B4929888444FFA75E4435` |
@@ -241,6 +241,9 @@ v2 报告中的 `PSD_PILOT_ACCEPTED` 结论在**补齐证据后**依然成立，
 | `diff-map-replace.png` | 4,274 | `72E1447A87810B7FE5A86B538A8517A03063446833BE571CBD6A420580215C95` |
 | `CardWheel-v2.1-accepted.psd`（未入库） | 18,702,665 | `722B6C28D4B76ECCAC7D28DCA1D0CAABBF93EC62EF81E55378F17D54E17F355B` |
 | `CardWheel-v2.1-edited.psd`（未入库） | 18,721,331 | `67BDA30A77298145BC9542628FC3E6361D4824A5405E18415D3DE52CD3B5AD54` |
+
+> 上表 SHA256 为**提交入库内容**的哈希（三份 `.log` 已统一为 LF 换行后计算，与 git blob 一致；
+> 二进制 PNG/PSD 不受换行规范化影响）。
 
 替换素材：`ui-audit/psd/pilot/intermediate/card-spring-marker.png`
 — 8,923 bytes，SHA256 `DFD69F36164F556287161671E607141100A147F1FABDEF4C576AD8880A664042`
@@ -275,4 +278,4 @@ git diff --name-status b8ad051..HEAD
 提交：
 - `63b772f` — `test(ui-audit): PSD Pilot v2.1 最终证据 Gate（实测 SO 尺寸/替换像素/重开持久性）`
 - `88488f0` — `docs(ui-audit): PSD Pilot v2.1 最终证据 Gate 报告（真实统计与新 Gate）`
-- 本条「实际 Diff」为报告追加提交（`git log` 中紧随其后）
+- 其后两个追加提交：本条「实际 Diff」小节；以及把三份 `.log` 统一为 LF 并校正 §10 哈希
