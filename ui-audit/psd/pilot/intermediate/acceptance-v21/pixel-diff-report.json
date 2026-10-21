@@ -1,0 +1,452 @@
+{
+  "workDir": "E:\\ERE\\Documents\\Work\\直播轮盘\\ui-audit\\psd\\pilot\\intermediate\\acceptance-v21",
+  "resultPath": "E:\\ERE\\Documents\\Work\\直播轮盘\\ui-audit\\psd\\pilot\\intermediate\\acceptance-v21\\acceptance-result.json",
+  "regions": {
+    "cardBoxes": {
+      "Spring": {
+        "x0": 596,
+        "y0": 307,
+        "x1": 700,
+        "y1": 411
+      },
+      "Summer": {
+        "x0": 726,
+        "y0": 307,
+        "x1": 830,
+        "y1": 411
+      },
+      "Autumn": {
+        "x0": 596,
+        "y0": 417,
+        "x1": 700,
+        "y1": 521
+      },
+      "Winter": {
+        "x0": 726,
+        "y0": 417,
+        "x1": 830,
+        "y1": 521
+      }
+    },
+    "editBoxes": {
+      "title": [
+        568,
+        71,
+        869,
+        118
+      ],
+      "buttonLabel": [
+        613,
+        771,
+        686,
+        789
+      ],
+      "primaryShape": [
+        563,
+        756,
+        735,
+        810
+      ],
+      "secondaryShape": [
+        747,
+        756,
+        877,
+        810
+      ]
+    },
+    "springReplace": {
+      "pixels": 10816,
+      "changedPixels": 10816,
+      "changedPct": 100,
+      "over32Pixels": 10816,
+      "over32Pct": 100,
+      "meanAbsDiff": 197.2834,
+      "maxChannelDiff": 255,
+      "changedBBox": [
+        596,
+        307,
+        700,
+        411
+      ]
+    },
+    "replaceOutside": {
+      "count": 0,
+      "first": null,
+      "bbox": null
+    },
+    "replaceGlobal": {
+      "pixels": 1296000,
+      "changedPixels": 10816,
+      "changedPct": 0.835,
+      "over32Pixels": 10816,
+      "over32Pct": 0.835,
+      "meanAbsDiff": 1.6465,
+      "maxChannelDiff": 255,
+      "changedBBox": [
+        596,
+        307,
+        700,
+        411
+      ]
+    },
+    "otherCardsDuringReplace": {
+      "Summer": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      },
+      "Autumn": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      },
+      "Winter": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      }
+    },
+    "reopen": {
+      "pixels": 1296000,
+      "changedPixels": 0,
+      "changedPct": 0,
+      "over32Pixels": 0,
+      "over32Pct": 0,
+      "meanAbsDiff": 0,
+      "maxChannelDiff": 0,
+      "changedBBox": null
+    },
+    "springMeanRgb": {
+      "open": [
+        197,
+        192,
+        218
+      ],
+      "reopened": [
+        235,
+        11,
+        235
+      ],
+      "editedReopened": [
+        235,
+        11,
+        235
+      ]
+    },
+    "markerProbe": {
+      "topLeft": [
+        0,
+        0,
+        0
+      ],
+      "center": [
+        255,
+        0,
+        255
+      ],
+      "bottomRight": [
+        0,
+        255,
+        0
+      ]
+    },
+    "editPhase": {
+      "pixels": 1296000,
+      "changedPixels": 14543,
+      "changedPct": 1.122,
+      "over32Pixels": 13954,
+      "over32Pct": 1.077,
+      "meanAbsDiff": 1.9346,
+      "maxChannelDiff": 224,
+      "changedBBox": [
+        568,
+        71,
+        877,
+        810
+      ]
+    },
+    "editOutside": {
+      "count": 0,
+      "first": null,
+      "bbox": null
+    },
+    "springDuringEdit": {
+      "pixels": 10816,
+      "changedPixels": 0,
+      "changedPct": 0,
+      "over32Pixels": 0,
+      "over32Pct": 0,
+      "meanAbsDiff": 0,
+      "maxChannelDiff": 0,
+      "changedBBox": null
+    },
+    "cardsDuringEdit": {
+      "Spring": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      },
+      "Summer": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      },
+      "Autumn": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      },
+      "Winter": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      }
+    },
+    "editReopenGlobal": {
+      "pixels": 1296000,
+      "changedPixels": 1764,
+      "changedPct": 0.136,
+      "over32Pixels": 0,
+      "over32Pct": 0,
+      "meanAbsDiff": 0.0151,
+      "maxChannelDiff": 19,
+      "changedBBox": [
+        568,
+        71,
+        869,
+        789
+      ]
+    },
+    "editReopenOutside": {
+      "count": 0,
+      "first": null,
+      "bbox": null
+    },
+    "springAfterEditReopen": {
+      "pixels": 10816,
+      "changedPixels": 0,
+      "changedPct": 0,
+      "over32Pixels": 0,
+      "over32Pct": 0,
+      "meanAbsDiff": 0,
+      "maxChannelDiff": 0,
+      "changedBBox": null
+    },
+    "cardsAfterEditReopen": {
+      "Spring": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      },
+      "Summer": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      },
+      "Autumn": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      },
+      "Winter": {
+        "pixels": 10816,
+        "changedPixels": 0,
+        "changedPct": 0,
+        "over32Pixels": 0,
+        "over32Pct": 0,
+        "meanAbsDiff": 0,
+        "maxChannelDiff": 0,
+        "changedBBox": null
+      }
+    }
+  },
+  "checks": [
+    {
+      "label": "PNG-SIZE-open",
+      "ok": true,
+      "detail": "1440x900"
+    },
+    {
+      "label": "PNG-SIZE-postReplace",
+      "ok": true,
+      "detail": "1440x900"
+    },
+    {
+      "label": "PNG-SIZE-reopened",
+      "ok": true,
+      "detail": "1440x900"
+    },
+    {
+      "label": "PNG-SIZE-edited",
+      "ok": true,
+      "detail": "1440x900"
+    },
+    {
+      "label": "PNG-SIZE-editedReopened",
+      "ok": true,
+      "detail": "1440x900"
+    },
+    {
+      "label": "SPRING-REGION-CHANGED",
+      "ok": true,
+      "detail": "changedPct=100% over32=100% mean=197.2834 max=255"
+    },
+    {
+      "label": "SPRING-CHANGED-BBOX-INSIDE-CARD",
+      "ok": true,
+      "detail": "changedBBox=[596,307,700,411] card=596,307,700,411"
+    },
+    {
+      "label": "REPLACE-NO-SPILL",
+      "ok": true,
+      "detail": "outsidePixels=0 bbox=null first=null"
+    },
+    {
+      "label": "REPLACE-ONLY-SPRING-CARD",
+      "ok": true,
+      "detail": "pageChanged=10816 inSpring=10816"
+    },
+    {
+      "label": "OTHER-CARDS-UNCHANGED",
+      "ok": true,
+      "detail": "Summer=0 Autumn=0 Winter=0"
+    },
+    {
+      "label": "REOPEN-IDENTICAL",
+      "ok": true,
+      "detail": "changed=0 max=0 mean=0"
+    },
+    {
+      "label": "SPRING-NOT-MAGENTA-BEFORE",
+      "ok": true,
+      "detail": "mean=197,192,218"
+    },
+    {
+      "label": "SPRING-MAGENTA-AFTER-REOPEN",
+      "ok": true,
+      "detail": "mean=235,11,235"
+    },
+    {
+      "label": "MARKER-PATTERN-IN-COMPOSITE",
+      "ok": true,
+      "detail": "topLeft=0,0,0 center=255,0,255 bottomRight=0,255,0"
+    },
+    {
+      "label": "EDIT-BOXES-PRESENT",
+      "ok": true,
+      "detail": "count=4 keys=title,buttonLabel,primaryShape,secondaryShape"
+    },
+    {
+      "label": "EDIT-PHASE-CHANGED",
+      "ok": true,
+      "detail": "changed=14543 bbox=[568,71,877,810]"
+    },
+    {
+      "label": "EDIT-PHASE-NO-SPILL",
+      "ok": true,
+      "detail": "outsidePixels=0 bbox=null first=null"
+    },
+    {
+      "label": "SPRING-CARD-STABLE-BY-EDITS",
+      "ok": true,
+      "detail": "changed=0 max=0"
+    },
+    {
+      "label": "OTHER-CARDS-UNTOUCHED-BY-EDITS",
+      "ok": true,
+      "detail": "Summer=0 Autumn=0 Winter=0"
+    },
+    {
+      "label": "EDIT-REOPEN-TEXT-ONLY",
+      "ok": true,
+      "detail": "outsidePixels=0 bbox=null first=null"
+    },
+    {
+      "label": "EDIT-REOPEN-DELTA-BOUNDED",
+      "ok": true,
+      "detail": "changed=1764 max=19 mean=0.0151"
+    },
+    {
+      "label": "SPRING-STILL-MAGENTA-AFTER-EDIT-REOPEN",
+      "ok": true,
+      "detail": "mean=235,11,235"
+    },
+    {
+      "label": "SPRING-CARD-STABLE-AFTER-EDIT-REOPEN",
+      "ok": true,
+      "detail": "changed=0 max=0"
+    },
+    {
+      "label": "OTHER-CARDS-STABLE-AFTER-EDIT-REOPEN",
+      "ok": true,
+      "detail": "Summer=0 Autumn=0 Winter=0"
+    },
+    {
+      "label": "EVIDENCE-IMAGES",
+      "ok": true,
+      "detail": "local=E:\\ERE\\Documents\\Work\\直播轮盘\\ui-audit\\psd\\pilot\\intermediate\\acceptance-v21\\local-pixel-evidence.png diffMap=E:\\ERE\\Documents\\Work\\直播轮盘\\ui-audit\\psd\\pilot\\intermediate\\acceptance-v21\\diff-map-replace.png"
+    }
+  ],
+  "evidence": {
+    "local": {
+      "out": "E:\\ERE\\Documents\\Work\\直播轮盘\\ui-audit\\psd\\pilot\\intermediate\\acceptance-v21\\local-pixel-evidence.png",
+      "width": 1724,
+      "height": 440,
+      "panels": 4,
+      "scale": 4
+    },
+    "diffMap": "E:\\ERE\\Documents\\Work\\直播轮盘\\ui-audit\\psd\\pilot\\intermediate\\acceptance-v21\\diff-map-replace.png"
+  },
+  "result": "PASS",
+  "failures": []
+}

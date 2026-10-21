@@ -1,0 +1,45 @@
+PSD Pilot v2.1 acceptance runner — 2026-10-21 11:37:51
+ps7          = 7.6.6
+workdir      = E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21
+host psd     = E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\CardWheel-Editable-v2.psd
+marker       = E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\card-spring-marker.png
+jsx          = E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\pilot-phaseC-acceptance.jsx
+host sha256  = 7583EEEFF1BC29796C42EA822532553BA45EF7D24115E378193696A6182D198A
+copy sha256  = 7583EEEFF1BC29796C42EA822532553BA45EF7D24115E378193696A6182D198A
+photoshop    = 25.11.0
+raw return   = PSD_PILOT_V21:PASS
+result       = PASS
+checks       = 45
+failures     = 0
+host sha256 after = 7583EEEFF1BC29796C42EA822532553BA45EF7D24115E378193696A6182D198A
+---- pixel diff ----
+PASS PNG-SIZE-open :: 1440x900
+PASS PNG-SIZE-postReplace :: 1440x900
+PASS PNG-SIZE-reopened :: 1440x900
+PASS PNG-SIZE-edited :: 1440x900
+PASS PNG-SIZE-editedReopened :: 1440x900
+PASS SPRING-REGION-CHANGED :: changedPct=100% over32=100% mean=197.2834 max=255
+PASS SPRING-CHANGED-BBOX-INSIDE-CARD :: changedBBox=[596,307,700,411] card=596,307,700,411
+PASS REPLACE-NO-SPILL :: outsidePixels=0 bbox=null first=null
+PASS REPLACE-ONLY-SPRING-CARD :: pageChanged=10816 inSpring=10816
+PASS OTHER-CARDS-UNCHANGED :: Summer=0 Autumn=0 Winter=0
+PASS REOPEN-IDENTICAL :: changed=0 max=0 mean=0
+PASS SPRING-NOT-MAGENTA-BEFORE :: mean=197,192,218
+PASS SPRING-MAGENTA-AFTER-REOPEN :: mean=235,11,235
+PASS MARKER-PATTERN-IN-COMPOSITE :: topLeft=0,0,0 center=255,0,255 bottomRight=0,255,0
+PASS EDIT-BOXES-PRESENT :: count=4 keys=title,buttonLabel,primaryShape,secondaryShape
+PASS EDIT-PHASE-CHANGED :: changed=14543 bbox=[568,71,877,810]
+PASS EDIT-PHASE-NO-SPILL :: outsidePixels=0 bbox=null first=null
+PASS SPRING-CARD-STABLE-BY-EDITS :: changed=0 max=0
+PASS OTHER-CARDS-UNTOUCHED-BY-EDITS :: Summer=0 Autumn=0 Winter=0
+PASS EDIT-REOPEN-TEXT-ONLY :: outsidePixels=0 bbox=null first=null
+PASS EDIT-REOPEN-DELTA-BOUNDED :: changed=1764 max=19 mean=0.0151
+PASS SPRING-STILL-MAGENTA-AFTER-EDIT-REOPEN :: mean=235,11,235
+PASS SPRING-CARD-STABLE-AFTER-EDIT-REOPEN :: changed=0 max=0
+PASS OTHER-CARDS-STABLE-AFTER-EDIT-REOPEN :: Summer=0 Autumn=0 Winter=0
+PASS EVIDENCE-IMAGES :: local=E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21\local-pixel-evidence.png diffMap=E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21\diff-map-replace.png
+=== SUMMARY: 25/25 passed, failures=0
+report -> E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21\pixel-diff-report.json
+----
+INFO 已启动 Photoshop: E:\Adode\Ps\Adobe Photoshop 2024\Photoshop.exe
+=== RUNNER RESULT: PASS (failures=0)

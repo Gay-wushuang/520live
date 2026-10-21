@@ -1,0 +1,19 @@
+PSD Pilot v2.1 — 失败可检测性负向自检（negative control）
+时间: 2026-10-21 11:38:41
+说明：所有用例都在 acceptance-v21-negative/ 副本上进行，不修改正式验收证据。
+
+[0] 真实证据 validate-only（期望 exit=0） -> exit=0
+    === ACCEPTANCE PASS: 所有必需检查项与证据文件均通过
+
+[1] 篡改 acceptance-result.json（result=FAIL, PS-OPEN=false）（期望 exit=1） -> exit=1
+    FAIL RESULT: FAIL
+    FAIL CHECK-FAILED: PS-OPEN :: NEGATIVE-CONTROL: 人为置为失败
+    FAIL CHECK-NOT-OK: PS-OPEN :: NEGATIVE-CONTROL: 人为置为失败
+
+[2] 把 exports.reopened 指向不存在的文件（期望 exit=1） -> exit=1
+    FAIL MISSING-EVIDENCE: reopened -> E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21-negative\v21-03-reopened-MISSING.png
+
+[3] 把 exports.open 指向替换后图，运行 verify-pixel-diff-v21.mjs（期望 exit=1） -> exit=1
+    FAIL SPRING-REGION-CHANGED :: changedPct=0% over32=0% mean=0 max=0
+    FAIL SPRING-CHANGED-BBOX-INSIDE-CARD :: changedBBox=null card=596,307,700,411
+    FAIL SPRING-NOT-MAGENTA-BEFORE :: mean=235,11,235

@@ -1,0 +1,54 @@
+PSD Pilot v2.1 acceptance — Wed Oct 21 2026 11:38:14 GMT+0800
+photoshop   = Adobe Photoshop 25.11.0
+workdir     = E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21
+work psd    = E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21\CardWheel-v2.1-working.psd
+marker      = E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\card-spring-marker.png
+----
+PASS PS-OPEN :: 1440x900 name=CardWheel-v2.1-working.psd
+PASS PS-VERSION :: Adobe Photoshop 25.11.0
+PASS SOURCE-IS-TEMP-COPY :: doc=E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21\CardWheel-v2.1-working.psd
+PASS STRUCTURE-COUNTS :: text=14 so=4 shapes=20 total=47
+PASS SNAPSHOT-BASELINE :: layers=47
+PASS SO-DIM:Spring :: 1672x941 @72ppi doc=图层 0.psb
+PASS SO-DIM:Summer :: 1672x941 @72ppi doc=图层 01.psb
+PASS SO-DIM:Autumn :: 1672x941 @72ppi doc=图层 02.psb
+PASS SO-DIM:Winter :: 1672x941 @72ppi doc=图层 03.psb
+PASS SO-DISPLAY-SIZE :: Spring=104x104 Summer=104x104 Autumn=104x104 Winter=104x104
+PASS SO-SAMPLES-BASELINE :: Spring=218,213,234/252,234,238/156,173,226 Summer=204,217,250/248,248,254/243,237,238 Autumn=204,183,202/193,58,36/54,46,36 Winter=214,207,233/87,101,190/238,230,246
+PASS OPEN-EXPORT :: E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21/v21-01-open.png bytes=3896918
+PASS SMART-OBJECT-FOUND :: Card image / Spring / Smart Object
+PASS SMART-OBJECT-REPLACE :: marker=E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\card-spring-marker.png exists=true
+PASS SPRING-SO-KIND-AFTER-REPLACE :: Card image / Spring / Smart Object kind=SMARTOBJECT
+PASS SPRING-SO-BOUNDS-UNCHANGED :: before=596,307,700,411 after=596,307,700,411
+PASS SPRING-SO-DIM-AFTER-REPLACE :: 1672x941 @72ppi doc=card-spring-marker.png
+PASS SPRING-SO-COLOR-AFTER-REPLACE :: center 218,213,234 -> 255,0,255
+PASS SPRING-SO-MARKER-PATTERN :: topLeft=0,0,0 bottomRight=0,255,0
+PASS REPLACE-NO-STRUCTURE-CHANGE :: baseline=47 now=47
+PASS SAVE :: E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21/CardWheel-v2.1-accepted.psd bytes=18702665
+PASS POST-REPLACE-EXPORT :: E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21/v21-02-post-replace.png bytes=3893631
+PASS REOPEN :: CardWheel-v2.1-accepted.psd 1440x900
+PASS STRUCTURE-AFTER-REOPEN :: so=4 shapes=20 total=47
+PASS STRUCTURE-SNAPSHOT-STABLE :: baseline=47 reopened=47
+PASS TEXT-COUNT-AFTER-REOPEN :: text=14
+PASS SPRING-SO-PERSIST-DIM :: 1672x941 @72ppi doc=card-spring-marker.png
+PASS SPRING-SO-PERSIST-COLOR :: center=255,0,255 topLeft=0,0,0 bottomRight=0,255,0
+PASS OTHER-SO-CONTENT-STABLE :: Summer=stable 1672x941 c=204,217,250 | Autumn=stable 1672x941 c=204,183,202 | Winter=stable 1672x941 c=214,207,233
+PASS COMPOSITE-EXPORT :: E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21/v21-03-reopened.png bytes=3893631
+PASS TITLE-LAYER-FOUND :: Title / 积分卡转盘
+PASS TITLE-EDIT-VISIBLE :: contents=积分卡转盘V2 bounds=568,71,869,118
+PASS BUTTON-LABEL-FOUND :: Button label / 抽取积分卡
+PASS BUTTON-EDIT-VISIBLE :: contents=测试按钮 bounds=613,771,686,789
+PASS SHAPE-LAYER-FOUND :: Secondary button / Shape
+PASS SHAPE-EDIT
+PASS SHAPE-FILL-VISIBLE :: 30,204,131 30,204,131 30,203,130 30,204,131
+PASS SHAPE-EDIT-NO-STRUCTURE-CHANGE :: baseline=47 now=47
+PASS EDIT-EXPORT :: E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21/v21-04-edited.png bytes=3893630
+PASS EDIT-SAVE :: E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21/CardWheel-v2.1-edited.psd bytes=18721331
+PASS EDIT-REOPEN :: CardWheel-v2.1-edited.psd
+PASS TEXT-PERSIST-AFTER-REOPEN :: contents=积分卡转盘V2
+PASS STRUCTURE-AFTER-EDIT-REOPEN :: baseline=47 reopened=47
+PASS SPRING-SO-STILL-MARKER :: center=255,0,255 1672x941 @72ppi
+PASS EDIT-REOPEN-EXPORT :: E:\ERE\Documents\Work\直播轮盘\ui-audit\psd\pilot\intermediate\acceptance-v21/v21-05-edited-reopened.png bytes=3893630
+----
+=== SUMMARY: 45/45 checks passed, failures=0, missingRequired=0
+=== RESULT: PASS

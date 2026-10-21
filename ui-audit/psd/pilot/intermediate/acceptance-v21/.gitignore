@@ -1,0 +1,9 @@
+# 验收过程中的大体积中间件（可重建，不入库）。
+# - CardWheel-v2.1-working.psd  交付 PSD 的逐字节副本（SHA256 与交付文件一致）
+# - CardWheel-v2.1-accepted.psd 替换春季卡图并重开验证后的临时 PSD
+# - CardWheel-v2.1-edited.psd   再做文字/形状编辑后的临时 PSD
+# 三者哈希记录在 ../psd-pilot-v2-report.md §10；运行 run-phaseC-acceptance.ps1 可重建。
+*.psd
+
+# 仓库根的 .gitignore 忽略 *.log；验证日志是本 Gate 的交付证据，这里显式放行。
+!*.log
