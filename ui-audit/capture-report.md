@@ -4,9 +4,9 @@
 
 - 审计基线：`8dcf2151799088d97d6c53f5751a86b1b9a347dc`（采集开始时 HEAD 与基线一致）。
 - 报告宣称候选状态为 44 个，但 `reports/capture-plan.md` 的正式 ID 逐行枚举为 **46 个**；若把计划中额外出现的 `MON-13b` 也算独立 ID，则为 47 个。此次不删除条目凑数，采集了 46 个正式 ID，并把 `MON-13b` 作为 `MON-13` 的反馈文本变体验证。
-- 46 个正式 ID 中：**45 个真实 UI 状态成功、1 个 blocked、0 个运行失败**。
-- 共生成 **49 张状态 PNG**（同一 ID 的多视口变体计为不同文件）和 **5 张 contact-sheet**。
-- 未修改 `src/` 下页面、组件、状态机、概率或奖励规则；未生成或声称生成 PSD。
+- 46 个正式 ID 中：**46 个真实 UI 状态全部成功、0 个 blocked、0 个运行失败**。
+- 共生成 **50 张状态 PNG**（同一 ID 的多视口变体计为不同文件）和 **5 张 contact-sheet**。
+- 未修改页面路由、奖励概率与存档逻辑；未生成或声称生成 PSD。为让 `OVL-WALL-02` 成为真实可达状态，修正了终极奖励的展示顺序（见“计划校正与源码修复”）。
 
 机器可读的逐文件尺寸、SHA-256、视口、状态与错误信息见 [`manifest.json`](manifest.json)。
 
@@ -35,22 +35,31 @@
 |---|---:|---:|---:|---:|
 | 大富翁（MON） | 18 | 18 | 0 | 20（`MON-01` 含 3 视口） |
 | 积分卡/收集档案（CARD/CS） | 15 | 15 | 0 | 17（`CARD-01/02` 含双视口） |
-| 覆盖层（OVL） | 13 | 12 | 1 | 12 |
-| 合计 | 46 | 45 | 1 | 49 |
+| 覆盖层（OVL） | 13 | 13 | 0 | 13 |
+| 合计 | 46 | 46 | 0 | 50 |
 
 成功截图位置：
 
-- `screenshots/desktop/`：45 张
+- `screenshots/desktop/`：46 张
 - `screenshots/mobile/`：4 张
 - `screenshots/overview/`：`MON.png`、`CARD.png`、`OVERLAY.png`、`MOBILE.png`、`ALL.png`
 
-## Blocked 与计划校正
+## 计划校正与源码修复
 
-### Blocked
+### `OVL-WALL-02` 从 blocked 变为可达
 
-- `OVL-WALL-02`：终极奖励双图版 `WallpaperRewardModal` 不可达。页面只在 `pendingReward && !showVideoReward` 时渲染该弹窗，而 `gameStore.addCard` 在终极奖励分支同时设置 `showVideoReward=true`，因此实际 UI 会直接进入视频层。未为此修改生产状态机，也未制作替代图。
+**原问题**：终极奖励双图弹窗不可达。`CardWheelPage` 仅在 `pendingReward && !showVideoReward` 时渲染 `WallpaperRewardModal`，而 `gameStore.addCard` 在 ultimate 分支同一次 `set()` 中即把 `showVideoReward` 置为 `true`，双图弹窗从未出现一帧。
 
-### 审计计划中的实际差异
+**修复**：
+- `addCard` 的 ultimate 分支不再直接进入视频，而是保留 `pendingReward`（`showVideoReward: false`），先展示双图弹窗。
+- `claimUltimateReward`（点击“领取终极奖励”）重置该季节卡数并置 `showVideoReward: true`，此时才进入视频层；`pendingReward` 保留供视频层展示季节名。
+- 新增 `closeUltimateReward`，由视频层“关闭并领取”调用，负责清空 `showVideoReward` 与 `pendingReward`，避免关闭视频后再次触发领取流程。
+
+**行为变化（需知悉）**：终极奖励顺序由“直接视频”变为“双图弹窗 → 领取 → 视频”。奖励数值、概率、存档结构与卡数重置规则未改变。
+
+**验证**：`OVL-WALL-02` 截图显示“终极大奖已解锁”、左侧壁纸与右侧“夏秋双面折扇”双图、“领取终极奖励”按钮；`OVL-VID-01` 在其后仍能进入视频播放态，`OVL-VID-02` 捕获到加载 spinner。
+
+### 审计计划中的其它实际差异
 
 - 数量口径：计划标题与合计写 44，逐行正式 ID 实际为 46；`MON-13b` 另作为非正式附加 ID 出现。
 - `CARD-04`：计划写 `card.spring1` 后应显示 `ResultModal`，但第 2 张同季卡会触发 `WallpaperRewardModal`。实际采集用零进度 fixture，经真实抽卡后获得“命中横幅 + ResultModal”。
@@ -59,13 +68,12 @@
 
 ## 质量检查
 
-- 49 张状态 PNG 均存在、非空，且实际像素尺寸与 manifest 一致。
+- 50 张状态 PNG 均存在、非空，且实际像素尺寸与 manifest 一致。
 - 除 `MON-wide` 的有意全页截图外，所有文件严格等于对应视口尺寸。
 - 所有成功状态均无 `pageerror` 或 console error。
 - 390px 移动端与 768px 平板端均无 DOM 水平溢出；主页面、转盘、结果弹窗、壁纸弹窗和视频层可查看。
-- `OVL-VID-01` 验证视频进入可播放状态；`OVL-VID-02` 单独保留加载 spinner 中间态。
+- `OVL-VID-01` 验证视频进入可播放状态；`OVL-VID-02` 单独保留加载 spinner 中间态（对 `动态壁纸.mp4` 请求延迟 4s 复现，未替换资源）。
 - `CARD-01` 在冷缓存和热缓存下都由真实图片请求延迟稳定复现。
-- `OVL-WALL-02` 明确记为 `skipped/blocked`，未生成伪造 PNG。
 - 未执行下载/导出动作，未在用户下载目录留下文件。
 
 视觉总览人工检查已覆盖 `ALL.png`、`MOBILE.png`、视频播放态和视频加载态。固定视口截图按计划不使用 `fullPage`，因此页面纵向内容不一定在单张图里全部出现；收集档案状态在操作前已滚动到目标区域，属于预期构图而非意外裁切。
@@ -85,7 +93,7 @@ npm run capture:ui
 
 | 命令 | 结果 |
 |---|---|
-| `npm run capture:ui` | 通过；45 成功、1 blocked、0 error，49 张状态 PNG + 5 张总览 |
+| `npm run capture:ui` | 通过；46 成功、0 blocked、0 error，50 张状态 PNG + 5 张总览 |
 | `npm run lint` | 通过；ESLint 0 error |
 | `npm run check` | 通过；`tsc -b --noEmit` 0 error |
 | `npm run build` | 通过；Vite 64 modules transformed，构建产物正常 |
@@ -98,13 +106,15 @@ npm run capture:ui
 本阶段预期变更范围：
 
 - `package.json` / `package-lock.json`：加入 `@playwright/test`、`sharp` 及 `capture:ui` 脚本。
-- `ui-audit/tools/capture.mjs`：确定性、隔离的截图采集与 contact-sheet 生成器。
+- `src/stores/gameStore.ts`：终极奖励改为“双图弹窗 → 领取 → 视频”，新增 `closeUltimateReward`。
+- `src/components/VideoRewardPlayer.tsx`：关闭视频改调 `closeUltimateReward`。
+- `ui-audit/tools/capture.mjs`：确定性、隔离的截图采集与 contact-sheet 生成器；新增 `delayVideo` 复现视频加载态。
 - `ui-audit/screenshots/**`：真实渲染 PNG 基线与总览。
 - `ui-audit/design-source/assets/**`：PSD 交接用原始资源副本。
 - `ui-audit/design-source/layer-map.md`：Photoshop 图层组合建议。
 - `ui-audit/manifest.json` 与本报告。
 
-`ui-audit/` 当前约 78.6 MB，主要体积来自 49 张无损 PNG、5 张总览、12 个原始视觉/视频资源副本。
+`ui-audit/` 当前约 80 MB，主要体积来自 50 张无损 PNG、5 张总览、12 个原始视觉/视频资源副本。
 
 仓库开始时已有未跟踪的 `reports/` 和 4 张 `public/` 图片；这些视为已有用户工作，未删除或覆盖。
 

@@ -128,6 +128,7 @@ interface GameState {
   addCard: (season: Season) => RewardResult;
   claimWallpaper: (season: Season) => void;
   claimUltimateReward: () => void;
+  closeUltimateReward: () => void;
   resetGame: () => void;
   getSeasonName: (season: Season) => string;
   getSeasonFromIndex: (index: number) => Season;
@@ -502,7 +503,8 @@ export const useGameStore = create<GameState>()(
           lastSpin: entry,
           auditLogs: appendAuditLogs(state.auditLogs, auditEntries),
           pendingReward,
-          showVideoReward: isUltimate,
+          // 终极奖励先展示双图弹窗，领取后再进入视频层
+          showVideoReward: false,
         };
 
         set({
@@ -577,6 +579,7 @@ export const useGameStore = create<GameState>()(
           rewardLabel: info ? `${info.name}终极奖励` : '终极奖励',
           rewardStatus: 'ultimate',
         });
+        // 领取后保留 pendingReward 供视频层展示季节名，并进入视频阶段
         const nextState = {
           ...state,
           cardCollection: season
@@ -585,16 +588,29 @@ export const useGameStore = create<GameState>()(
                 [season]: 0,
               }
             : state.cardCollection,
-          showVideoReward: false,
-          pendingReward: null,
+          showVideoReward: true,
           auditLogs: appendAuditLogs(state.auditLogs, [log]),
         };
 
         set({
           cardCollection: nextState.cardCollection,
+          showVideoReward: true,
+          auditLogs: nextState.auditLogs,
+          archiveSlots: upsertCurrentArchive(nextState),
+        });
+      },
+
+      closeUltimateReward: () => {
+        const state = get();
+        const nextState = {
+          ...state,
           showVideoReward: false,
           pendingReward: null,
-          auditLogs: nextState.auditLogs,
+        };
+
+        set({
+          showVideoReward: false,
+          pendingReward: null,
           archiveSlots: upsertCurrentArchive(nextState),
         });
       },

@@ -2,7 +2,7 @@
   "meta": {
     "project": "520live",
     "commit": "8dcf2151799088d97d6c53f5751a86b1b9a347dc",
-    "capturedAt": "2026-10-20T01:37:16.337Z",
+    "capturedAt": "2026-10-21T06:48:06.611Z",
     "baseUrl": "http://127.0.0.1:5173",
     "playwright": "1.64.1",
     "browser": "chromium",
@@ -14,10 +14,10 @@
     "seeded": true,
     "declaredCandidateCount": 44,
     "candidateCount": 46,
-    "successfulCandidateCount": 45,
-    "blockedCandidateCount": 1,
+    "successfulCandidateCount": 46,
+    "blockedCandidateCount": 0,
     "errorCandidateCount": 0,
-    "screenshotFileCount": 49
+    "screenshotFileCount": 50
   },
   "viewports": {
     "desktop": {
@@ -475,10 +475,12 @@
     {
       "id": "OVL-WALL-02",
       "area": "overlay",
-      "class": "blocked",
-      "status": "skipped",
+      "class": "data",
       "expected": "终极奖励双图壁纸弹窗",
-      "reason": "源码实证不可达：CardWheelPage 仅在 pendingReward && !showVideoReward 时渲染 WallpaperRewardModal，而 gameStore.addCard 在 ultimate 时同步设置 showVideoReward=true。"
+      "status": "ok",
+      "files": [
+        "screenshots/desktop/OVL-WALL-02.desktop.png"
+      ]
     },
     {
       "id": "OVL-VID-01",
@@ -527,7 +529,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:34:58.501Z"
+      "capturedAt": "2026-10-21T06:45:38.933Z"
     },
     {
       "id": "MON-01",
@@ -554,7 +556,7 @@
         2521
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:34:59.341Z"
+      "capturedAt": "2026-10-21T06:45:39.763Z"
     },
     {
       "id": "MON-01",
@@ -581,7 +583,7 @@
         2595
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:34:59.707Z"
+      "capturedAt": "2026-10-21T06:45:40.190Z"
     },
     {
       "id": "MON-02",
@@ -597,10 +599,10 @@
       ],
       "file": "screenshots/desktop/MON-02.desktop.png",
       "status": "ok",
-      "hash": "sha256:1db572f7605d98d6972358da6884b1f2628d5fe98037b1b2a1c9a4a6f65014ae",
+      "hash": "sha256:010f0a5d445e464e8f8ef72a3d51400f780e9b695d21cb62df0661b898b76e04",
       "width": 1440,
       "height": 900,
-      "bytes": 964858,
+      "bytes": 964870,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -608,7 +610,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:00.167Z"
+      "capturedAt": "2026-10-21T06:45:40.687Z"
     },
     {
       "id": "MON-03",
@@ -635,7 +637,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:00.915Z"
+      "capturedAt": "2026-10-21T06:45:41.480Z"
     },
     {
       "id": "MON-04",
@@ -651,10 +653,10 @@
       ],
       "file": "screenshots/desktop/MON-04.desktop.png",
       "status": "ok",
-      "hash": "sha256:d5454e5da3aa1db5e6495608281a6af54104d6a02d24262acc665c3ba4fec4fb",
+      "hash": "sha256:0acb798c5dfb59f478e39143654a6c31fd9635c0ab5d0bd89d70d2556b58d9ae",
       "width": 1440,
       "height": 900,
-      "bytes": 960393,
+      "bytes": 960364,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -662,7 +664,7 @@
         1507
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:03.220Z"
+      "capturedAt": "2026-10-21T06:45:43.809Z"
     },
     {
       "id": "MON-05",
@@ -678,10 +680,10 @@
       ],
       "file": "screenshots/desktop/MON-05.desktop.png",
       "status": "ok",
-      "hash": "sha256:7a58ebc6848a4dcd81a491400f610c4303d09715a3d60c30f98315173a125558",
+      "hash": "sha256:2ea77435fe88cb63aac1693b971893cd73fb739993802cc4c4322a3b160077a7",
       "width": 1440,
       "height": 900,
-      "bytes": 1308492,
+      "bytes": 1308445,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -689,7 +691,7 @@
         1489
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:06.186Z"
+      "capturedAt": "2026-10-21T06:45:46.722Z"
     },
     {
       "id": "MON-06",
@@ -705,10 +707,10 @@
       ],
       "file": "screenshots/desktop/MON-06.desktop.png",
       "status": "ok",
-      "hash": "sha256:1f7c5bb4eee53c12dd7e94caf5c4128405dcca552f4c5ad4cda5d7ef5bab5538",
+      "hash": "sha256:3e7ecc45306cf220f3e61e0d3720066e1c6c536c4ccb0e997cbb3226e80d662b",
       "width": 1440,
       "height": 900,
-      "bytes": 1234395,
+      "bytes": 1234269,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -716,7 +718,7 @@
         1547
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:13.390Z"
+      "capturedAt": "2026-10-21T06:45:53.949Z"
     },
     {
       "id": "MON-07",
@@ -743,7 +745,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:20.645Z"
+      "capturedAt": "2026-10-21T06:46:01.279Z"
     },
     {
       "id": "MON-08",
@@ -759,10 +761,10 @@
       ],
       "file": "screenshots/desktop/MON-08.desktop.png",
       "status": "ok",
-      "hash": "sha256:d52daa9aee6d5a646a15375dac31340ee9f69b398516ec8fa006fd2195bb3654",
+      "hash": "sha256:42ab08b8628fdb960988c150fbda089587ea8b1c6266da688184e07fed8fcc85",
       "width": 1440,
       "height": 900,
-      "bytes": 972988,
+      "bytes": 972922,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -770,7 +772,7 @@
         1485
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:21.387Z"
+      "capturedAt": "2026-10-21T06:46:02.077Z"
     },
     {
       "id": "MON-09",
@@ -797,7 +799,7 @@
         1485
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:22.170Z"
+      "capturedAt": "2026-10-21T06:46:02.931Z"
     },
     {
       "id": "MON-10",
@@ -824,7 +826,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:22.993Z"
+      "capturedAt": "2026-10-21T06:46:03.795Z"
     },
     {
       "id": "MON-11",
@@ -851,7 +853,7 @@
         1507
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:23.736Z"
+      "capturedAt": "2026-10-21T06:46:04.560Z"
     },
     {
       "id": "MON-12",
@@ -878,7 +880,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:26.853Z"
+      "capturedAt": "2026-10-21T06:46:07.752Z"
     },
     {
       "id": "MON-13",
@@ -894,10 +896,10 @@
       ],
       "file": "screenshots/desktop/MON-13.desktop.png",
       "status": "ok",
-      "hash": "sha256:21248ccb81f6fd77caa7744b92902cdcc94c4a7a5f334d938bf97da8a9529862",
+      "hash": "sha256:bad933f9a4658dae02bd0dda9ac26748d3b2e86c5edd21925a3b903c9714b651",
       "width": 1440,
       "height": 900,
-      "bytes": 980628,
+      "bytes": 980632,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -905,7 +907,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:27.656Z"
+      "capturedAt": "2026-10-21T06:46:08.574Z"
     },
     {
       "id": "MON-14",
@@ -932,7 +934,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:28.493Z"
+      "capturedAt": "2026-10-21T06:46:09.545Z"
     },
     {
       "id": "MON-15",
@@ -948,10 +950,10 @@
       ],
       "file": "screenshots/desktop/MON-15.wide.png",
       "status": "ok",
-      "hash": "sha256:7ab07d459c2e128482cc379d90ad3b89419ae5abb9f2ae166c2691306c0c61bd",
+      "hash": "sha256:e5e8e0ee229726ec1217dbb3e1f776fa214c46d11f1504f9fc90edd1def4d91a",
       "width": 1920,
       "height": 1080,
-      "bytes": 1475354,
+      "bytes": 1475131,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -959,7 +961,7 @@
         1507
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:29.214Z"
+      "capturedAt": "2026-10-21T06:46:10.343Z"
     },
     {
       "id": "MON-16",
@@ -986,7 +988,7 @@
         1485
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:32.562Z"
+      "capturedAt": "2026-10-21T06:46:13.688Z"
     },
     {
       "id": "MON-17",
@@ -1013,7 +1015,7 @@
         1485
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:33.376Z"
+      "capturedAt": "2026-10-21T06:46:14.511Z"
     },
     {
       "id": "MON-wide",
@@ -1040,7 +1042,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:34.201Z"
+      "capturedAt": "2026-10-21T06:46:15.340Z"
     },
     {
       "id": "CARD-01",
@@ -1056,10 +1058,10 @@
       ],
       "file": "screenshots/desktop/CARD-01.desktop.png",
       "status": "ok",
-      "hash": "sha256:c2429f48fdeb0162c1af8102fe53a34a0e59362d2bd8b6e47f3c443710b5c065",
+      "hash": "sha256:b1f2d768807f39985ba624f535393adf773da37be6699943c8ae9efc7506adbc",
       "width": 1440,
       "height": 900,
-      "bytes": 438544,
+      "bytes": 438260,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1067,7 +1069,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:35.298Z"
+      "capturedAt": "2026-10-21T06:46:16.469Z"
     },
     {
       "id": "CARD-01",
@@ -1083,10 +1085,10 @@
       ],
       "file": "screenshots/mobile/CARD-01.mobile.png",
       "status": "ok",
-      "hash": "sha256:decdf5b44ca200e1a6515541206f08fabfde3902f20c561d9ffcad6ec81c9a73",
+      "hash": "sha256:d343002518ca4beebb164c2f32cf2ce1a1ba039a11d9ee0f190c6eecab5b1ce2",
       "width": 390,
       "height": 844,
-      "bytes": 121079,
+      "bytes": 120956,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1094,7 +1096,7 @@
         2573
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:36.152Z"
+      "capturedAt": "2026-10-21T06:46:17.387Z"
     },
     {
       "id": "CARD-02",
@@ -1110,10 +1112,10 @@
       ],
       "file": "screenshots/desktop/CARD-02.desktop.png",
       "status": "ok",
-      "hash": "sha256:5cf7692c9ed66b6385e71d2d486b054e54951edfa4720817e9f77e290822412e",
+      "hash": "sha256:7e4e3d4bbc08ce61b64e0a190a6656b49a80cc3c591f980635877cf29035acbd",
       "width": 1440,
       "height": 900,
-      "bytes": 665623,
+      "bytes": 667112,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1121,7 +1123,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:36.742Z"
+      "capturedAt": "2026-10-21T06:46:18.098Z"
     },
     {
       "id": "CARD-02",
@@ -1137,10 +1139,10 @@
       ],
       "file": "screenshots/mobile/CARD-02.mobile.png",
       "status": "ok",
-      "hash": "sha256:f55f0aaaa74f28514997108bb67fdcb7ce8424b98e4a4b7998a00b80f8c5dcb7",
+      "hash": "sha256:91f903eb10a03fb8140ddfaf6944cc3eb63167c380570a9271378f1a3cc11d0d",
       "width": 390,
       "height": 844,
-      "bytes": 224966,
+      "bytes": 225542,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1148,7 +1150,7 @@
         2397
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:37.666Z"
+      "capturedAt": "2026-10-21T06:46:19.272Z"
     },
     {
       "id": "CARD-03",
@@ -1164,10 +1166,10 @@
       ],
       "file": "screenshots/desktop/CARD-03.desktop.png",
       "status": "ok",
-      "hash": "sha256:41b15758af3ba2da553730e95221025882867ec6a5cbdb85a7219ef469282096",
+      "hash": "sha256:a579b4ba84d7e68958898681c232719a6bc56faabbe06f40e4d4f109e923b2eb",
       "width": 1440,
       "height": 900,
-      "bytes": 673475,
+      "bytes": 671098,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1175,7 +1177,7 @@
         1553
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:38.338Z"
+      "capturedAt": "2026-10-21T06:46:19.995Z"
     },
     {
       "id": "CARD-04",
@@ -1191,10 +1193,10 @@
       ],
       "file": "screenshots/desktop/CARD-04.desktop.png",
       "status": "ok",
-      "hash": "sha256:d55e4ae1613cc4b35d584885560e5b26267fb74740758ef20c76e6eba4eb7e5e",
+      "hash": "sha256:3e40cc50af241f8ff92cb86187ee23ac3897d792c5d5e76e30b7c08707cdefa8",
       "width": 1440,
       "height": 900,
-      "bytes": 460050,
+      "bytes": 440318,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1202,7 +1204,7 @@
         1624
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:40.470Z"
+      "capturedAt": "2026-10-21T06:46:22.189Z"
     },
     {
       "id": "CARD-05",
@@ -1218,10 +1220,10 @@
       ],
       "file": "screenshots/mobile/CARD-05.mobile.png",
       "status": "ok",
-      "hash": "sha256:f55f0aaaa74f28514997108bb67fdcb7ce8424b98e4a4b7998a00b80f8c5dcb7",
+      "hash": "sha256:91f903eb10a03fb8140ddfaf6944cc3eb63167c380570a9271378f1a3cc11d0d",
       "width": 390,
       "height": 844,
-      "bytes": 224966,
+      "bytes": 225542,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1229,7 +1231,7 @@
         2397
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:46.778Z"
+      "capturedAt": "2026-10-21T06:46:28.402Z"
     },
     {
       "id": "CS-01",
@@ -1245,10 +1247,10 @@
       ],
       "file": "screenshots/desktop/CS-01.desktop.png",
       "status": "ok",
-      "hash": "sha256:7bfd5e3d7d4b3cbedd58e7a634e2dee44b4253064d5a8760893c6947a7579aac",
+      "hash": "sha256:7af54dc6fa370ca2d4088781a9d4bac167d508a5821d84a72df2e48426fc99b6",
       "width": 1440,
       "height": 900,
-      "bytes": 667618,
+      "bytes": 667885,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1256,7 +1258,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:47.445Z"
+      "capturedAt": "2026-10-21T06:46:29.059Z"
     },
     {
       "id": "CS-02",
@@ -1272,10 +1274,10 @@
       ],
       "file": "screenshots/desktop/CS-02.desktop.png",
       "status": "ok",
-      "hash": "sha256:14dd79d0304bd0f94903fbededf1a677c118f9d32739b2e0cc37b84b6bb1679a",
+      "hash": "sha256:1539b779b9f6a044150fc946669f07b626797c6f33053301011433109552be65",
       "width": 1440,
       "height": 900,
-      "bytes": 661323,
+      "bytes": 661287,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1283,7 +1285,7 @@
         1746
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:48.430Z"
+      "capturedAt": "2026-10-21T06:46:30.089Z"
     },
     {
       "id": "CS-03",
@@ -1299,10 +1301,10 @@
       ],
       "file": "screenshots/desktop/CS-03.desktop.png",
       "status": "ok",
-      "hash": "sha256:31a847cf047cab78b8ddf286abb3ea29878b84afb307533b98504b7563abc9ef",
+      "hash": "sha256:c35b94f0adf685cc0a1fe968719782daea5fb62dd3ea2e57db892cb868688e1e",
       "width": 1440,
       "height": 900,
-      "bytes": 667661,
+      "bytes": 667679,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1310,7 +1312,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:49.509Z"
+      "capturedAt": "2026-10-21T06:46:31.218Z"
     },
     {
       "id": "CS-04",
@@ -1326,10 +1328,10 @@
       ],
       "file": "screenshots/desktop/CS-04.desktop.png",
       "status": "ok",
-      "hash": "sha256:a958c77eb73ce1ca8ea2377e9c984dfa671cf027fb862eb2eb33f14732788df2",
+      "hash": "sha256:10b181ecabcf2cff4441fb560703e03598715688a64e7a9cbbf0c025365c7c62",
       "width": 1440,
       "height": 900,
-      "bytes": 667443,
+      "bytes": 667506,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1337,7 +1339,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:50.497Z"
+      "capturedAt": "2026-10-21T06:46:32.249Z"
     },
     {
       "id": "CS-05",
@@ -1353,10 +1355,10 @@
       ],
       "file": "screenshots/desktop/CS-05.desktop.png",
       "status": "ok",
-      "hash": "sha256:ca460b642006f562bd981a05f3429192141e06b731668975cf596c47199b964d",
+      "hash": "sha256:4a9f4bd7f43cdfc7c94b8805d7c55ee838d1d388b70f327e21aaf453ac332a2b",
       "width": 1440,
       "height": 900,
-      "bytes": 667851,
+      "bytes": 667651,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1364,7 +1366,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:51.511Z"
+      "capturedAt": "2026-10-21T06:46:33.347Z"
     },
     {
       "id": "CS-06",
@@ -1380,10 +1382,10 @@
       ],
       "file": "screenshots/desktop/CS-06.desktop.png",
       "status": "ok",
-      "hash": "sha256:dd0823ca63f0b216bc1e728f30e1ec2b14f45e401f17969f502b7f4c4535019d",
+      "hash": "sha256:60e7d0a5806b8933e300c7704c5d85a62d7aca2596055151e016ebd1e997e6d9",
       "width": 1440,
       "height": 900,
-      "bytes": 667614,
+      "bytes": 667891,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1391,7 +1393,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:52.522Z"
+      "capturedAt": "2026-10-21T06:46:34.470Z"
     },
     {
       "id": "CS-07",
@@ -1407,7 +1409,7 @@
       ],
       "file": "screenshots/desktop/CS-07.desktop.png",
       "status": "ok",
-      "hash": "sha256:8f3b66781455cd3812074c32af465e44462e1eaefe44e816fc4a748b9edc1943",
+      "hash": "sha256:65efb533cb794143022678ec150d92516b4bad5f2b767ed35d21f1e42a9a1f35",
       "width": 1440,
       "height": 900,
       "bytes": 661286,
@@ -1418,7 +1420,7 @@
         1746
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:53.486Z"
+      "capturedAt": "2026-10-21T06:46:35.495Z"
     },
     {
       "id": "CS-08",
@@ -1434,10 +1436,10 @@
       ],
       "file": "screenshots/desktop/CS-08.desktop.png",
       "status": "ok",
-      "hash": "sha256:d13588955df935e12498cc71600d045051eee278731701d0cd610b823490c31d",
+      "hash": "sha256:dd849dc66652830a974b4551451de086361c9663c75b6afe9f32085a30e21229",
       "width": 1440,
       "height": 900,
-      "bytes": 667622,
+      "bytes": 667932,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1445,7 +1447,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:54.505Z"
+      "capturedAt": "2026-10-21T06:46:36.600Z"
     },
     {
       "id": "CS-09",
@@ -1461,10 +1463,10 @@
       ],
       "file": "screenshots/desktop/CS-09.desktop.png",
       "status": "ok",
-      "hash": "sha256:fdea942d50166f0fab557f13e3165d3848050266643a1ac9ca1730d07a6a5197",
+      "hash": "sha256:91300f990e0d3f82322d1105b346b7c8bf116b88c6f00aac0425c5bb5109cd89",
       "width": 1440,
       "height": 900,
-      "bytes": 661253,
+      "bytes": 661474,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1472,7 +1474,7 @@
         1746
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:55.494Z"
+      "capturedAt": "2026-10-21T06:46:37.751Z"
     },
     {
       "id": "CS-10",
@@ -1488,10 +1490,10 @@
       ],
       "file": "screenshots/desktop/CS-10.desktop.png",
       "status": "ok",
-      "hash": "sha256:9ba92148f6c330750e96f0e868711c96226217038046e5b8cd70b3d2429fd90b",
+      "hash": "sha256:b4271d8d86c187758cf7f850aaefbee22d77941ad85c471c15cf94711669924e",
       "width": 1440,
       "height": 900,
-      "bytes": 384039,
+      "bytes": 383906,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1499,7 +1501,7 @@
         1555
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:56.507Z"
+      "capturedAt": "2026-10-21T06:46:38.874Z"
     },
     {
       "id": "OVL-EVT-01",
@@ -1515,10 +1517,10 @@
       ],
       "file": "screenshots/desktop/OVL-EVT-01.desktop.png",
       "status": "ok",
-      "hash": "sha256:65cd96e4e2775e6e1084e5f6563e49f4362e994f4c085f695ac857573a12b992",
+      "hash": "sha256:8135f09aa0a85cb677ba69ccdaa2e59d6c691724e648b5446ea06c3d39ab8249",
       "width": 1440,
       "height": 900,
-      "bytes": 437401,
+      "bytes": 435963,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1526,7 +1528,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:35:57.589Z"
+      "capturedAt": "2026-10-21T06:46:39.935Z"
     },
     {
       "id": "OVL-EVT-02",
@@ -1542,10 +1544,10 @@
       ],
       "file": "screenshots/desktop/OVL-EVT-02.desktop.png",
       "status": "ok",
-      "hash": "sha256:0ef696665b92ca4af90cffb9b6ad3558f5c452aad3dad2242c97ba820e336f9f",
+      "hash": "sha256:5bd984f08be1b6ea6ef8756d9b6c34eef111d6877064e88e9795e04ce23c2353",
       "width": 1440,
       "height": 900,
-      "bytes": 427955,
+      "bytes": 428150,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1553,7 +1555,7 @@
         1489
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:01.106Z"
+      "capturedAt": "2026-10-21T06:46:43.433Z"
     },
     {
       "id": "OVL-EVT-03",
@@ -1569,10 +1571,10 @@
       ],
       "file": "screenshots/desktop/OVL-EVT-03.desktop.png",
       "status": "ok",
-      "hash": "sha256:5cf7133bd7338c4d32a214ff07c2ded7dbded30f8b0f7c6889a6cd5d1665f28e",
+      "hash": "sha256:a24f9feb625c5564652104dae11e15d230f7de7370151cac043d57876940c9dd",
       "width": 1440,
       "height": 900,
-      "bytes": 420432,
+      "bytes": 420854,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1580,7 +1582,7 @@
         1489
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:08.117Z"
+      "capturedAt": "2026-10-21T06:46:50.421Z"
     },
     {
       "id": "OVL-EVT-04",
@@ -1596,10 +1598,10 @@
       ],
       "file": "screenshots/desktop/OVL-EVT-04.desktop.png",
       "status": "ok",
-      "hash": "sha256:7680da871fb33997c4d0453d8b377b02d80a378f56d930ee6640691b73eb531d",
+      "hash": "sha256:5f0196e560338536f5397dfbb3bf425433439eeb6b859fc44a9ba6eed6364338",
       "width": 1440,
       "height": 900,
-      "bytes": 416127,
+      "bytes": 416267,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1607,7 +1609,7 @@
         1489
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:15.163Z"
+      "capturedAt": "2026-10-21T06:46:57.479Z"
     },
     {
       "id": "OVL-EVT-05",
@@ -1623,10 +1625,10 @@
       ],
       "file": "screenshots/desktop/OVL-EVT-05.desktop.png",
       "status": "ok",
-      "hash": "sha256:7cb0fd05148cd5701cd7d381f8bc8d6740b0eb6193a85dd2c8c45eaab5d4fe38",
+      "hash": "sha256:c9b8037840b2bcee0f970d72a3c3999ba41568150a216670afe0695f3ccb9f83",
       "width": 1440,
       "height": 900,
-      "bytes": 390036,
+      "bytes": 390080,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1634,7 +1636,7 @@
         1547
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:22.209Z"
+      "capturedAt": "2026-10-21T06:47:04.548Z"
     },
     {
       "id": "OVL-EVT-06",
@@ -1650,10 +1652,10 @@
       ],
       "file": "screenshots/desktop/OVL-EVT-06.desktop.png",
       "status": "ok",
-      "hash": "sha256:9b2343b10f3948b1090b081c2737eecefe7c1e857d6fabe7d059cd6bc152716d",
+      "hash": "sha256:145108ec350b18520e0b00a07f22a3335454e045c218e2871c070a8644fb7d91",
       "width": 1440,
       "height": 900,
-      "bytes": 414463,
+      "bytes": 414960,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1661,7 +1663,7 @@
         1489
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:29.199Z"
+      "capturedAt": "2026-10-21T06:47:11.588Z"
     },
     {
       "id": "OVL-FIG-01",
@@ -1677,10 +1679,10 @@
       ],
       "file": "screenshots/desktop/OVL-FIG-01.desktop.png",
       "status": "ok",
-      "hash": "sha256:b979462d54a244783ca81a729225a9988ff6daa264584a2384a6b17bda1ddec2",
+      "hash": "sha256:fde8e731cb26d18ca0fbddb553195281a67eff5956047a040c7163bff7e1ad34",
       "width": 1440,
       "height": 900,
-      "bytes": 310340,
+      "bytes": 310436,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1688,7 +1690,7 @@
         1427
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:36.206Z"
+      "capturedAt": "2026-10-21T06:47:18.619Z"
     },
     {
       "id": "OVL-FIG-02",
@@ -1704,10 +1706,10 @@
       ],
       "file": "screenshots/desktop/OVL-FIG-02.desktop.png",
       "status": "ok",
-      "hash": "sha256:00328fcfe0384cb51884a72decb8d6c717088d2c139026e7890a13e129f8f147",
+      "hash": "sha256:0fe2281c0a3d59e67c994b4426750f65849e9bf421981509e6da78208fcdcabf",
       "width": 1440,
       "height": 900,
-      "bytes": 287392,
+      "bytes": 287342,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1715,7 +1717,7 @@
         1489
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:39.636Z"
+      "capturedAt": "2026-10-21T06:47:22.098Z"
     },
     {
       "id": "OVL-RES-01",
@@ -1731,10 +1733,10 @@
       ],
       "file": "screenshots/desktop/OVL-RES-01.desktop.png",
       "status": "ok",
-      "hash": "sha256:c9022a249375bf84cf6e2062779b87e1996a9c0eb5972a1d061a84d01c3b4304",
+      "hash": "sha256:0820b3c75ae2c43da3d6c2ffbe300a3ba37a3c66de7996b3cac6a6d3a34f587a",
       "width": 1440,
       "height": 900,
-      "bytes": 461405,
+      "bytes": 430111,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1742,7 +1744,7 @@
         1624
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:46.058Z"
+      "capturedAt": "2026-10-21T06:47:28.618Z"
     },
     {
       "id": "OVL-WALL-01",
@@ -1758,10 +1760,10 @@
       ],
       "file": "screenshots/desktop/OVL-WALL-01.desktop.png",
       "status": "ok",
-      "hash": "sha256:4f731d51ecc424a955d972e971dba3b6e6969755f863c60c106d5a103246b0d6",
+      "hash": "sha256:5df924f0825b6c2222271495189987a6e67c6783313f28f7ff9ddb1493df17e3",
       "width": 1440,
       "height": 900,
-      "bytes": 916322,
+      "bytes": 915807,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
@@ -1769,7 +1771,34 @@
         1686
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:52.245Z"
+      "capturedAt": "2026-10-21T06:47:35.000Z"
+    },
+    {
+      "id": "OVL-WALL-02",
+      "area": "overlay",
+      "route": "/card-wheel",
+      "action": "action",
+      "expected": "终极奖励双图壁纸弹窗",
+      "class": "data",
+      "viewport": "desktop",
+      "viewportSize": [
+        1440,
+        900
+      ],
+      "file": "screenshots/desktop/OVL-WALL-02.desktop.png",
+      "status": "ok",
+      "hash": "sha256:ec799904c105ac2a5957e1f806a2d98d634c9eb0208f05ad4c8b5365ab019661",
+      "width": 1440,
+      "height": 900,
+      "bytes": 895315,
+      "fullPage": false,
+      "horizontalOverflow": false,
+      "documentSize": [
+        1440,
+        1686
+      ],
+      "consoleErrors": [],
+      "capturedAt": "2026-10-21T06:47:41.386Z"
     },
     {
       "id": "OVL-VID-01",
@@ -1785,18 +1814,18 @@
       ],
       "file": "screenshots/desktop/OVL-VID-01.desktop.png",
       "status": "ok",
-      "hash": "sha256:8c61fcd7c5ca62ce9e146b01c974dcece21ad7c754978676136f4678da98ec2f",
+      "hash": "sha256:aa05535d6fac90e25062a7e5c92c7bab97563abf77e24d20ba1cb8fa91c4a32f",
       "width": 1440,
       "height": 900,
-      "bytes": 1158594,
+      "bytes": 1158630,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
         1440,
-        1686
+        1746
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:36:58.568Z"
+      "capturedAt": "2026-10-21T06:47:47.771Z"
     },
     {
       "id": "OVL-VID-02",
@@ -1812,27 +1841,18 @@
       ],
       "file": "screenshots/desktop/OVL-VID-02.desktop.png",
       "status": "ok",
-      "hash": "sha256:795d3485042078e3ce4d9fd0637fcf55c374d0217b7ebe6cd5a880016e5f29d2",
+      "hash": "sha256:a0c74cdb075eeb42a7f21b088785bf40285f16d3af4c67712f37e40a94270910",
       "width": 1440,
       "height": 900,
-      "bytes": 991636,
+      "bytes": 368057,
       "fullPage": false,
       "horizontalOverflow": false,
       "documentSize": [
         1440,
-        1686
+        1746
       ],
       "consoleErrors": [],
-      "capturedAt": "2026-10-20T01:37:05.307Z"
-    },
-    {
-      "id": "OVL-WALL-02",
-      "area": "overlay",
-      "class": "blocked",
-      "status": "skipped",
-      "expected": "终极奖励双图壁纸弹窗",
-      "reason": "源码实证不可达：CardWheelPage 仅在 pendingReward && !showVideoReward 时渲染 WallpaperRewardModal，而 gameStore.addCard 在 ultimate 时同步设置 showVideoReward=true。",
-      "route": "/card-wheel"
+      "capturedAt": "2026-10-21T06:47:55.392Z"
     }
   ],
   "overviews": [

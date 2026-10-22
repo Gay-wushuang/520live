@@ -18,7 +18,7 @@ export default function VideoRewardPlayer() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const { showVideoReward, claimUltimateReward, pendingReward } = useGameStore();
+  const { showVideoReward, closeUltimateReward, pendingReward } = useGameStore();
   const particles = useMemo<Particle[]>(
     () =>
       showVideoReward
@@ -67,7 +67,7 @@ export default function VideoRewardPlayer() {
 
     setIsPlaying(false);
     setIsVisible(false);
-    claimUltimateReward();
+    closeUltimateReward();
   };
 
   if (!showVideoReward || !isVisible) return null;

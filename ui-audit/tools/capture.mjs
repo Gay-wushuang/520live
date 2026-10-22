@@ -163,7 +163,7 @@ function initPayload(card, monopoly) {
   return { card: card ?? CARD_ZERO, monopoly: monopoly ?? monopolyFixture() };
 }
 
-async function newAuditPage(context, { viewport = 'desktop', card, monopoly, delayCards = false } = {}) {
+async function newAuditPage(context, { viewport = 'desktop', card, monopoly, delayCards = false, delayVideo = false } = {}) {
   const page = await context.newPage();
   await page.setViewportSize(VIEWPORTS[viewport]);
   const consoleErrors = [];
@@ -195,11 +195,14 @@ async function newAuditPage(context, { viewport = 'desktop', card, monopoly, del
     globalThis.__captureSetCryptoQueue = (values) => { cryptoQueue = [...values]; };
   }, initPayload(card, monopoly));
 
-  if (delayCards) {
+  if (delayCards || delayVideo) {
     await page.route('**/*', async (route) => {
       const requestPath = decodeURIComponent(new URL(route.request().url()).pathname);
-      if (requestPath.endsWith('-积分卡.png')) {
+      if (delayCards && requestPath.endsWith('-积分卡.png')) {
         await new Promise((resolve) => setTimeout(resolve, 3000));
+      }
+      if (delayVideo && requestPath.endsWith('动态壁纸.mp4')) {
+        await new Promise((resolve) => setTimeout(resolve, 4000));
       }
       await route.continue();
     });
@@ -297,9 +300,9 @@ const candidates = [
   { id: 'OVL-FIG-02', area: 'overlay', route: '/', class: 'data', expected: '实体周边轮盘结果', monopoly: monopolyFixture({ position: 4 }), action: async (page) => { await gotoMonopoly(page); await rollToPending(page); await openEvent(page); await page.getByText(/活动海报 · 实体周边/).waitFor({ timeout: 6000 }); } },
   { id: 'OVL-RES-01', area: 'overlay', route: '/card-wheel', class: 'data', expected: '无配对奖励的抽卡结果弹窗', card: CARD_ZERO, action: async (page) => { await gotoCard(page); await spinSpring(page); await waitSpinComplete(page); await page.getByRole('button', { name: '关闭结果' }).waitFor(); } },
   { id: 'OVL-WALL-01', area: 'overlay', route: '/card-wheel', class: 'data', expected: '首次配对的壁纸奖励弹窗', card: cardFixture({ counts: { spring: 1, summer: 1, autumn: 1, winter: 1 } }), action: async (page) => { await gotoCard(page); await spinSpring(page); await waitSpinComplete(page); await page.getByRole('button', { name: /领取壁纸/ }).waitFor(); } },
-  { id: 'OVL-WALL-02', area: 'overlay', route: '/card-wheel', class: 'blocked', expected: '终极奖励双图壁纸弹窗', reason: '源码实证不可达：CardWheelPage 仅在 pendingReward && !showVideoReward 时渲染 WallpaperRewardModal，而 gameStore.addCard 在 ultimate 时同步设置 showVideoReward=true。' },
-  { id: 'OVL-VID-01', area: 'overlay', route: '/card-wheel', class: 'data', expected: '终极视频全屏播放层', card: cardFixture({ counts: { spring: 1, summer: 1, autumn: 1, winter: 1 }, wallpapers: { spring: true, summer: true, autumn: true, winter: true } }), action: async (page) => { await gotoCard(page); await spinSpring(page); await waitSpinComplete(page); await page.getByRole('heading', { name: '终极大奖已解锁' }).waitFor(); await page.waitForFunction(() => { const video = document.querySelector('video'); return video && !video.paused && video.readyState >= 2; }, null, { timeout: 8000 }); await page.waitForFunction(() => { const video = document.querySelector('video'); return video && !Array.from(video.parentElement?.children ?? []).some((node) => node.classList.contains('justify-center') && node.querySelector('.animate-spin')); }, null, { timeout: 3000 }); } },
-  { id: 'OVL-VID-02', area: 'overlay', route: '/card-wheel', class: 'data', expected: '终极视频加载 spinner 瞬间', card: cardFixture({ counts: { spring: 1, summer: 1, autumn: 1, winter: 1 }, wallpapers: { spring: true, summer: true, autumn: true, winter: true } }), action: async (page) => { await gotoCard(page); await spinSpring(page); await waitSpinComplete(page); await page.getByRole('heading', { name: '终极大奖已解锁' }).waitFor(); } },
+  { id: 'OVL-WALL-02', area: 'overlay', route: '/card-wheel', class: 'data', expected: '终极奖励双图壁纸弹窗', card: cardFixture({ counts: { spring: 1, summer: 1, autumn: 1, winter: 1 }, wallpapers: { spring: true, summer: true, autumn: true, winter: true } }), action: async (page) => { await gotoCard(page); await spinSpring(page); await waitSpinComplete(page); await page.getByRole('button', { name: '领取终极奖励' }).waitFor(); await page.getByText('夏秋双面折扇').first().waitFor(); } },
+  { id: 'OVL-VID-01', area: 'overlay', route: '/card-wheel', class: 'data', expected: '终极视频全屏播放层', card: cardFixture({ counts: { spring: 1, summer: 1, autumn: 1, winter: 1 }, wallpapers: { spring: true, summer: true, autumn: true, winter: true } }), action: async (page) => { await gotoCard(page); await spinSpring(page); await waitSpinComplete(page); await page.getByRole('button', { name: '领取终极奖励' }).click(); await page.locator('video').waitFor(); await page.waitForFunction(() => { const video = document.querySelector('video'); return video && !video.paused && video.readyState >= 2; }, null, { timeout: 8000 }); await page.waitForFunction(() => { const video = document.querySelector('video'); return video && !Array.from(video.parentElement?.children ?? []).some((node) => node.classList.contains('justify-center') && node.querySelector('.animate-spin')); }, null, { timeout: 3000 }); } },
+  { id: 'OVL-VID-02', area: 'overlay', route: '/card-wheel', class: 'data', delayVideo: true, expected: '终极视频加载 spinner 瞬间', card: cardFixture({ counts: { spring: 1, summer: 1, autumn: 1, winter: 1 }, wallpapers: { spring: true, summer: true, autumn: true, winter: true } }), action: async (page) => { await gotoCard(page); await spinSpring(page); await waitSpinComplete(page); await page.getByRole('button', { name: '领取终极奖励' }).click(); await page.locator('video').waitFor(); await page.locator('div.animate-spin').last().waitFor({ state: 'visible' }); } },
 ];
 
 if (candidates.length !== 46) {
@@ -324,6 +327,7 @@ async function captureOne(context, candidate, viewport, index) {
     card: candidate.card,
     monopoly: candidate.monopoly,
     delayCards: candidate.delayCards,
+    delayVideo: candidate.delayVideo,
   });
   const { page, consoleErrors, pageErrors } = audit;
   const file = outputFile(candidate.id, viewport, index, candidate.fullPage);
