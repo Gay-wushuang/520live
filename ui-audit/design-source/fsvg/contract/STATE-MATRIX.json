@@ -1,0 +1,420 @@
+[
+  {
+    "candidate": "MON-01",
+    "description": "初始/掷骰可用",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-01.desktop.svg",
+      "states/MON-01.tablet.svg",
+      "states/MON-01.mobile.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-02",
+    "description": "掷骰中禁用",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-02.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-03",
+    "description": "棋子移动/操作禁用",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-03.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-04",
+    "description": "待触发厄运/目标格",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-04.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-05",
+    "description": "事件完成横幅",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-05.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-06",
+    "description": "特殊效果系统提示",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-06.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-07",
+    "description": "观众激活效果",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-07.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-08",
+    "description": "前进后退方向选择",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-08.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-09",
+    "description": "三观众选择/删除",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-09.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-10",
+    "description": "日志空态",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-10.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-11",
+    "description": "日志有记录",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-11.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-12",
+    "description": "两份档案选择",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-12.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-13",
+    "description": "读取与空日志反馈",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-13.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-14",
+    "description": "七类图例",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-14.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-15",
+    "description": "宽屏目标格 ring",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-15.wide.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-16",
+    "description": "P1/P2 双棋子",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-16.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-17",
+    "description": "删除最后观众拒绝",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-17.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "MON-wide",
+    "description": "宽屏全页/图例/系统效果",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/MON-wide.wide.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CARD-01",
+    "description": "卡图加载中",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CARD-01.desktop.svg",
+      "states/CARD-01.mobile.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CARD-02",
+    "description": "转盘就绪",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CARD-02.desktop.svg",
+      "states/CARD-02.mobile.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CARD-03",
+    "description": "抽取禁用中",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CARD-03.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CARD-04",
+    "description": "抽卡结果覆盖层",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CARD-04.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CARD-05",
+    "description": "移动端 0/2 收集",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CARD-05.mobile.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-01",
+    "description": "单档案头",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-01.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-02",
+    "description": "非零统计",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-02.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-03",
+    "description": "四季 0/2",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-03.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-04",
+    "description": "春季 1/2",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-04.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-05",
+    "description": "春季 2/2 待领取",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-05.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-06",
+    "description": "四季壁纸已解锁",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-06.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-07",
+    "description": "最近四条历史",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-07.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-08",
+    "description": "积分卡日志空态",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-08.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-09",
+    "description": "积分卡日志有数据",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-09.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "CS-10",
+    "description": "两档案选择",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/CS-10.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-EVT-01",
+    "description": "厄运旋转",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-EVT-01.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-EVT-02",
+    "description": "厄运结果",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-EVT-02.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-EVT-03",
+    "description": "冒险结果",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-EVT-03.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-EVT-04",
+    "description": "真心话长文案",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-EVT-04.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-EVT-05",
+    "description": "特殊效果结果",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-EVT-05.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-EVT-06",
+    "description": "混乱八扇区结果",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-EVT-06.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-FIG-01",
+    "description": "周边旋转",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-FIG-01.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-FIG-02",
+    "description": "周边结果",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-FIG-02.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-RES-01",
+    "description": "无配对奖励卡结果",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-RES-01.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-WALL-01",
+    "description": "壁纸奖励",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-WALL-01.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-WALL-02",
+    "description": "终极双图弹窗",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-WALL-02.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-VID-01",
+    "description": "终极视频播放",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-VID-01.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  },
+  {
+    "candidate": "OVL-VID-02",
+    "description": "终极视频加载",
+    "baselineStatus": "ok",
+    "svgFiles": [
+      "states/OVL-VID-02.desktop.svg"
+    ],
+    "designEvidence": "mapped"
+  }
+]

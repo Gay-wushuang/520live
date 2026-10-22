@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="240" viewBox="0 0 440 240" version="1.1" data-design-system="520live-functional-v1" data-artboard="COMPONENT-BUTTON" data-context="base" data-viewport="440x240">
+  <title>COMPONENT-BUTTON — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="440" height="240" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <text x="24" y="31" fill="#24313F" font-size="18" font-weight="700" text-anchor="start" dominant-baseline="middle">BUTTON</text>
+  <g id="COMP-BUTTON-PRIMARY" data-state="default" data-layer="30-controls">
+    <rect x="24" y="67" width="180" height="50" rx="8" fill="#364A60" stroke="#364A60" stroke-width="1" />
+    <text x="114.0" y="93.0" fill="#FFFFFF" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">主要操作</text>
+  </g>
+  <g id="COMP-BUTTON-DISABLED" data-state="disabled" data-layer="30-controls">
+    <rect x="215" y="67" width="200" height="50" rx="8" fill="#F1F2F4" stroke="#CFD5DA" stroke-width="1" />
+    <text x="315.0" y="93.0" fill="#667380" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">不可用</text>
+  </g>
+  <g id="COMP-BUTTON-SECONDARY" data-state="default" data-layer="30-controls">
+    <rect x="24" y="137" width="391" height="48" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="219.5" y="162.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">次要操作</text>
+  </g>
+</svg>

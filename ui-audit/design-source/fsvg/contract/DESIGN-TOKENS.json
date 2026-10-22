@@ -1,0 +1,48 @@
+{
+  "colors": {
+    "bg": "#F3F5F7",
+    "surface": "#FFFFFF",
+    "subtle": "#F8F9FA",
+    "ink": "#24313F",
+    "muted": "#667380",
+    "border": "#CFD5DA",
+    "line": "#E6EAEE",
+    "accent": "#364A60",
+    "accentFill": "#E7EDF2",
+    "danger": "#6E3F42",
+    "warning": "#6F5E3B",
+    "ok": "#3E6759",
+    "disabled": "#F1F2F4",
+    "overlay": "#24313F",
+    "shadow": "#DCE1E6"
+  },
+  "fontFamily": "Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif",
+  "spacingScale": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48
+  ],
+  "radii": {
+    "control": 8,
+    "panel": 12,
+    "board": 14
+  },
+  "svgLayerNames": [
+    "10-layout",
+    "20-content",
+    "30-controls",
+    "40-status",
+    "50-overlays"
+  ],
+  "typography": {
+    "header": 24,
+    "section": 16,
+    "body": 13,
+    "caption": 11
+  },
+  "artworkPolicy": "no decorative art in functional phase"
+}

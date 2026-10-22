@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" version="1.1" data-design-system="520live-functional-v1" data-artboard="OVL-VID-01-desktop" data-context="variant" data-viewport="1440x900">
+  <title>OVL-VID-01-desktop — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="1440" height="900" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <g id="OVERLAY-BACKDROP" data-func="OVL-F09" data-state="modal" data-layer="50-overlays">
+    <rect x="0" y="0" width="1440" height="900" fill="#24313F" fill-opacity="0.34" />
+  </g>
+  <g id="OVERLAY-MODAL" data-func="OVL-F09" data-layer="10-layout">
+    <rect x="392.0" y="110.0" width="656" height="680" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="410.0" y="138.0" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">终极奖励视频</text>
+    <text x="410.0" y="161.0" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">视频播放</text>
+    <g id="OVERLAY-CLOSE" data-func="OVL-F09" data-state="default" data-layer="30-controls">
+      <rect x="987.0" y="124.0" width="44" height="42" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1009.0" y="146.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">×</text>
+    </g>
+    <g id="OVERLAY-PHASE" data-func="OVL-F09" data-layer="40-status">
+      <rect x="412.0" y="186.0" width="616" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="422.0" y="199.0" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">视频播放</text>
+    </g>
+    <g id="OVERLAY-VIDEO-ASSET" data-func="OVL-F09" data-state="placeholder" data-layer="20-content">
+      <rect x="418.0" y="246.0" width="604" height="310" rx="6" fill="#333B43" stroke="none" stroke-width="1" />
+    </g>
+    <text x="720.0" y="388.0" fill="#FFFFFF" font-size="17" font-weight="650" text-anchor="middle" dominant-baseline="middle">播放区域 / 静态占位</text>
+    <text x="422.0" y="595.0" fill="#24313F" font-size="14" font-weight="600" text-anchor="start" dominant-baseline="middle">视频状态：播放 / 加载 / 结束</text>
+    <text x="422.0" y="630.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">奖励领取与关闭存在业务关联，不可删除</text>
+    <g id="OVERLAY-CONTINUE" data-func="OVL-F09" data-state="default" data-layer="30-controls">
+      <rect x="416.0" y="726.0" width="608" height="46" rx="8" fill="#364A60" stroke="#364A60" stroke-width="1" />
+      <text x="720.0" y="750.0" fill="#FFFFFF" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">关闭并领取</text>
+    </g>
+  </g>
+</svg>

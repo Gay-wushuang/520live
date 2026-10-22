@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="844" viewBox="0 0 390 844" version="1.1" data-design-system="520live-functional-v1" data-artboard="OVL-RES-01-MOBILE" data-context="overlay" data-viewport="390x844">
+  <title>OVL-RES-01-MOBILE — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="390" height="844" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <g id="OVERLAY-BACKDROP" data-func="OVL-F07" data-state="modal" data-layer="50-overlays">
+    <rect x="0" y="0" width="390" height="844" fill="#24313F" fill-opacity="0.34" />
+  </g>
+  <g id="OVERLAY-MODAL" data-func="OVL-F07" data-layer="10-layout">
+    <rect x="14.0" y="26" width="362" height="690" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="32.0" y="54" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">积分卡结果</text>
+    <text x="32.0" y="77" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">本次未触发壁纸奖励</text>
+    <g id="OVERLAY-CLOSE" data-func="OVL-F07" data-state="default" data-layer="30-controls">
+      <rect x="315.0" y="40" width="44" height="42" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="337.0" y="62.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">×</text>
+    </g>
+    <g id="OVERLAY-PHASE" data-func="OVL-F07" data-layer="40-status">
+      <rect x="34.0" y="102" width="322" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="44.0" y="115" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">本次未触发壁纸奖励</text>
+    </g>
+    <g id="OVERLAY-REWARD-ARTWORK" data-func="OVL-F07" data-state="placeholder" data-layer="20-content">
+      <rect x="49.0" y="163" width="292" height="295" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    </g>
+    <text x="195.0" y="296" fill="#24313F" font-size="17" font-weight="650" text-anchor="middle" dominant-baseline="middle">卡片 / 壁纸预览占位</text>
+    <text x="195.0" y="497" fill="#24313F" font-size="16" font-weight="700" text-anchor="middle" dominant-baseline="middle">春季卡 × 1</text>
+    <text x="195.0" y="537" fill="#667380" font-size="12" font-weight="400" text-anchor="middle" dominant-baseline="middle">奖励结果和领取状态来自已有数据</text>
+    <g id="OVERLAY-CONTINUE" data-func="OVL-F07" data-state="default" data-layer="30-controls">
+      <rect x="38.0" y="648" width="314" height="48" rx="8" fill="#364A60" stroke="#364A60" stroke-width="1" />
+      <text x="195.0" y="673.0" fill="#FFFFFF" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">关闭结果</text>
+    </g>
+  </g>
+</svg>

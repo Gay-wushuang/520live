@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="240" viewBox="0 0 440 240" version="1.1" data-design-system="520live-functional-v1" data-artboard="COMPONENT-REWARD-CARD" data-context="base" data-viewport="440x240">
+  <title>COMPONENT-REWARD-CARD — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="440" height="240" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <text x="24" y="31" fill="#24313F" font-size="18" font-weight="700" text-anchor="start" dominant-baseline="middle">REWARD-CARD</text>
+  <g id="COMP-REWARD-CARD" data-func="CARD-F10 CARD-F13" data-state="placeholder" data-layer="20-content">
+    <rect x="24" y="65" width="175" height="150" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <text x="111" y="130" fill="#667380" font-size="13" font-weight="400" text-anchor="middle" dominant-baseline="middle">季节卡 / 图像插槽</text>
+  </g>
+  <g id="COMP-REWARD-INFO" data-func="CARD-F09 CARD-F14" data-state="progress" data-layer="20-content">
+    <text x="217" y="91" fill="#24313F" font-size="19" font-weight="700" text-anchor="start" dominant-baseline="middle">春季</text>
+    <text x="217" y="125" fill="#667380" font-size="14" font-weight="400" text-anchor="start" dominant-baseline="middle">1 / 2 · 50%</text>
+    <rect x="217" y="146" width="196" height="8" rx="4" fill="#E6EAEE" stroke="none" stroke-width="1" />
+    <rect x="217" y="146" width="98" height="8" rx="4" fill="#364A60" stroke="none" stroke-width="1" />
+    <text x="217" y="177" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">下一目标：壁纸解锁</text>
+  </g>
+</svg>

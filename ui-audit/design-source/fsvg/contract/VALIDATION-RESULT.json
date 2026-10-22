@@ -1,0 +1,13 @@
+{
+  "gate": "FSVG_V11_STRUCTURAL_PASS",
+  "svgFiles": 84,
+  "stateCandidates": 46,
+  "successCandidates": 46,
+  "blockedCandidates": 0,
+  "screenshotMappedArtboards": 50,
+  "functionIdsMapped": 38,
+  "uniqueIdFiles": 84,
+  "editableTextNodes": 4092,
+  "sourceCodeFunctionalAudit": "NOT_COMPLETED",
+  "photoshopNativeLayerAcceptance": "NOT_COMPLETED"
+}

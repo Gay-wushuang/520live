@@ -1,0 +1,453 @@
+{
+  "project": "520live",
+  "baselineCommit": "712032679abdf4e14926624148ad965db7050bb6",
+  "artDirection": "functional-neutral-grayscale",
+  "contract": "FSVG v1.1",
+  "source": "FSVG v1 kit synced to ui-audit baseline (capture commit 8dcf2151799088d97d6c53f5751a86b1b9a347dc, published ui-audit/manifest.json)",
+  "screenshots": {
+    "desktop/CARD-01.desktop.png": {
+      "id": "CARD-01",
+      "viewport": "desktop",
+      "svg": "states/CARD-01.desktop.svg",
+      "description": "卡图加载中",
+      "sourceScreenshot": "desktop/CARD-01.desktop.png"
+    },
+    "desktop/CARD-02.desktop.png": {
+      "id": "CARD-02",
+      "viewport": "desktop",
+      "svg": "states/CARD-02.desktop.svg",
+      "description": "转盘就绪",
+      "sourceScreenshot": "desktop/CARD-02.desktop.png"
+    },
+    "desktop/CARD-03.desktop.png": {
+      "id": "CARD-03",
+      "viewport": "desktop",
+      "svg": "states/CARD-03.desktop.svg",
+      "description": "抽取禁用中",
+      "sourceScreenshot": "desktop/CARD-03.desktop.png"
+    },
+    "desktop/CARD-04.desktop.png": {
+      "id": "CARD-04",
+      "viewport": "desktop",
+      "svg": "states/CARD-04.desktop.svg",
+      "description": "抽卡结果覆盖层",
+      "sourceScreenshot": "desktop/CARD-04.desktop.png"
+    },
+    "desktop/CS-01.desktop.png": {
+      "id": "CS-01",
+      "viewport": "desktop",
+      "svg": "states/CS-01.desktop.svg",
+      "description": "单档案头",
+      "sourceScreenshot": "desktop/CS-01.desktop.png"
+    },
+    "desktop/CS-02.desktop.png": {
+      "id": "CS-02",
+      "viewport": "desktop",
+      "svg": "states/CS-02.desktop.svg",
+      "description": "非零统计",
+      "sourceScreenshot": "desktop/CS-02.desktop.png"
+    },
+    "desktop/CS-03.desktop.png": {
+      "id": "CS-03",
+      "viewport": "desktop",
+      "svg": "states/CS-03.desktop.svg",
+      "description": "四季 0/2",
+      "sourceScreenshot": "desktop/CS-03.desktop.png"
+    },
+    "desktop/CS-04.desktop.png": {
+      "id": "CS-04",
+      "viewport": "desktop",
+      "svg": "states/CS-04.desktop.svg",
+      "description": "春季 1/2",
+      "sourceScreenshot": "desktop/CS-04.desktop.png"
+    },
+    "desktop/CS-05.desktop.png": {
+      "id": "CS-05",
+      "viewport": "desktop",
+      "svg": "states/CS-05.desktop.svg",
+      "description": "春季 2/2 待领取",
+      "sourceScreenshot": "desktop/CS-05.desktop.png"
+    },
+    "desktop/CS-06.desktop.png": {
+      "id": "CS-06",
+      "viewport": "desktop",
+      "svg": "states/CS-06.desktop.svg",
+      "description": "四季壁纸已解锁",
+      "sourceScreenshot": "desktop/CS-06.desktop.png"
+    },
+    "desktop/CS-07.desktop.png": {
+      "id": "CS-07",
+      "viewport": "desktop",
+      "svg": "states/CS-07.desktop.svg",
+      "description": "最近四条历史",
+      "sourceScreenshot": "desktop/CS-07.desktop.png"
+    },
+    "desktop/CS-08.desktop.png": {
+      "id": "CS-08",
+      "viewport": "desktop",
+      "svg": "states/CS-08.desktop.svg",
+      "description": "积分卡日志空态",
+      "sourceScreenshot": "desktop/CS-08.desktop.png"
+    },
+    "desktop/CS-09.desktop.png": {
+      "id": "CS-09",
+      "viewport": "desktop",
+      "svg": "states/CS-09.desktop.svg",
+      "description": "积分卡日志有数据",
+      "sourceScreenshot": "desktop/CS-09.desktop.png"
+    },
+    "desktop/CS-10.desktop.png": {
+      "id": "CS-10",
+      "viewport": "desktop",
+      "svg": "states/CS-10.desktop.svg",
+      "description": "两档案选择",
+      "sourceScreenshot": "desktop/CS-10.desktop.png"
+    },
+    "desktop/MON-01.desktop.png": {
+      "id": "MON-01",
+      "viewport": "desktop",
+      "svg": "states/MON-01.desktop.svg",
+      "description": "初始/掷骰可用",
+      "sourceScreenshot": "desktop/MON-01.desktop.png"
+    },
+    "desktop/MON-01.tablet.png": {
+      "id": "MON-01",
+      "viewport": "tablet",
+      "svg": "states/MON-01.tablet.svg",
+      "description": "初始/掷骰可用",
+      "sourceScreenshot": "desktop/MON-01.tablet.png"
+    },
+    "desktop/MON-02.desktop.png": {
+      "id": "MON-02",
+      "viewport": "desktop",
+      "svg": "states/MON-02.desktop.svg",
+      "description": "掷骰中禁用",
+      "sourceScreenshot": "desktop/MON-02.desktop.png"
+    },
+    "desktop/MON-03.desktop.png": {
+      "id": "MON-03",
+      "viewport": "desktop",
+      "svg": "states/MON-03.desktop.svg",
+      "description": "棋子移动/操作禁用",
+      "sourceScreenshot": "desktop/MON-03.desktop.png"
+    },
+    "desktop/MON-04.desktop.png": {
+      "id": "MON-04",
+      "viewport": "desktop",
+      "svg": "states/MON-04.desktop.svg",
+      "description": "待触发厄运/目标格",
+      "sourceScreenshot": "desktop/MON-04.desktop.png"
+    },
+    "desktop/MON-05.desktop.png": {
+      "id": "MON-05",
+      "viewport": "desktop",
+      "svg": "states/MON-05.desktop.svg",
+      "description": "事件完成横幅",
+      "sourceScreenshot": "desktop/MON-05.desktop.png"
+    },
+    "desktop/MON-06.desktop.png": {
+      "id": "MON-06",
+      "viewport": "desktop",
+      "svg": "states/MON-06.desktop.svg",
+      "description": "特殊效果系统提示",
+      "sourceScreenshot": "desktop/MON-06.desktop.png"
+    },
+    "desktop/MON-07.desktop.png": {
+      "id": "MON-07",
+      "viewport": "desktop",
+      "svg": "states/MON-07.desktop.svg",
+      "description": "观众激活效果",
+      "sourceScreenshot": "desktop/MON-07.desktop.png"
+    },
+    "desktop/MON-08.desktop.png": {
+      "id": "MON-08",
+      "viewport": "desktop",
+      "svg": "states/MON-08.desktop.svg",
+      "description": "前进后退方向选择",
+      "sourceScreenshot": "desktop/MON-08.desktop.png"
+    },
+    "desktop/MON-09.desktop.png": {
+      "id": "MON-09",
+      "viewport": "desktop",
+      "svg": "states/MON-09.desktop.svg",
+      "description": "三观众选择/删除",
+      "sourceScreenshot": "desktop/MON-09.desktop.png"
+    },
+    "desktop/MON-10.desktop.png": {
+      "id": "MON-10",
+      "viewport": "desktop",
+      "svg": "states/MON-10.desktop.svg",
+      "description": "日志空态",
+      "sourceScreenshot": "desktop/MON-10.desktop.png"
+    },
+    "desktop/MON-11.desktop.png": {
+      "id": "MON-11",
+      "viewport": "desktop",
+      "svg": "states/MON-11.desktop.svg",
+      "description": "日志有记录",
+      "sourceScreenshot": "desktop/MON-11.desktop.png"
+    },
+    "desktop/MON-12.desktop.png": {
+      "id": "MON-12",
+      "viewport": "desktop",
+      "svg": "states/MON-12.desktop.svg",
+      "description": "两份档案选择",
+      "sourceScreenshot": "desktop/MON-12.desktop.png"
+    },
+    "desktop/MON-13.desktop.png": {
+      "id": "MON-13",
+      "viewport": "desktop",
+      "svg": "states/MON-13.desktop.svg",
+      "description": "读取与空日志反馈",
+      "sourceScreenshot": "desktop/MON-13.desktop.png"
+    },
+    "desktop/MON-14.desktop.png": {
+      "id": "MON-14",
+      "viewport": "desktop",
+      "svg": "states/MON-14.desktop.svg",
+      "description": "七类图例",
+      "sourceScreenshot": "desktop/MON-14.desktop.png"
+    },
+    "desktop/MON-15.wide.png": {
+      "id": "MON-15",
+      "viewport": "wide",
+      "svg": "states/MON-15.wide.svg",
+      "description": "宽屏目标格 ring",
+      "sourceScreenshot": "desktop/MON-15.wide.png"
+    },
+    "desktop/MON-16.desktop.png": {
+      "id": "MON-16",
+      "viewport": "desktop",
+      "svg": "states/MON-16.desktop.svg",
+      "description": "P1/P2 双棋子",
+      "sourceScreenshot": "desktop/MON-16.desktop.png"
+    },
+    "desktop/MON-17.desktop.png": {
+      "id": "MON-17",
+      "viewport": "desktop",
+      "svg": "states/MON-17.desktop.svg",
+      "description": "删除最后观众拒绝",
+      "sourceScreenshot": "desktop/MON-17.desktop.png"
+    },
+    "desktop/MON-wide.wide.full.png": {
+      "id": "MON-wide",
+      "viewport": "wide",
+      "svg": "states/MON-wide.wide.svg",
+      "description": "宽屏全页/图例/系统效果",
+      "sourceScreenshot": "desktop/MON-wide.wide.full.png"
+    },
+    "desktop/OVL-EVT-01.desktop.png": {
+      "id": "OVL-EVT-01",
+      "viewport": "desktop",
+      "svg": "states/OVL-EVT-01.desktop.svg",
+      "description": "厄运旋转",
+      "sourceScreenshot": "desktop/OVL-EVT-01.desktop.png"
+    },
+    "desktop/OVL-EVT-02.desktop.png": {
+      "id": "OVL-EVT-02",
+      "viewport": "desktop",
+      "svg": "states/OVL-EVT-02.desktop.svg",
+      "description": "厄运结果",
+      "sourceScreenshot": "desktop/OVL-EVT-02.desktop.png"
+    },
+    "desktop/OVL-EVT-03.desktop.png": {
+      "id": "OVL-EVT-03",
+      "viewport": "desktop",
+      "svg": "states/OVL-EVT-03.desktop.svg",
+      "description": "冒险结果",
+      "sourceScreenshot": "desktop/OVL-EVT-03.desktop.png"
+    },
+    "desktop/OVL-EVT-04.desktop.png": {
+      "id": "OVL-EVT-04",
+      "viewport": "desktop",
+      "svg": "states/OVL-EVT-04.desktop.svg",
+      "description": "真心话长文案",
+      "sourceScreenshot": "desktop/OVL-EVT-04.desktop.png"
+    },
+    "desktop/OVL-EVT-05.desktop.png": {
+      "id": "OVL-EVT-05",
+      "viewport": "desktop",
+      "svg": "states/OVL-EVT-05.desktop.svg",
+      "description": "特殊效果结果",
+      "sourceScreenshot": "desktop/OVL-EVT-05.desktop.png"
+    },
+    "desktop/OVL-EVT-06.desktop.png": {
+      "id": "OVL-EVT-06",
+      "viewport": "desktop",
+      "svg": "states/OVL-EVT-06.desktop.svg",
+      "description": "混乱八扇区结果",
+      "sourceScreenshot": "desktop/OVL-EVT-06.desktop.png"
+    },
+    "desktop/OVL-FIG-01.desktop.png": {
+      "id": "OVL-FIG-01",
+      "viewport": "desktop",
+      "svg": "states/OVL-FIG-01.desktop.svg",
+      "description": "周边旋转",
+      "sourceScreenshot": "desktop/OVL-FIG-01.desktop.png"
+    },
+    "desktop/OVL-FIG-02.desktop.png": {
+      "id": "OVL-FIG-02",
+      "viewport": "desktop",
+      "svg": "states/OVL-FIG-02.desktop.svg",
+      "description": "周边结果",
+      "sourceScreenshot": "desktop/OVL-FIG-02.desktop.png"
+    },
+    "desktop/OVL-RES-01.desktop.png": {
+      "id": "OVL-RES-01",
+      "viewport": "desktop",
+      "svg": "states/OVL-RES-01.desktop.svg",
+      "description": "无配对奖励卡结果",
+      "sourceScreenshot": "desktop/OVL-RES-01.desktop.png"
+    },
+    "desktop/OVL-VID-01.desktop.png": {
+      "id": "OVL-VID-01",
+      "viewport": "desktop",
+      "svg": "states/OVL-VID-01.desktop.svg",
+      "description": "终极视频播放",
+      "sourceScreenshot": "desktop/OVL-VID-01.desktop.png"
+    },
+    "desktop/OVL-VID-02.desktop.png": {
+      "id": "OVL-VID-02",
+      "viewport": "desktop",
+      "svg": "states/OVL-VID-02.desktop.svg",
+      "description": "终极视频加载",
+      "sourceScreenshot": "desktop/OVL-VID-02.desktop.png"
+    },
+    "desktop/OVL-WALL-01.desktop.png": {
+      "id": "OVL-WALL-01",
+      "viewport": "desktop",
+      "svg": "states/OVL-WALL-01.desktop.svg",
+      "description": "壁纸奖励",
+      "sourceScreenshot": "desktop/OVL-WALL-01.desktop.png"
+    },
+    "desktop/OVL-WALL-02.desktop.png": {
+      "id": "OVL-WALL-02",
+      "viewport": "desktop",
+      "svg": "states/OVL-WALL-02.desktop.svg",
+      "description": "终极双图弹窗",
+      "sourceScreenshot": "desktop/OVL-WALL-02.desktop.png"
+    },
+    "mobile/CARD-01.mobile.png": {
+      "id": "CARD-01",
+      "viewport": "mobile",
+      "svg": "states/CARD-01.mobile.svg",
+      "description": "卡图加载中",
+      "sourceScreenshot": "mobile/CARD-01.mobile.png"
+    },
+    "mobile/CARD-02.mobile.png": {
+      "id": "CARD-02",
+      "viewport": "mobile",
+      "svg": "states/CARD-02.mobile.svg",
+      "description": "转盘就绪",
+      "sourceScreenshot": "mobile/CARD-02.mobile.png"
+    },
+    "mobile/CARD-05.mobile.png": {
+      "id": "CARD-05",
+      "viewport": "mobile",
+      "svg": "states/CARD-05.mobile.svg",
+      "description": "移动端 0/2 收集",
+      "sourceScreenshot": "mobile/CARD-05.mobile.png"
+    },
+    "mobile/MON-01.mobile.png": {
+      "id": "MON-01",
+      "viewport": "mobile",
+      "svg": "states/MON-01.mobile.svg",
+      "description": "初始/掷骰可用",
+      "sourceScreenshot": "mobile/MON-01.mobile.png"
+    }
+  },
+  "svgFiles": [
+    "pages/monopoly/desktop.svg",
+    "pages/card-wheel/desktop.svg",
+    "pages/monopoly/wide.svg",
+    "pages/card-wheel/wide.svg",
+    "pages/monopoly/tablet.svg",
+    "pages/card-wheel/tablet.svg",
+    "pages/monopoly/mobile.svg",
+    "pages/card-wheel/mobile.svg",
+    "states/CARD-01.desktop.svg",
+    "states/CARD-02.desktop.svg",
+    "states/CARD-03.desktop.svg",
+    "states/CARD-04.desktop.svg",
+    "states/CS-01.desktop.svg",
+    "states/CS-02.desktop.svg",
+    "states/CS-03.desktop.svg",
+    "states/CS-04.desktop.svg",
+    "states/CS-05.desktop.svg",
+    "states/CS-06.desktop.svg",
+    "states/CS-07.desktop.svg",
+    "states/CS-08.desktop.svg",
+    "states/CS-09.desktop.svg",
+    "states/CS-10.desktop.svg",
+    "states/MON-01.desktop.svg",
+    "states/MON-01.tablet.svg",
+    "states/MON-02.desktop.svg",
+    "states/MON-03.desktop.svg",
+    "states/MON-04.desktop.svg",
+    "states/MON-05.desktop.svg",
+    "states/MON-06.desktop.svg",
+    "states/MON-07.desktop.svg",
+    "states/MON-08.desktop.svg",
+    "states/MON-09.desktop.svg",
+    "states/MON-10.desktop.svg",
+    "states/MON-11.desktop.svg",
+    "states/MON-12.desktop.svg",
+    "states/MON-13.desktop.svg",
+    "states/MON-14.desktop.svg",
+    "states/MON-15.wide.svg",
+    "states/MON-16.desktop.svg",
+    "states/MON-17.desktop.svg",
+    "states/MON-wide.wide.svg",
+    "states/OVL-EVT-01.desktop.svg",
+    "states/OVL-EVT-02.desktop.svg",
+    "states/OVL-EVT-03.desktop.svg",
+    "states/OVL-EVT-04.desktop.svg",
+    "states/OVL-EVT-05.desktop.svg",
+    "states/OVL-EVT-06.desktop.svg",
+    "states/OVL-FIG-01.desktop.svg",
+    "states/OVL-FIG-02.desktop.svg",
+    "states/OVL-RES-01.desktop.svg",
+    "states/OVL-VID-01.desktop.svg",
+    "states/OVL-VID-02.desktop.svg",
+    "states/OVL-WALL-01.desktop.svg",
+    "states/OVL-WALL-02.desktop.svg",
+    "states/CARD-01.mobile.svg",
+    "states/CARD-02.mobile.svg",
+    "states/CARD-05.mobile.svg",
+    "states/MON-01.mobile.svg",
+    "overlays/OVL-EVT-01.svg",
+    "overlays/OVL-EVT-02.svg",
+    "overlays/OVL-EVT-02.mobile.svg",
+    "overlays/OVL-EVT-03.svg",
+    "overlays/OVL-EVT-04.svg",
+    "overlays/OVL-EVT-04.mobile.svg",
+    "overlays/OVL-EVT-05.svg",
+    "overlays/OVL-EVT-06.svg",
+    "overlays/OVL-FIG-01.svg",
+    "overlays/OVL-FIG-02.svg",
+    "overlays/OVL-FIG-02.mobile.svg",
+    "overlays/OVL-RES-01.svg",
+    "overlays/OVL-RES-01.mobile.svg",
+    "overlays/OVL-WALL-01.svg",
+    "overlays/OVL-WALL-01.mobile.svg",
+    "overlays/OVL-VID-01.svg",
+    "overlays/OVL-VID-01.mobile.svg",
+    "overlays/OVL-VID-02.svg",
+    "components/component-library.svg",
+    "components/button.svg",
+    "components/input.svg",
+    "components/status-chip.svg",
+    "components/board-cell.svg",
+    "components/player-token.svg",
+    "components/reward-card.svg",
+    "components/modal-shell.svg"
+  ],
+  "candidateCount": 46,
+  "mappedAvailableCandidates": 46,
+  "blockedCandidate": null,
+  "notClaims": [
+    "runtime functionality not implemented by SVG",
+    "source-code complete audit not performed in this environment",
+    "SVG structural pass is not a React runtime test"
+  ]
+}

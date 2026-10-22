@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="240" viewBox="0 0 440 240" version="1.1" data-design-system="520live-functional-v1" data-artboard="COMPONENT-PLAYER-TOKEN" data-context="base" data-viewport="440x240">
+  <title>COMPONENT-PLAYER-TOKEN — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="440" height="240" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <text x="24" y="31" fill="#24313F" font-size="18" font-weight="700" text-anchor="start" dominant-baseline="middle">PLAYER-TOKEN</text>
+  <g id="COMP-TOKEN-P1" data-func="MON-F10" data-state="standing" data-layer="40-status">
+    <circle cx="85" cy="120" r="32" fill="#364A60" stroke="#364A60" stroke-width="2" />
+    <text x="85" y="120" fill="#FFFFFF" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">P1</text>
+  </g>
+  <g id="COMP-TOKEN-P2" data-func="MON-F10" data-state="standing" data-layer="40-status">
+    <circle cx="215" cy="120" r="32" fill="#FFFFFF" stroke="#364A60" stroke-width="2" />
+    <text x="215" y="120" fill="#24313F" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">P2</text>
+  </g>
+  <g id="COMP-TOKEN-P3" data-func="MON-F10" data-state="standing" data-layer="40-status">
+    <circle cx="345" cy="120" r="32" fill="#FFFFFF" stroke="#364A60" stroke-width="2" />
+    <text x="345" y="120" fill="#24313F" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="middle">P3</text>
+  </g>
+</svg>

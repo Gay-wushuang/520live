@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="240" viewBox="0 0 440 240" version="1.1" data-design-system="520live-functional-v1" data-artboard="COMPONENT-INPUT" data-context="base" data-viewport="440x240">
+  <title>COMPONENT-INPUT — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="440" height="240" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <text x="24" y="31" fill="#24313F" font-size="18" font-weight="700" text-anchor="start" dominant-baseline="middle">INPUT</text>
+  <g id="COMP-INPUT" data-layer="30-controls">
+    <rect x="24" y="74" width="392" height="48" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <text x="36" y="98.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">昵称输入 / placeholder</text>
+  </g>
+  <g id="COMP-SELECT" data-layer="30-controls">
+    <rect x="24" y="138" width="392" height="48" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <text x="36" y="162.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">存档选择  ▾</text>
+  </g>
+</svg>

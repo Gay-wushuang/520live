@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1050" viewBox="0 0 1440 1050" version="1.1" data-design-system="520live-functional-v1" data-artboard="CS-05-desktop" data-context="variant" data-viewport="1440x1050">
+  <title>CS-05-desktop — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="1440" height="1050" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <g id="CARD-HEADER" data-func="CARD-F05" data-layer="10-layout">
+    <rect x="0" y="0" width="1440" height="76" rx="0" fill="#FFFFFF" stroke="none" stroke-width="1" />
+    <text x="34" y="28" fill="#24313F" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="middle">积分卡转盘</text>
+    <text x="34" y="52" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">春 · 夏 · 秋 · 冬 / 收集与奖励</text>
+  </g>
+  <g id="CARD-BACK" data-func="CARD-F05" data-state="default" data-layer="30-controls">
+    <rect x="1260" y="14" width="152" height="46" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="1336.0" y="38.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">← 返回棋盘</text>
+  </g>
+  <g id="CARD-WHEEL-PANEL" data-func="CARD-F01 CARD-F02 CARD-F03 CARD-F04" data-layer="10-layout">
+    <rect x="32" y="96" width="720" height="734" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="50" y="124" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">转盘抽取</text>
+    <g id="CARD-ACTION-SPIN" data-func="CARD-F03" data-state="CS-05" data-layer="30-controls">
+      <rect x="64" y="662" width="656" height="48" rx="8" fill="#364A60" stroke="#364A60" stroke-width="1" />
+      <text x="392.0" y="687.0" fill="#FFFFFF" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">抽取积分卡</text>
+    </g>
+    <g id="CARD-RESET" data-func="CARD-F05" data-state="default" data-layer="30-controls">
+      <rect x="64" y="724" width="323.0" height="44" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="225.5" y="747.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">重置游戏</text>
+    </g>
+    <g id="CARD-RESULT-FEEDBACK" data-func="CARD-F04" data-layer="40-status">
+      <rect x="399.0" y="733" width="317.0" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="409.0" y="746" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">准备就绪</text>
+    </g>
+  </g>
+  <g id="CARD-WHEEL" data-func="CARD-F01 CARD-F02 CARD-F03 CARD-F04" data-state="ready" data-layer="10-layout">
+    <circle cx="392.0" cy="412" r="236" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="2" />
+    <line x1="392.0" y1="412" x2="628.0" y2="412.0" stroke="#CFD5DA" stroke-width="2" />
+    <line x1="392.0" y1="412" x2="392.0" y2="648.0" stroke="#CFD5DA" stroke-width="2" />
+    <line x1="392.0" y1="412" x2="156.0" y2="412.00000000000006" stroke="#CFD5DA" stroke-width="2" />
+    <line x1="392.0" y1="412" x2="391.99999999999994" y2="176.0" stroke="#CFD5DA" stroke-width="2" />
+    <g id="CARD-WHEEL-ART-01" data-func="CARD-F01 CARD-F10" data-state="placeholder" data-layer="20-content">
+      <rect x="440.11" y="289.89" width="84" height="64" rx="6" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="482.11" y="313.89" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">春季</text>
+      <text x="482.11" y="334.89" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">卡片素材</text>
+    </g>
+    <g id="CARD-WHEEL-ART-02" data-func="CARD-F01 CARD-F10" data-state="placeholder" data-layer="20-content">
+      <rect x="440.11" y="470.11" width="84" height="64" rx="6" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="482.11" y="494.11" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">夏季</text>
+      <text x="482.11" y="515.11" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">卡片素材</text>
+    </g>
+    <g id="CARD-WHEEL-ART-03" data-func="CARD-F01 CARD-F10" data-state="placeholder" data-layer="20-content">
+      <rect x="259.89" y="470.11" width="84" height="64" rx="6" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="301.89" y="494.11" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">秋季</text>
+      <text x="301.89" y="515.11" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">卡片素材</text>
+    </g>
+    <g id="CARD-WHEEL-ART-04" data-func="CARD-F01 CARD-F10" data-state="placeholder" data-layer="20-content">
+      <rect x="259.89" y="289.89" width="84" height="64" rx="6" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="301.89" y="313.89" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">冬季</text>
+      <text x="301.89" y="334.89" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">卡片素材</text>
+    </g>
+    <circle cx="392.0" cy="412" r="17" fill="#364A60" stroke="#FFFFFF" stroke-width="2" />
+    <text x="392.0" y="413" fill="#FFFFFF" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle">抽</text>
+    <path d="M 379.0 160 L 405.0 160 L 392.0 190 Z" fill="#364A60" stroke="none" stroke-width="1" />
+  </g>
+  <g id="CARD-ARCHIVE" data-func="CARD-F06 CARD-F07" data-layer="10-layout">
+    <rect x="772" y="96" width="636" height="184" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="790" y="124" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">玩家档案</text>
+    <g id="CARD-PROFILE-SELECT" data-func="CARD-F06" data-layer="30-controls">
+      <rect x="786" y="145" width="608" height="36" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="798" y="163.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">档案：玩家A / 可切换</text>
+    </g>
+    <g id="CARD-PLAYER-NAME" data-func="CARD-F07" data-layer="30-controls">
+      <rect x="786" y="190" width="608" height="36" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="798" y="208.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">当前昵称：玩家A</text>
+    </g>
+    <g id="CARD-PROFILE-SAVE" data-func="CARD-F06" data-state="default" data-layer="30-controls">
+      <rect x="784.0" y="238" width="148.5" height="34" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="858.25" y="256.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">保存</text>
+    </g>
+    <g id="CARD-PROFILE-LOAD" data-func="CARD-F06" data-state="default" data-layer="30-controls">
+      <rect x="938.5" y="238" width="148.5" height="34" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1012.75" y="256.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">读取</text>
+    </g>
+    <g id="CARD-PROFILE-NEW" data-func="CARD-F06" data-state="default" data-layer="30-controls">
+      <rect x="1093.0" y="238" width="148.5" height="34" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1167.25" y="256.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">新建</text>
+    </g>
+    <g id="CARD-PROFILE-DELETE" data-func="CARD-F06" data-state="default" data-layer="30-controls">
+      <rect x="1247.5" y="238" width="148.5" height="34" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1321.75" y="256.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">删除</text>
+    </g>
+  </g>
+  <g id="CARD-STATS" data-func="CARD-F08" data-layer="10-layout">
+    <rect x="772" y="294" width="636" height="92" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="790" y="322" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">抽取统计</text>
+    <g id="CARD-STATS-TOTAL" data-func="CARD-F08" data-layer="40-status">
+      <rect x="786" y="342" width="299.0" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="796" y="355" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">总抽取：0</text>
+    </g>
+    <g id="CARD-STATS-CARD" data-func="CARD-F08" data-layer="40-status">
+      <rect x="1095.0" y="342" width="299.0" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="1105.0" y="355" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">积分卡：0</text>
+    </g>
+  </g>
+  <g id="CARD-COLLECTION" data-func="CARD-F09 CARD-F10 CARD-F13 CARD-F14" data-layer="10-layout">
+    <rect x="772" y="400" width="636" height="275" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="790" y="428" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">四季进度 / 壁纸奖励</text>
+    <g id="CARD-GOAL" data-func="CARD-F14" data-layer="40-status">
+      <rect x="786" y="643" width="608" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="796" y="656" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">目标：每季 2 张 → 壁纸 → 终极视频</text>
+    </g>
+  </g>
+  <g id="CARD-SEASON-1" data-func="CARD-F09 CARD-F10 CARD-F13" data-state="unlocked" data-layer="20-content">
+    <rect x="786.0" y="455" width="299.0" height="99" rx="10" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <g id="CARD-COLLECTION-ART-01" data-func="CARD-F10" data-state="placeholder" data-layer="20-content">
+      <rect x="796.0" y="467" width="60" height="60" rx="5" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="826.0" y="498" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">卡图</text>
+    </g>
+    <text x="866.0" y="479" fill="#24313F" font-size="13" font-weight="650" text-anchor="start" dominant-baseline="middle">春季</text>
+    <text x="866.0" y="501" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">2/2  ·  100%</text>
+    <rect x="866.0" y="512" width="203.0" height="6" rx="3" fill="#E6EAEE" stroke="none" stroke-width="1" />
+    <rect x="866.0" y="512" width="203.0" height="6" rx="3" fill="#364A60" stroke="none" stroke-width="1" />
+    <text x="866.0" y="537" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">壁纸可领取</text>
+  </g>
+  <g id="CARD-SEASON-2" data-func="CARD-F09 CARD-F10 CARD-F13" data-state="progress" data-layer="20-content">
+    <rect x="1095.0" y="455" width="299.0" height="99" rx="10" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <g id="CARD-COLLECTION-ART-02" data-func="CARD-F10" data-state="placeholder" data-layer="20-content">
+      <rect x="1105.0" y="467" width="60" height="60" rx="5" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1135.0" y="498" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">卡图</text>
+    </g>
+    <text x="1175.0" y="479" fill="#24313F" font-size="13" font-weight="650" text-anchor="start" dominant-baseline="middle">夏季</text>
+    <text x="1175.0" y="501" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">0/2  ·  0%</text>
+    <rect x="1175.0" y="512" width="203.0" height="6" rx="3" fill="#E6EAEE" stroke="none" stroke-width="1" />
+    <text x="1175.0" y="537" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">壁纸未解锁</text>
+  </g>
+  <g id="CARD-SEASON-3" data-func="CARD-F09 CARD-F10 CARD-F13" data-state="progress" data-layer="20-content">
+    <rect x="786.0" y="564" width="299.0" height="99" rx="10" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <g id="CARD-COLLECTION-ART-03" data-func="CARD-F10" data-state="placeholder" data-layer="20-content">
+      <rect x="796.0" y="576" width="60" height="60" rx="5" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="826.0" y="607" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">卡图</text>
+    </g>
+    <text x="866.0" y="588" fill="#24313F" font-size="13" font-weight="650" text-anchor="start" dominant-baseline="middle">秋季</text>
+    <text x="866.0" y="610" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">0/2  ·  0%</text>
+    <rect x="866.0" y="621" width="203.0" height="6" rx="3" fill="#E6EAEE" stroke="none" stroke-width="1" />
+    <text x="866.0" y="646" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">壁纸未解锁</text>
+  </g>
+  <g id="CARD-SEASON-4" data-func="CARD-F09 CARD-F10 CARD-F13" data-state="progress" data-layer="20-content">
+    <rect x="1095.0" y="564" width="299.0" height="99" rx="10" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <g id="CARD-COLLECTION-ART-04" data-func="CARD-F10" data-state="placeholder" data-layer="20-content">
+      <rect x="1105.0" y="576" width="60" height="60" rx="5" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1135.0" y="607" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">卡图</text>
+    </g>
+    <text x="1175.0" y="588" fill="#24313F" font-size="13" font-weight="650" text-anchor="start" dominant-baseline="middle">冬季</text>
+    <text x="1175.0" y="610" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">0/2  ·  0%</text>
+    <rect x="1175.0" y="621" width="203.0" height="6" rx="3" fill="#E6EAEE" stroke="none" stroke-width="1" />
+    <text x="1175.0" y="646" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">壁纸未解锁</text>
+  </g>
+  <g id="CARD-HISTORY" data-func="CARD-F11" data-layer="10-layout">
+    <rect x="772" y="689" width="636" height="101" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="790" y="717" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">最近四次抽取</text>
+    <g id="CARD-HISTORY-0" data-func="CARD-F11" data-layer="40-status">
+      <rect x="786.0" y="735" width="147.5" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="796.0" y="748" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">—</text>
+    </g>
+    <g id="CARD-HISTORY-1" data-func="CARD-F11" data-layer="40-status">
+      <rect x="938.0" y="735" width="147.5" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="948.0" y="748" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">—</text>
+    </g>
+    <g id="CARD-HISTORY-2" data-func="CARD-F11" data-layer="40-status">
+      <rect x="1090.0" y="735" width="147.5" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="1100.0" y="748" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">—</text>
+    </g>
+    <g id="CARD-HISTORY-3" data-func="CARD-F11" data-layer="40-status">
+      <rect x="1242.0" y="735" width="147.5" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="1252.0" y="748" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">—</text>
+    </g>
+  </g>
+  <g id="CARD-LOGS" data-func="CARD-F11 CARD-F12" data-layer="10-layout">
+    <rect x="32" y="818" width="1376" height="165" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="50" y="846" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">运营日志 / 数据导出</text>
+    <text x="54" y="885" fill="#667380" font-size="13" font-weight="400" text-anchor="start" dominant-baseline="middle">暂无记录，抽取后生成日志</text>
+    <g id="CARD-LOG-COPY" data-func="CARD-F12" data-state="default" data-layer="30-controls">
+      <rect x="1120" y="843" width="132" height="44" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1186.0" y="866.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">复制日志</text>
+    </g>
+    <g id="CARD-LOG-CSV" data-func="CARD-F12" data-state="default" data-layer="30-controls">
+      <rect x="1262" y="843" width="132" height="44" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1328.0" y="866.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">导出 CSV</text>
+    </g>
+  </g>
+</svg>

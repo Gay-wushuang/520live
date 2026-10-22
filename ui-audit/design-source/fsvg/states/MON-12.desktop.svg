@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1050" viewBox="0 0 1440 1050" version="1.1" data-design-system="520live-functional-v1" data-artboard="MON-12-desktop" data-context="variant" data-viewport="1440x1050">
+  <title>MON-12-desktop — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="1440" height="1050" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <g id="MON-HEADER" data-func="MON-F01 MON-F02" data-layer="10-layout">
+    <rect x="0" y="0" width="1440" height="76" rx="0" fill="#FFFFFF" stroke="none" stroke-width="1" />
+    <text x="34" y="28" fill="#24313F" font-size="24" font-weight="700" text-anchor="start" dominant-baseline="middle">大富翁互动系统</text>
+    <text x="34" y="52" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">28 格 / 7 种类型 / 每种 4 格</text>
+  </g>
+  <g id="MON-NAV-CARD" data-func="MON-F01" data-state="default" data-layer="30-controls">
+    <rect x="1160" y="15" width="130" height="44" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="1225.0" y="38.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">打开积分抽奖</text>
+  </g>
+  <g id="MON-RESET" data-func="MON-F02" data-state="default" data-layer="30-controls">
+    <rect x="1300" y="15" width="118" height="44" rx="8" fill="#FFFFFF" stroke="#6E3F42" stroke-width="1" />
+    <text x="1359.0" y="38.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">重置棋盘</text>
+  </g>
+  <g id="MON-AUDIENCE" data-func="MON-F03 MON-F04 MON-F05 MON-F06 MON-F12" data-layer="10-layout">
+    <rect x="32" y="98" width="302" height="492" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="50" y="126" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">观众档案</text>
+    <g id="MON-USER-COUNT" data-func="MON-F05" data-layer="40-status">
+      <rect x="246" y="114" width="66" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="256" y="127" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">1 位</text>
+    </g>
+    <g id="MON-PROFILE-SELECT" data-func="MON-F03" data-layer="30-controls">
+      <rect x="48" y="150" width="270" height="38" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="60" y="169.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">当前档案：观众B  ▾</text>
+    </g>
+    <text x="50" y="215" fill="#24313F" font-size="17" font-weight="650" text-anchor="start" dominant-baseline="middle">观众A  ·  第 1 回合</text>
+    <text x="50" y="245" fill="#667380" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">位置 第 2 格   ·   方向 前进</text>
+    <g id="MON-EFFECTS" data-func="MON-F12" data-layer="40-status">
+      <rect x="48" y="267" width="270" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="58" y="280" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">效果状态：无</text>
+    </g>
+    <g id="MON-PROFILE-SAVE" data-func="MON-F03" data-state="default" data-layer="30-controls">
+      <rect x="48.0" y="305" width="86.0" height="40" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="91.0" y="326.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">保存</text>
+    </g>
+    <g id="MON-PROFILE-LOAD" data-func="MON-F03" data-state="default" data-layer="30-controls">
+      <rect x="140.0" y="305" width="86.0" height="40" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="183.0" y="326.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">读取</text>
+    </g>
+    <g id="MON-PROFILE-NEW" data-func="MON-F03" data-state="default" data-layer="30-controls">
+      <rect x="232.0" y="305" width="86.0" height="40" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="275.0" y="326.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">新建</text>
+    </g>
+    <g id="MON-AUDIENCE-EDIT" data-func="MON-F04" data-layer="30-controls">
+      <rect x="48" y="362" width="270" height="37" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="60" y="380.5" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">当前观众：观众A（可编辑）</text>
+    </g>
+    <g id="MON-USER-INPUT" data-func="MON-F05" data-layer="30-controls">
+      <rect x="48" y="410" width="200" height="40" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="60" y="430.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">新增观众昵称</text>
+    </g>
+    <g id="MON-USER-ADD" data-func="MON-F05" data-state="default" data-layer="30-controls">
+      <rect x="256" y="410" width="62" height="40" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="287.0" y="431.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">添加</text>
+    </g>
+    <g id="MON-USER-BULK" data-func="MON-F05" data-layer="30-controls">
+      <rect x="48" y="457" width="270" height="48" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="60" y="481.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">批量导入 / 换行或逗号分隔</text>
+    </g>
+    <g id="MON-USER-IMPORT" data-func="MON-F05" data-state="default" data-layer="30-controls">
+      <rect x="48" y="514" width="186" height="42" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="141.0" y="536.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">导入观众名单</text>
+    </g>
+    <g id="MON-USER-DELETE" data-func="MON-F05 MON-F06" data-state="default" data-layer="30-controls">
+      <rect x="243" y="514" width="75" height="42" rx="8" fill="#FFFFFF" stroke="#6E3F42" stroke-width="1" />
+      <text x="280.5" y="536.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">删除</text>
+    </g>
+    <g id="MON-USER-SELECT" data-func="MON-F05" data-layer="40-status">
+      <rect x="48" y="560" width="270" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="58" y="573" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">观众列表  P1 观众A</text>
+    </g>
+  </g>
+  <g id="MON-LOGS" data-func="MON-F13 MON-F14" data-layer="10-layout">
+    <rect x="32" y="605" width="302" height="126" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="50" y="633" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">下播核对日志</text>
+    <text x="48" y="662" fill="#667380" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">暂无记录，开始行动后显示</text>
+    <g id="MON-LOG-COPY" data-func="MON-F14" data-state="default" data-layer="30-controls">
+      <rect x="48" y="680" width="108" height="40" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="102.0" y="701.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">复制日志</text>
+    </g>
+    <g id="MON-LOG-CSV" data-func="MON-F14" data-state="default" data-layer="30-controls">
+      <rect x="163" y="680" width="154" height="40" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="240.0" y="701.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">导出 CSV</text>
+    </g>
+  </g>
+  <g id="MON-LEGEND" data-func="MON-F15" data-layer="10-layout">
+    <rect x="32" y="746" width="302" height="138" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="50" y="774" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">七类棋盘图例</text>
+    <text x="48" y="794" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">积分 · 4 格</text>
+    <text x="48" y="817" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">厄运 · 4 格</text>
+    <text x="48" y="840" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">冒险 · 4 格</text>
+    <text x="48" y="863" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">真心 · 4 格</text>
+    <text x="199" y="794" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">效果 · 4 格</text>
+    <text x="199" y="817" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">周边 · 4 格</text>
+    <text x="199" y="840" fill="#667380" font-size="11" font-weight="400" text-anchor="start" dominant-baseline="middle">混乱 · 4 格</text>
+  </g>
+  <g id="MON-TURN-CONTROLS" data-func="MON-F07 MON-F08 MON-F11 MON-F12" data-layer="10-layout">
+    <rect x="352" y="98" width="1056" height="215" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="370" y="126" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">当前回合与骰子</text>
+    <rect x="368" y="148" width="180" height="144" rx="12" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+    <text x="382" y="169" fill="#24313F" font-size="12" font-weight="600" text-anchor="start" dominant-baseline="middle">六面骰</text>
+    <rect x="422" y="187" width="68" height="68" rx="9" fill="#FFFFFF" stroke="#364A60" stroke-width="2" />
+    <circle cx="442" cy="206" r="5" fill="#364A60" stroke="none" stroke-width="1" />
+    <circle cx="469" cy="206" r="5" fill="#364A60" stroke="none" stroke-width="1" />
+    <circle cx="442" cy="235" r="5" fill="#364A60" stroke="none" stroke-width="1" />
+    <circle cx="469" cy="235" r="5" fill="#364A60" stroke="none" stroke-width="1" />
+    <rect x="566.0" y="149" width="267.0" height="68" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <text x="576.0" y="167" fill="#667380" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">当前观众</text>
+    <text x="576.0" y="193" fill="#24313F" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">观众A</text>
+    <rect x="839.0" y="149" width="267.0" height="68" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <text x="849.0" y="167" fill="#667380" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">当前位置</text>
+    <text x="849.0" y="193" fill="#24313F" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">第 2 格</text>
+    <rect x="1112.0" y="149" width="267.0" height="68" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <text x="1122.0" y="167" fill="#667380" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">下次移动</text>
+    <text x="1122.0" y="193" fill="#24313F" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">前进 · 1 格</text>
+    <g id="MON-ACTION-ROLL" data-func="MON-F08 MON-F11" data-state="ready" data-layer="30-controls">
+      <rect x="566" y="231" width="826" height="48" rx="8" fill="#364A60" stroke="#364A60" stroke-width="1" />
+      <text x="979.0" y="256.0" fill="#FFFFFF" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">掷骰子前进</text>
+    </g>
+    <g id="MON-DIRECTION" data-func="MON-F08 MON-F12" data-layer="40-status">
+      <rect x="566" y="282" width="198" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="576" y="295" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">方向：前进（可切换）</text>
+    </g>
+    <g id="MON-DICE-RESULT" data-func="MON-F07" data-layer="40-status">
+      <rect x="771" y="282" width="172" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="781" y="295" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">骰点：4 / 待执行</text>
+    </g>
+  </g>
+  <g id="MON-BOARD" data-func="MON-F09 MON-F10 MON-F11" data-state="ready" data-layer="10-layout">
+    <rect x="352" y="328" width="1056" height="456" rx="14" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <g id="MON-CELL-01" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="367.0" y="343.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="430.25" y="361.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">积分</text>
+      <text x="430.25" y="379.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#01</text>
+    </g>
+    <g id="MON-CELL-02" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="495.5" y="343.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="558.75" y="361.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">厄运</text>
+      <text x="558.75" y="379.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#02</text>
+    </g>
+    <g id="MON-CELL-03" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="624.0" y="343.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="687.25" y="361.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">冒险</text>
+      <text x="687.25" y="379.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#03</text>
+    </g>
+    <g id="MON-CELL-04" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="752.5" y="343.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="815.75" y="361.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">真心</text>
+      <text x="815.75" y="379.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#04</text>
+    </g>
+    <g id="MON-CELL-05" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="881.0" y="343.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="944.25" y="361.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">效果</text>
+      <text x="944.25" y="379.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#05</text>
+    </g>
+    <g id="MON-CELL-06" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1009.5" y="343.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1072.75" y="361.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">周边</text>
+      <text x="1072.75" y="379.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#06</text>
+    </g>
+    <g id="MON-CELL-07" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1138.0" y="343.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1201.25" y="361.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">混乱</text>
+      <text x="1201.25" y="379.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#07</text>
+    </g>
+    <g id="MON-CELL-08" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1266.5" y="343.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1329.75" y="361.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">积分</text>
+      <text x="1329.75" y="379.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#08</text>
+    </g>
+    <g id="MON-CELL-09" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1266.5" y="396.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1329.75" y="414.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">厄运</text>
+      <text x="1329.75" y="433.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#09</text>
+    </g>
+    <g id="MON-CELL-10" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1266.5" y="450.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1329.75" y="468.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">冒险</text>
+      <text x="1329.75" y="486.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#10</text>
+    </g>
+    <g id="MON-CELL-11" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1266.5" y="503.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1329.75" y="521.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">真心</text>
+      <text x="1329.75" y="540.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#11</text>
+    </g>
+    <g id="MON-CELL-12" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1266.5" y="557.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1329.75" y="575.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">效果</text>
+      <text x="1329.75" y="593.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#12</text>
+    </g>
+    <g id="MON-CELL-13" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1266.5" y="610.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1329.75" y="628.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">周边</text>
+      <text x="1329.75" y="647.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#13</text>
+    </g>
+    <g id="MON-CELL-14" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1266.5" y="664.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1329.75" y="682.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">混乱</text>
+      <text x="1329.75" y="700.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#14</text>
+    </g>
+    <g id="MON-CELL-15" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1266.5" y="717.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1329.75" y="735.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">积分</text>
+      <text x="1329.75" y="754.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#15</text>
+    </g>
+    <g id="MON-CELL-16" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1138.0" y="717.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1201.25" y="735.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">厄运</text>
+      <text x="1201.25" y="754.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#16</text>
+    </g>
+    <g id="MON-CELL-17" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="1009.5" y="717.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="1072.75" y="735.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">冒险</text>
+      <text x="1072.75" y="754.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#17</text>
+    </g>
+    <g id="MON-CELL-18" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="881.0" y="717.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="944.25" y="735.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">真心</text>
+      <text x="944.25" y="754.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#18</text>
+    </g>
+    <g id="MON-CELL-19" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="752.5" y="717.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="815.75" y="735.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">效果</text>
+      <text x="815.75" y="754.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#19</text>
+    </g>
+    <g id="MON-CELL-20" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="624.0" y="717.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="687.25" y="735.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">周边</text>
+      <text x="687.25" y="754.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#20</text>
+    </g>
+    <g id="MON-CELL-21" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="495.5" y="717.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="558.75" y="735.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">混乱</text>
+      <text x="558.75" y="754.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#21</text>
+    </g>
+    <g id="MON-CELL-22" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="367.0" y="717.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="430.25" y="735.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">积分</text>
+      <text x="430.25" y="754.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#22</text>
+    </g>
+    <g id="MON-CELL-23" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="367.0" y="664.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="430.25" y="682.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">厄运</text>
+      <text x="430.25" y="700.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#23</text>
+    </g>
+    <g id="MON-CELL-24" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="367.0" y="610.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="430.25" y="628.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">冒险</text>
+      <text x="430.25" y="647.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#24</text>
+    </g>
+    <g id="MON-CELL-25" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="367.0" y="557.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="430.25" y="575.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">真心</text>
+      <text x="430.25" y="593.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#25</text>
+    </g>
+    <g id="MON-CELL-26" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="367.0" y="503.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="430.25" y="521.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">效果</text>
+      <text x="430.25" y="540.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#26</text>
+    </g>
+    <g id="MON-CELL-27" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="367.0" y="450.0" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="430.25" y="468.26" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">周边</text>
+      <text x="430.25" y="486.99" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#27</text>
+    </g>
+    <g id="MON-CELL-28" data-func="MON-F09 MON-F11" data-state="normal">
+      <rect x="367.0" y="396.5" width="126.5" height="51.5" rx="4" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="430.25" y="414.76" fill="#24313F" font-size="12" font-weight="650" text-anchor="middle" dominant-baseline="middle">混乱</text>
+      <text x="430.25" y="433.49" fill="#667380" font-size="10" font-weight="400" text-anchor="middle" dominant-baseline="middle">#28</text>
+    </g>
+    <g id="MON-ARTWORK-SLOT" data-state="optional-placeholder" data-layer="20-content">
+      <rect x="500.5" y="401.5" width="759.0" height="309.0" rx="9" fill="#FFFFFF" stroke="#E6EAEE" stroke-width="1" />
+    </g>
+    <text x="880.0" y="491.8" fill="#24313F" font-size="18" font-weight="700" text-anchor="middle" dominant-baseline="middle">当前棋盘</text>
+    <text x="880.0" y="546.37" fill="#667380" font-size="12" font-weight="400" text-anchor="middle" dominant-baseline="middle">28 格 · 七类 × 4</text>
+    <text x="880.0" y="600.94" fill="#667380" font-size="11" font-weight="400" text-anchor="middle" dominant-baseline="middle">棋子与事件目标由游戏状态驱动</text>
+    <g id="MON-PLAYER-TOKEN-1" data-func="MON-F10" data-state="standing" data-layer="40-status">
+      <circle cx="611.0" cy="354.0" r="11" fill="#364A60" stroke="#364A60" stroke-width="1" />
+      <text x="611.0" y="355.0" fill="#FFFFFF" font-size="9" font-weight="700" text-anchor="middle" dominant-baseline="middle">P1</text>
+    </g>
+  </g>
+  <g id="MON-LAST-EVENT" data-func="MON-F11 MON-F13" data-layer="40-status">
+    <rect x="360" y="749" width="320" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+    <text x="370" y="762" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">事件状态：无待处理</text>
+  </g>
+  <g id="MON-BOARD-STATUS" data-func="MON-F09 MON-F10 MON-F11" data-layer="40-status">
+    <rect x="360" y="794" width="1040" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+    <text x="370" y="807" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">当前：观众A · #02 厄运   |   等待掷骰   |   多棋子 / 效果均有状态入口</text>
+  </g>
+  <g id="MON-FEEDBACK" data-func="MON-F13" data-layer="40-status">
+    <rect x="360" y="827" width="450" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+    <text x="370" y="840" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">系统提示 / 上次事件（状态驱动）</text>
+  </g>
+  <g id="MON-NEXT-TURN" data-func="MON-F08" data-state="default" data-layer="30-controls">
+    <rect x="1188" y="826" width="212" height="32" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <text x="1294.0" y="843.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">继续 / 下一回合</text>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="240" viewBox="0 0 440 240" version="1.1" data-design-system="520live-functional-v1" data-artboard="COMPONENT-MODAL-SHELL" data-context="base" data-viewport="440x240">
+  <title>COMPONENT-MODAL-SHELL — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="440" height="240" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <text x="24" y="31" fill="#24313F" font-size="18" font-weight="700" text-anchor="start" dominant-baseline="middle">MODAL-SHELL</text>
+  <g id="COMP-MODAL-SHELL" data-func="OVL-F01" data-state="ready" data-layer="50-overlays">
+    <rect x="24" y="61" width="392" height="160" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="47" y="93" fill="#24313F" font-size="20" font-weight="700" text-anchor="start" dominant-baseline="middle">弹层标题</text>
+    <text x="47" y="134" fill="#667380" font-size="13" font-weight="400" text-anchor="start" dominant-baseline="middle">状态 / 说明 / 结果槽</text>
+    <g id="COMP-MODAL-CLOSE" data-state="default" data-layer="30-controls">
+      <rect x="351" y="75" width="48" height="44" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="375.0" y="98.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">×</text>
+    </g>
+    <g id="COMP-MODAL-CONFIRM" data-state="default" data-layer="30-controls">
+      <rect x="47" y="160" width="350" height="44" rx="8" fill="#364A60" stroke="#364A60" stroke-width="1" />
+      <text x="222.0" y="183.0" fill="#FFFFFF" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">确认并继续</text>
+    </g>
+  </g>
+</svg>

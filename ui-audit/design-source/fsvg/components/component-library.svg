@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" version="1.1" data-design-system="520live-functional-v1" data-artboard="COMPONENT-LIBRARY" data-context="base" data-viewport="1280x900">
+  <title>COMPONENT-LIBRARY — 520live 功能型结构稿</title>
+  <desc>静态功能与状态映射；所有可见几何/文字为原生 SVG，未实现业务事件。</desc>
+  <style>text { font-family: Noto Sans CJK SC, Microsoft YaHei, PingFang SC, sans-serif; }</style>
+  <rect x="0" y="0" width="1280" height="900" fill="#F3F5F7" id="ARTBOARD-BACKGROUND" data-layer="10-layout" />
+  <text x="42" y="45" fill="#24313F" font-size="26" font-weight="700" text-anchor="start" dominant-baseline="middle">基础组件库 / 功能型母版</text>
+  <text x="42" y="78" fill="#667380" font-size="13" font-weight="400" text-anchor="start" dominant-baseline="middle">统一：8px 间距 / 8px 按钮圆角 / 12px 容器圆角 / 灰阶语义 / 原生可编辑文字</text>
+  <g id="LIB-BUTTONS" data-layer="10-layout">
+    <rect x="42" y="110" width="570" height="205" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="60" y="138" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">Button / 操作控件</text>
+    <g id="COMP-BTN-0" data-state="default" data-layer="30-controls">
+      <rect x="60" y="165" width="242" height="48" rx="8" fill="#364A60" stroke="#364A60" stroke-width="1" />
+      <text x="181.0" y="190.0" fill="#FFFFFF" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">主操作</text>
+    </g>
+    <g id="COMP-BTN-1" data-state="default" data-layer="30-controls">
+      <rect x="330" y="165" width="242" height="48" rx="8" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+      <text x="451.0" y="190.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">常规操作</text>
+    </g>
+    <g id="COMP-BTN-2" data-state="default" data-layer="30-controls">
+      <rect x="60" y="235" width="242" height="48" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="181.0" y="260.0" fill="#24313F" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">静默操作</text>
+    </g>
+    <g id="COMP-BTN-3" data-state="default" data-layer="30-controls">
+      <rect x="330" y="235" width="242" height="48" rx="8" fill="#F1F2F4" stroke="#CFD5DA" stroke-width="1" />
+      <text x="451.0" y="260.0" fill="#667380" font-size="13" font-weight="650" text-anchor="middle" dominant-baseline="middle">禁用操作</text>
+    </g>
+  </g>
+  <g id="LIB-INPUTS" data-layer="10-layout">
+    <rect x="638" y="110" width="600" height="205" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="656" y="138" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">Field / 表单控件</text>
+    <g id="COMP-FIELD" data-layer="30-controls">
+      <rect x="658" y="166" width="540" height="44" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="670" y="188.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">文本输入 / placeholder</text>
+    </g>
+    <g id="COMP-SELECT" data-layer="30-controls">
+      <rect x="658" y="226" width="540" height="44" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+      <text x="670" y="248.0" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">档案选择 ▾</text>
+    </g>
+  </g>
+  <g id="LIB-CHIPS" data-layer="10-layout">
+    <rect x="42" y="335" width="570" height="162" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="60" y="363" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">Status / 状态标签</text>
+    <g id="COMP-CHIP-0" data-layer="40-status">
+      <rect x="60" y="392" width="166" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="70" y="405" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">正常</text>
+    </g>
+    <g id="COMP-CHIP-1" data-layer="40-status">
+      <rect x="236" y="392" width="166" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="246" y="405" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">选中</text>
+    </g>
+    <g id="COMP-CHIP-2" data-layer="40-status">
+      <rect x="412" y="392" width="166" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="422" y="405" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">不可用</text>
+    </g>
+    <g id="COMP-CHIP-3" data-layer="40-status">
+      <rect x="60" y="432" width="166" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="70" y="445" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">正在执行</text>
+    </g>
+    <g id="COMP-CHIP-4" data-layer="40-status">
+      <rect x="236" y="432" width="166" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="246" y="445" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">成功</text>
+    </g>
+    <g id="COMP-CHIP-5" data-layer="40-status">
+      <rect x="412" y="432" width="166" height="26" rx="6" fill="#F8F9FA" stroke="#E6EAEE" stroke-width="1" />
+      <text x="422" y="445" fill="#24313F" font-size="11" font-weight="500" text-anchor="start" dominant-baseline="middle">失败</text>
+    </g>
+  </g>
+  <g id="LIB-CARD" data-layer="10-layout">
+    <rect x="638" y="335" width="600" height="162" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="656" y="363" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">Card / 内容容器</text>
+    <rect x="658" y="384" width="265" height="93" rx="8" fill="#F8F9FA" stroke="#CFD5DA" stroke-width="1" />
+    <text x="674" y="415" fill="#24313F" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">容器标题</text>
+    <text x="674" y="449" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">内容与说明</text>
+    <rect x="937" y="384" width="279" height="93" rx="8" fill="#FFFFFF" stroke="#364A60" stroke-width="1" />
+    <text x="952" y="415" fill="#24313F" font-size="14" font-weight="700" text-anchor="start" dominant-baseline="middle">状态强调容器</text>
+    <text x="952" y="449" fill="#667380" font-size="12" font-weight="400" text-anchor="start" dominant-baseline="middle">语义上需要强调时使用</text>
+  </g>
+  <g id="LIB-NOTES" data-layer="10-layout">
+    <rect x="42" y="517" width="1196" height="318" rx="12" fill="#FFFFFF" stroke="#CFD5DA" stroke-width="1" />
+    <text x="60" y="545" fill="#24313F" font-size="16" font-weight="700" text-anchor="start" dominant-baseline="middle">组件规则 / PSD 转换约束</text>
+    <text x="66" y="583" fill="#24313F" font-size="15" font-weight="400" text-anchor="start" dominant-baseline="middle">• 原生 SVG：rect / circle / path / text，不使用滤镜或图片描边模拟按钮。</text>
+    <text x="66" y="622" fill="#24313F" font-size="15" font-weight="400" text-anchor="start" dominant-baseline="middle">• 所有控件分组具稳定 ID + data-func + data-state，组件可单独导入 PSD。</text>
+    <text x="66" y="661" fill="#24313F" font-size="15" font-weight="400" text-anchor="start" dominant-baseline="middle">• PSD 推荐按 SVG 中的 g 分组构造 Photoshop Group；文字转 Type Layer，简单轮廓转 Shape Layer。</text>
+    <text x="66" y="700" fill="#24313F" font-size="15" font-weight="400" text-anchor="start" dominant-baseline="middle">• 不将同一页面展平为一张图片。每张画板具有独立尺寸，状态稿由同一套生成规则构建。</text>
+    <text x="66" y="739" fill="#24313F" font-size="15" font-weight="400" text-anchor="start" dominant-baseline="middle">• 移动端画板允许长页面；390×844 是首屏视口，整页内容可纵向滚动。</text>
+    <text x="66" y="778" fill="#24313F" font-size="15" font-weight="400" text-anchor="start" dominant-baseline="middle">• 后续视觉风格仅修改令牌和图形语义，不允许破坏现有 FUNC-ID / Component-ID。</text>
+  </g>
+</svg>
