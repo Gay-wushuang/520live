@@ -2,7 +2,7 @@
   "psd": {
     "width": 1440,
     "height": 900,
-    "bytes": 5760177,
+    "bytes": 5760725,
     "counts": {
       "groups": 7,
       "text": 14,
@@ -20,11 +20,11 @@
       "meanAbsoluteRgbError": 9.36,
       "changedPixelRatioOver12PerChannel": 0.1137
     },
-    "psdCompositeVsReference": {
-      "meanAbsoluteRgbError": 8.39,
-      "changedPixelRatioOver12PerChannel": 0.1228
+    "photoshopRenderVsReference": {
+      "meanAbsoluteRgbError": 7.19,
+      "changedPixelRatioOver12PerChannel": 0.1122
     },
-    "note": "Figma semantic reconstruction vs CARD-02 reference; full-page pixel difference includes intentional partial collection simplification and font/rendering differences."
+    "note": "Photoshop 2024 PNG export vs frozen CARD-02 reference; full-page pixel difference includes card crop, label styles, stage lighting, and partial collection simplification."
   },
   "tree": [
     "- 00_BG [GROUP]",

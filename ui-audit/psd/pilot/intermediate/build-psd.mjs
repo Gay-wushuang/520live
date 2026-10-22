@@ -34,7 +34,7 @@ function textLayer(name, text, x, y, size, color, style = 'Bold', width = 500, a
       shapeType: 'box',
       boxBounds: [0, 0, width, size * 1.8],
       style: {
-        font: { name: `NotoSansSC-${style}` },
+        font: { name: style === 'Regular' ? 'MicrosoftYaHei' : 'MicrosoftYaHei-Bold' },
         fontSize: size,
         fillColor: color,
       },
@@ -69,7 +69,8 @@ const wheelRings = await svgLayer('Wheel / Border rings', 484, 209, 472, 472, `<
 const hub = await svgLayer('Wheel / Center hub', 682, 407, 76, 76, `<defs><radialGradient id="h" cx="35%" cy="35%"><stop stop-color="#fff"/><stop offset=".68" stop-color="#fff7ed"/><stop offset="1" stop-color="#fde68a"/></radialGradient></defs><circle cx="38" cy="38" r="35.5" fill="url(#h)" stroke="#f59e0b" stroke-width="5"/>`);
 const pointer = await svgLayer('Pointer / Main + highlight + pin', 700, 140, 40, 92, `<defs><filter id="p" x="-80%" y="-30%" width="260%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#b91c1c" flood-opacity=".45"/></filter></defs><g filter="url(#p)"><path d="M20 90L10 30C8 17 11 8 20 3C29 8 32 17 30 30Z" fill="#dc2626" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path d="M20 82L14 31C13 22 15 15 20 10C25 15 27 22 26 31Z" fill="#f87171" opacity=".85"/><circle cx="20" cy="24" r="5" fill="#7f1d1d"/></g>`);
 
-const imagePositions = [[596,307],[726,307],[596,417],[726,417]];
+// 轮盘顺序：右上春、右下夏、左下秋、左上冬。
+const imagePositions = [[722,345],[722,452],[616,452],[616,345]];
 const imageFiles = ['春-积分卡.png','夏-积分卡.png','秋-积分卡.png','冬-积分卡.png'];
 const imageNames = ['Spring','Summer','Autumn','Winter'];
 const cardImages = [];
@@ -106,9 +107,9 @@ const psd = {
         textLayer('Hub / 抽卡', '抽卡', 682, 433, 15, {r:180,g:83,b:9}, 'Bold', 76, 'center'),
         hub,
         textLayer('Label / 夏季', '夏季', 808, 536, 18, {r:124,g:45,b:18}, 'Bold', 60),
-        textLayer('Label / 秋季', '秋季', 464, 536, 18, {r:124,g:45,b:18}, 'Bold', 60),
+        textLayer('Label / 秋季', '秋季', 594, 536, 18, {r:124,g:45,b:18}, 'Bold', 60),
         textLayer('Label / 春季', '春季', 808, 326, 18, {r:124,g:45,b:18}, 'Bold', 60),
-        textLayer('Label / 冬季', '冬季', 464, 326, 18, {r:124,g:45,b:18}, 'Bold', 60),
+        textLayer('Label / 冬季', '冬季', 594, 326, 18, {r:124,g:45,b:18}, 'Bold', 60),
         ...cardImages,
         wheelRings,
         ...sectors,
@@ -117,7 +118,7 @@ const psd = {
     ]},
     { name: '01_HEADER', opened: true, children: [
       textLayer('Subtitle', '红色指针停在哪一格，就记录对应季节积分卡', 370, 132, 14, {r:180,g:83,b:9}, 'Bold', 700, 'center'),
-      textLayer('Title / 积分卡转盘', '积分卡转盘', 370, 75, 48, {r:244,g:63,b:94}, 'Black', 700, 'center'),
+      textLayer('Title / 积分卡转盘', '积分卡转盘', 370, 50, 48, {r:244,g:63,b:94}, 'Black', 700, 'center'),
       textLayer('Back text', '← 返回棋盘首页', 668, 28, 14, {r:146,g:64,b:14}, 'Bold', 120, 'center'),
       backPill,
     ]},

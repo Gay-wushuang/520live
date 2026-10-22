@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# PSD 试点 QA 中间副本（仅本机，不入库）
+ui-audit/psd/pilot/CardWheel-Photoshop-QA*.psd
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

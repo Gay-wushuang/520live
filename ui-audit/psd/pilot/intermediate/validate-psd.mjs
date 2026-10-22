@@ -25,7 +25,7 @@ function walk(children = [], depth = 0) {
 }
 walk(psd.children);
 
-const psdPreviewPath = path.join(root, 'ui-audit/psd/pilot/intermediate/CardWheel-PSD-Composite.png');
+const psdPreviewPath = path.join(root, 'ui-audit/psd/pilot/intermediate/CardWheel-Photoshop-Render-v3.png');
 const [ref, figma, psdPreview] = await Promise.all([
   sharp(referencePath).ensureAlpha().raw().toBuffer({ resolveWithObject: true }),
   sharp(figmaPath).ensureAlpha().raw().toBuffer({ resolveWithObject: true }),
@@ -48,8 +48,8 @@ const result = {
   comparison: {
     dimensions: [ref.info.width, ref.info.height],
     figmaVsReference: compare(ref, figma),
-    psdCompositeVsReference: compare(ref, psdPreview),
-    note: 'Figma semantic reconstruction vs CARD-02 reference; full-page pixel difference includes intentional partial collection simplification and font/rendering differences.'
+    photoshopRenderVsReference: compare(ref, psdPreview),
+    note: 'Photoshop 2024 PNG export vs frozen CARD-02 reference; full-page pixel difference includes card crop, label styles, stage lighting, and partial collection simplification.'
   },
   tree,
 };
