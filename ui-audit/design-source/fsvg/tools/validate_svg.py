@@ -45,21 +45,29 @@ for row in functions:
  for id in row['componentIDs']:
   if id not in all_ids:fail.append(f'FUNCTION COMPONENT MISSING {row["functionId"]} {id}')
 
-# 语义断言：WallpaperRewardModal 运行时无右上角关闭按钮，wall 系 SVG 与 OVL-F08 均不得虚构 OVERLAY-CLOSE。
-WALL_SVGS={'states/OVL-WALL-01.desktop.svg','states/OVL-WALL-02.desktop.svg','overlays/OVL-WALL-01.svg','overlays/OVL-WALL-01.mobile.svg'}
+# 语义断言：WallpaperRewardModal / VideoRewardPlayer 运行时均无右上角关闭按钮。
+# 下列 SVG 禁止虚构 OVERLAY-CLOSE；其余所有 overlay 必须保留真实存在的 ×。
+UNCLOSABLE_SVGS={
+ 'states/OVL-WALL-01.desktop.svg','states/OVL-WALL-02.desktop.svg',
+ 'overlays/OVL-WALL-01.svg','overlays/OVL-WALL-01.mobile.svg',
+ 'states/OVL-VID-01.desktop.svg','states/OVL-VID-02.desktop.svg',
+ 'overlays/OVL-VID-01.svg','overlays/OVL-VID-01.mobile.svg','overlays/OVL-VID-02.svg',
+}
 close_files=[]
 for rel in manifest['svgFiles']:
  root=ET.parse(ROOT/rel).getroot()
- if 'OVERLAY-CLOSE' in {n.attrib['id'] for n in root.iter() if 'id' in n.attrib}:close_files.append(rel)
-leaked=sorted(set(close_files)&WALL_SVGS)
-if leaked:fail.append('FICTIONAL OVERLAY-CLOSE IN WALL SVG '+str(leaked))
-# 其余 overlay（EVT/FIG/RES/VID 及 CARD-04 内嵌结果层）运行时存在 × 关闭，必须保留。
-if len(close_files)!=28:fail.append(f'OVERLAY-CLOSE FILE COUNT {len(close_files)} EXPECTED 28')
-for row in functions:
- if row['functionId']=='OVL-F08':
-  if 'OVERLAY-CLOSE' in row['componentIDs']:fail.append('FICTIONAL OVL-F08 COMPONENT OVERLAY-CLOSE')
+ has_close='OVERLAY-CLOSE' in {n.attrib['id'] for n in root.iter() if 'id' in n.attrib}
+ if has_close:close_files.append(rel)
+ if rel in UNCLOSABLE_SVGS and has_close:fail.append('FICTIONAL OVERLAY-CLOSE '+rel)
+ elif '/OVL-' in rel and rel not in UNCLOSABLE_SVGS and not has_close:fail.append('MISSING OVERLAY-CLOSE '+rel)
+# 两条不可关闭的 overlay 功能映射均不得含虚构组件，且必须保留领取操作组件。
+for fid in ('OVL-F08','OVL-F09'):
+ row=next((r for r in functions if r['functionId']==fid),None)
+ if row is None:fail.append(f'MISSING {fid}')
+ else:
+  if 'OVERLAY-CLOSE' in row['componentIDs']:fail.append(f'FICTIONAL {fid} COMPONENT OVERLAY-CLOSE')
   for cid in ('OVERLAY-MODAL','OVERLAY-PHASE','OVERLAY-CONTINUE'):
-   if cid not in row['componentIDs']:fail.append('MISSING OVL-F08 COMPONENT '+cid)
+   if cid not in row['componentIDs']:fail.append(f'MISSING {fid} COMPONENT '+cid)
 
 if len(states)!=46:fail.append('CANDIDATE COUNT')
 if sum(x['baselineStatus']=='ok' for x in states)!=46:fail.append('SUCCESS COUNT')

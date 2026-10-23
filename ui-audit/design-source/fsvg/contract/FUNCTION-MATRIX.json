@@ -1173,7 +1173,6 @@
     "domain": "overlay",
     "componentIDs": [
       "OVERLAY-MODAL",
-      "OVERLAY-CLOSE",
       "OVERLAY-PHASE",
       "OVERLAY-CONTINUE"
     ],

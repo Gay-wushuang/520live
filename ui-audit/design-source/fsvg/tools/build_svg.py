@@ -317,8 +317,8 @@ def overlay(d,state,viewport='desktop'):
  backdrop=d.group('OVERLAY-BACKDROP',fmap,'modal','50-overlays');d.a('rect',{'x':0,'y':0,'width':W,'height':H,'fill':C['overlay'],'fill-opacity':'0.34'},backdrop)
  bw=W-28 if mobile else min(656,W*.64);bx=(W-bw)/2;bh=690 if mobile else (680 if kind.startswith('video') else 660);by=26 if mobile else (H-bh)/2
  mg=d.panel('OVERLAY-MODAL',bx,by,bw,bh,title,fmap,sub)
- # WallpaperRewardModal 运行时无右上角关闭按钮（wall/wall-ultimate），其余 overlay 保留 ×。
- if kind not in ('wall','wall-ultimate'):
+ # WallpaperRewardModal（wall/wall-ultimate）和 VideoRewardPlayer（video/video-loading）运行时无右上角关闭按钮。
+ if kind not in ('wall','wall-ultimate','video','video-loading'):
   d.button('OVERLAY-CLOSE',bx+bw-61,by+14,44,42,'×','quiet',fmap,parent=mg)
  d.chip('OVERLAY-PHASE',bx+20,by+76,bw-40,sub,fmap,parent=mg)
  if kind in ('spin','result'):
@@ -388,8 +388,9 @@ CARD_FUN={
 'CARD-F01':'CARD-WHEEL','CARD-F02':'CARD-WHEEL','CARD-F03':'CARD-ACTION-SPIN','CARD-F04':'CARD-RESULT-FEEDBACK','CARD-F05':'CARD-RESET CARD-BACK',
 'CARD-F06':'CARD-PROFILE-SELECT CARD-PROFILE-SAVE CARD-PROFILE-LOAD CARD-PROFILE-NEW CARD-PROFILE-DELETE','CARD-F07':'CARD-PLAYER-NAME','CARD-F08':'CARD-STATS','CARD-F09':'CARD-COLLECTION','CARD-F10':'CARD-COLLECTION','CARD-F11':'CARD-HISTORY CARD-LOGS','CARD-F12':'CARD-LOG-COPY CARD-LOG-CSV','CARD-F13':'CARD-COLLECTION','CARD-F14':'CARD-GOAL'}
 OVERLAY_FUN={f'OVL-F{i:02d}':'OVERLAY-MODAL OVERLAY-CLOSE OVERLAY-PHASE OVERLAY-CONTINUE' for i in range(1,10)}
-# WallpaperRewardModal 无右上角关闭控件；OVL-F08 组件集合不得包含虚构的 OVERLAY-CLOSE。
+# WallpaperRewardModal 和 VideoRewardPlayer 运行时均无右上角关闭控件。
 OVERLAY_FUN['OVL-F08']='OVERLAY-MODAL OVERLAY-PHASE OVERLAY-CONTINUE'
+OVERLAY_FUN['OVL-F09']='OVERLAY-MODAL OVERLAY-PHASE OVERLAY-CONTINUE'
 
 def build_components():
  d=Doc(1280,900,'COMPONENT-LIBRARY')
