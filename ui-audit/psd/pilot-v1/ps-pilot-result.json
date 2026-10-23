@@ -1,0 +1,15 @@
+{
+"photoshopVersion": "25.11.0",
+"documents": [
+{"label":"pages/monopoly/desktop.svg","opened":true,"topLevel":1,"totalNodes":1,"textLayers":0,"groupLayers":0,"smartObjects":0,"psdSaved":true,"psdSize":6281082,"pngExported":true,"reopenNodes":1,"reopenMatch":true,"width":6000,"height":3750,"mode":"DocumentMode.RGB","layers":[
+{"name":"图层 1","typename":"ArtLayer","kind":"LayerKind.NORMAL","depth":0,"text":false,"smart":false,"styles":0}
+]},
+{"label":"states/OVL-VID-01.desktop.svg","opened":true,"topLevel":1,"totalNodes":1,"textLayers":0,"groupLayers":0,"smartObjects":0,"psdSaved":true,"psdSize":3281067,"pngExported":true,"reopenNodes":1,"reopenMatch":true,"width":6000,"height":3750,"mode":"DocumentMode.RGB","layers":[
+{"name":"图层 1","typename":"ArtLayer","kind":"LayerKind.NORMAL","depth":0,"text":false,"smart":false,"styles":0}
+]},
+{"label":"overlays/OVL-EVT-01.svg","opened":true,"topLevel":1,"totalNodes":1,"textLayers":0,"groupLayers":0,"smartObjects":0,"psdSaved":true,"psdSize":3345836,"pngExported":true,"reopenNodes":1,"reopenMatch":true,"width":6000,"height":3750,"mode":"DocumentMode.RGB","layers":[
+{"name":"图层 1","typename":"ArtLayer","kind":"LayerKind.NORMAL","depth":0,"text":false,"smart":false,"styles":0}
+]}
+],
+"errors":[]
+}

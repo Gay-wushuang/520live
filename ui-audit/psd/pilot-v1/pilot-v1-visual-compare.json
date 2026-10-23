@@ -1,0 +1,44 @@
+[
+  {
+    "svg": "pages/monopoly/desktop.svg",
+    "screenshot": "screenshots/desktop/MON-01.desktop.png",
+    "ps_render_px": [
+      6000,
+      3750
+    ],
+    "ps_render_scale_vs_svg": 4.1667,
+    "nonwhite_ratio_sampled": 0.6306,
+    "screenshot_px": [
+      1440,
+      900
+    ]
+  },
+  {
+    "svg": "states/OVL-VID-01.desktop.svg",
+    "screenshot": "screenshots/desktop/OVL-VID-01.desktop.png",
+    "ps_render_px": [
+      6000,
+      3750
+    ],
+    "ps_render_scale_vs_svg": 4.1667,
+    "nonwhite_ratio_sampled": 0.8649,
+    "screenshot_px": [
+      1440,
+      900
+    ]
+  },
+  {
+    "svg": "overlays/OVL-EVT-01.svg",
+    "screenshot": "screenshots/desktop/OVL-EVT-01.desktop.png",
+    "ps_render_px": [
+      6000,
+      3750
+    ],
+    "ps_render_scale_vs_svg": 4.1667,
+    "nonwhite_ratio_sampled": 0.7925,
+    "screenshot_px": [
+      1440,
+      900
+    ]
+  }
+]
