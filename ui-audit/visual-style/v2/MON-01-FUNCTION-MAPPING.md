@@ -10,11 +10,11 @@
 | MON-F04 | 展开稿 `MON-AUDIENCE-EDIT` | 修改当前观众昵称。 |
 | MON-F05 | 展开稿 `MON-USER-COUNT/SELECT/INPUT/ADD/BULK/IMPORT/DELETE` | 观众选择、添加、批量导入与删除。 |
 | MON-F06 | 展开稿 `MON-USER-DELETE` | 最后一位观众不可删除；反馈状态另属 `MON-17`。 |
-| MON-F07 | 主状态 `MON-TURN-CONTROLS`, `MON-DICE-RESULT` | 尚未掷骰，不能伪造点数。 |
-| MON-F08 | 主状态 `MON-ACTION-ROLL`, `MON-DIRECTION`; 展开稿未增加新操作 | 方向在初始态是状态；只有效果允许时可切换。旧 `MON-NEXT-TURN` 是不符合运行时的常驻假按钮，移除。 |
+| MON-F07 | 主状态 `MON-TURN-CONTROLS`, `MON-DICE-RESULT`；结果样板 `MON-CENTER-FEEDBACK` | READY 无点数；ROLL_RESULT 与 EVENT_PENDING 的点数均标为设计示例。 |
+| MON-F08 | 主状态与三张状态样板 `MON-ACTION-ROLL`, `MON-DIRECTION` | ROLLING、ROLL_RESULT、EVENT_PENDING 显示禁用样式；方向在初始态仅是状态，只有效果允许时可切换。旧 `MON-NEXT-TURN` 常驻假按钮仍不采用。 |
 | MON-F09 | 主状态 `MON-BOARD`, `MON-CELL-01`～`28`, `MON-BOARD-STATUS` | 格号和环形次序必须保持。 |
 | MON-F10 | 主状态 `MON-PLAYER-TOKEN-1`, `MON-BOARD-STATUS` | P1 显示在索引 0 的 #01；P2 由专属状态表示。 |
-| MON-F11 | 主状态 `MON-ACTION-ROLL`, `MON-BOARD`, `MON-LAST-EVENT` | 事件浮层只在其他动态状态出现；初始无待处理事件。 |
+| MON-F11 | 主状态 `MON-ACTION-ROLL`, `MON-BOARD`, `MON-LAST-EVENT`；EVENT_PENDING 样板 `MON-ACTION-TRIGGER-EVENT` | 默认空中心；事件待触发态的动作对应运行时已有的 `handlePendingEvent`，不是新功能。 |
 | MON-F12 | 主状态 `MON-DIRECTION`; 展开稿 `MON-EFFECTS` | 默认无激活效果；方向效果另态。 |
 | MON-F13 | 主状态 `MON-LAST-EVENT`; 展开稿 `MON-LOGS`, `MON-FEEDBACK` | 提示和记录按真实状态展示。 |
 | MON-F14 | 展开稿 `MON-LOG-COPY`, `MON-LOG-CSV` | 真实日志复制与 CSV 导出，不能仅折叠后丢失。 |

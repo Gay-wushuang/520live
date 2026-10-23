@@ -27,7 +27,7 @@ def group(id_, body, func=None, state=None, role=None):
     return f'<g{attrs}>{body}</g>'
 
 def button(id_, x, y, w, h, label, func=None, kind='secondary', state='default'):
-    fills = {'primary': (C['mist'], C['ink']), 'secondary': (C['panel'], C['white']), 'danger': ('#4C354B', '#F3CDD5')}
+    fills = {'primary': (C['mist'], C['ink']), 'secondary': (C['panel'], C['white']), 'danger': ('#4C354B', '#F3CDD5'), 'disabled': ('#4E5B78', '#CDD5E6')}
     fill, ink = fills[kind]
     return group(id_, rect(x,y,w,h,fill,10, '#665478' if kind=='danger' else None) + txt(x+w/2,y+h/2+1,label,14,ink,700,'middle'),func,state,'control')
 
@@ -40,7 +40,13 @@ def svg(body, title):
 <defs><linearGradient id="night" x2="0" y2="1"><stop stop-color="#172240"/><stop offset="1" stop-color="#111A35"/></linearGradient><linearGradient id="board-center" x2="0.8" y2="1"><stop stop-color="#202D50"/><stop offset="1" stop-color="#172341"/></linearGradient></defs>
 {body}</svg>'''
 
-def base():
+def base(state='READY'):
+    if state not in {'READY', 'ROLLING', 'ROLL_RESULT', 'EVENT_PENDING'}:
+        raise ValueError(state)
+    moving = state in {'ROLLING', 'ROLL_RESULT'}
+    pending = state == 'EVENT_PENDING'
+    current_index = 1 if pending else 0
+    current_label = '#02  厄运' if pending else '#01  积分'
     a=[]
     a.append(rect(0,0,1440,1050,'url(#night)'))
     # Only a few low-contrast stars; no decorative content inside functional text areas.
@@ -53,12 +59,21 @@ def base():
     a.append(group('MON-TOOL-RAIL',rect(32,98,112,875,C['panel2'],18) + txt(88,127,'工具',13,C['muted'],600,'middle'),role='conceptual-disclosure'))
     for j,(label,y,active) in enumerate([('棋盘',168,True),('观众',240,False),('记录',312,False),('说明',384,False)]):
         a.append(group(f'MON-TOOL-{j+1}',rect(43,y-24,90,56,C['panel'] if active else 'none',12) + txt(88,y+4,label,14,C['white'] if active else C['muted'],700,'middle'),role='conceptual-disclosure'))
-    a.append(group('MON-TURN-CONTROLS',rect(160,98,1248,120,C['panel'],18) + txt(190,129,'当前回合',12,C['muted'],650) + txt(190,166,'观众 · 第 1 回合',27,C['white'],750) + txt(488,139,'当前位置',12,C['muted'],600) + txt(488,170,'#01  积分',18,C['white'],700) + txt(668,139,'移动方向',12,C['muted'],600), 'MON-F07 MON-F08 MON-F11 MON-F12'))
+    a.append(group('MON-TURN-CONTROLS',rect(160,98,1248,120,C['panel'],18) + txt(190,129,'当前回合',13,C['muted'],650) + txt(190,166,'观众 · 第 1 回合',27,C['white'],750) + txt(488,139,'当前位置',13,C['muted'],600) + txt(488,170,current_label,18,C['white'],700) + txt(668,139,'移动方向',13,C['muted'],600), 'MON-F07 MON-F08 MON-F11 MON-F12'))
     a.append(group('MON-DIRECTION',rect(650,155,112,34,C['panel2'],9) + txt(706,173,'前进 · 1 骰',13,C['white'],650,'middle'),'MON-F08 MON-F12','default','status-not-clickable'))
-    a.append(group('MON-DICE-VISUAL',rect(798,122,66,66,C['light'],13) + rect(803,127,56,56,'#DDDDEA',10) + ''.join(f'<circle cx="{x}" cy="{y}" r="4" fill="{C["ink"]}"/>' for x,y in [(821,145),(841,145),(831,155),(821,165),(841,165)]),role='decoration'))
-    a.append(group('MON-DICE-RESULT',txt(884,145,'六面骰',12,C['muted'],600) + txt(884,174,'等待掷骰',14,C['white'],650),'MON-F07','not-rolled','status-not-clickable'))
-    a.append(button('MON-ACTION-ROLL',1190,129,190,58,'掷骰子前进','MON-F08 MON-F11','primary','ready'))
-    a.append(group('MON-BOARD',rect(160,233,1248,710,C['panel2'],22) + rect(174,247,1220,682,'none',18,C['edge']) + txt(191,254,'28 格环形棋盘',13,C['muted'],650), 'MON-F09 MON-F10 MON-F11','ready'))
+    die = rect(798,122,66,66,C['light'],13) + rect(803,127,56,56,'#DDDDEA',10)
+    if state in {'ROLL_RESULT', 'EVENT_PENDING'}:
+        pips = [(819,144),(843,144),(819,168),(843,168)] if state == 'ROLL_RESULT' else [(831,156)]
+        die += ''.join(f'<circle cx="{x}" cy="{y}" r="4" fill="{C["ink"]}"/>' for x,y in pips)
+    else:
+        die += txt(831,156,'—' if state == 'READY' else '◆',24,C['ink'],700,'middle')
+    a.append(group('MON-DICE-VISUAL',die,state=state.lower(),role='die-symbol'))
+    dice_note = {'READY':'等待掷骰','ROLLING':'投掷中','ROLL_RESULT':'示例：4 点','EVENT_PENDING':'示例：1 点'}[state]
+    a.append(group('MON-DICE-RESULT',txt(884,145,'六面骰',13,C['muted'],600) + txt(884,174,dice_note,14,C['white'],650),'MON-F07',state.lower(),'status-not-clickable'))
+    roll_label = '掷骰中…' if state == 'ROLLING' else '掷骰子前进'
+    roll_button = button('MON-ACTION-ROLL',1190,129,190,58,roll_label,'MON-F08 MON-F11','primary' if state=='READY' else 'disabled','ready' if state=='READY' else 'disabled')
+    a.append(roll_button)
+    a.append(group('MON-BOARD',rect(160,233,1248,710,C['panel2'],22) + rect(174,247,1220,682,'none',18,C['edge']) + txt(191,262,'28 格环形棋盘',14,C['muted'],650), 'MON-F09 MON-F10 MON-F11',state.lower()))
     # 8 top, 6 right, 8 bottom, 6 left = 28 in clockwise order.
     cells=[]
     for n in range(28):
@@ -66,9 +81,9 @@ def base():
         elif n < 14: col,row=7,n-7
         elif n < 22: col,row=21-n,7
         else: col,row=0,28-n
-        x,y=191+143*col,270+81*row
+        x,y=191+143*col,290+78*row
         label,icon,accent,fill=KINDS[n%7]
-        active=n==0
+        active=n==current_index
         cell=rect(x,y,137,74,fill,10,C['gold'] if active else '#596079',2 if active else 0.6)
         cell+=rect(x+11,y+12,27,27,accent,7) + txt(x+24.5,y+27,icon,15,C['ink'],800,'middle')
         cell+=txt(x+47,y+26,label,15,C['white'],720) + txt(x+12,y+58,f'#{n+1:02d}',12,C['muted'],620)
@@ -76,15 +91,30 @@ def base():
         cells.append(group(f'MON-CELL-{n+1:02d}',cell,'MON-F09 MON-F11','current' if active else 'normal','board-cell'))
     a.extend(cells)
     # Empty center: only non-semantic night background and faint stars.
-    a.append(group('MON-BOARD-CENTER',rect(334,359,859,474,'url(#board-center)',18) + '<circle cx="454" cy="429" r="1.5" fill="#C9AA76" opacity="0.28"/><circle cx="1051" cy="721" r="1.5" fill="#C9AA76" opacity="0.22"/>',role='empty-center'))
+    a.append(group('MON-BOARD-CENTER',rect(334,368,852,464,'url(#board-center)',18) + '<circle cx="454" cy="429" r="1.5" fill="#C9AA76" opacity="0.28"/><circle cx="1051" cy="721" r="1.5" fill="#C9AA76" opacity="0.22"/>',role='empty-center'))
+    if state != 'READY':
+        # The feedback is confined to the empty center. All values are clearly marked examples.
+        phase = {'ROLLING':'投掷中','ROLL_RESULT':'骰点与移动反馈','EVENT_PENDING':'事件待触发'}[state]
+        content = rect(492,473,543,248,C['light'],18) + txt(520,505,'设计示例 · 非实时数据',13,'#616B86',650)
+        content += txt(520,548,phase,26,C['ink'],760)
+        if state == 'ROLLING':
+            content += txt(520,593,'正在生成骰点',17,C['ink'],650) + txt(520,638,'主操作暂不可重复触发',14,'#616B86',550)
+        elif state == 'ROLL_RESULT':
+            content += txt(520,593,'示例：4 点 · 前进 4 格',19,C['ink'],700) + txt(520,638,'从 #01 积分向 #05 效果移动',14,'#616B86',550)
+        else:
+            content += txt(520,593,'示例：#02 厄运事件',19,C['ink'],700) + txt(520,631,'待点击现有「触发事件」操作',14,'#616B86',550)
+            content += button('MON-ACTION-TRIGGER-EVENT',520,660,486,42,'触发事件：厄运','MON-F11','primary','pending')
+        a.append(group('MON-CENTER-FEEDBACK',content,'MON-F07 MON-F11',state.lower(),'transient-example'))
     # Bottom information strip is contextual, not another permanent center card.
-    a.append(group('MON-BOARD-STATUS',rect(175,958,1222,64,C['panel'],14) + txt(197,989,'棋盘就绪',15,C['white'],700) + txt(320,989,'当前 #01 积分   ·   等待掷骰   ·   暂无待处理事件',13,C['muted'],550),'MON-F09 MON-F10 MON-F11','ready','status'))
-    a.append(group('MON-LAST-EVENT',txt(1179,989,'事件：无',12,C['muted'],550),'MON-F11 MON-F13','none','status'))
+    status = {'READY':'当前 #01 积分   ·   等待掷骰   ·   暂无待处理事件','ROLLING':'示例：投掷中   ·   操作暂不可重复触发','ROLL_RESULT':'示例：4 点   ·   前进 4 格   ·   移动反馈','EVENT_PENDING':'示例：#02 厄运   ·   等待触发事件'}[state]
+    a.append(group('MON-BOARD-STATUS',rect(175,958,1222,64,C['panel'],14) + txt(197,989,'棋盘就绪' if state=='READY' else '回合进行中',15,C['white'],700) + txt(320,989,status,13,C['muted'],550),'MON-F09 MON-F10 MON-F11',state.lower(),'status'))
+    a.append(group('MON-LAST-EVENT',txt(1179,989,'事件：无' if state=='READY' else '设计示例',13,C['muted'],550),'MON-F11 MON-F13',state.lower(),'status'))
     return ''.join(a)
 
 def expanded():
     a=[base(),rect(0,0,1440,1050,'#080D1D',0,None,1,'opacity="0.52"')]
     a.append(group('MON-TOOLS-DRAWER',rect(144,94,546,854,C['light'],22) + txt(174,128,'观众管理与记录',22,C['ink'],750) + txt(174,155,'概念展开态 · 现有功能的迁移承载',12,'#65708A',500),role='conceptual-panel'))
+    a.append(group('MON-DRAWER-CLOSE',rect(624,110,42,38,'#E6E6F1',9)+txt(645,130,'×',21,C['ink'],700,'middle'),role='conceptual-disclosure'))
     # Disclosure tabs are not runtime buttons in this static pilot.
     for k,(label,x) in enumerate([('观众与档案',174),('记录',344),('轮盘说明',464)]):
         a.append(group(f'MON-DRAWER-TAB-{k+1}',rect(x,179,150 if k==0 else 112,36,C['panel'] if k==0 else '#E6E6F1',9)+txt(x+12,198,label,13,C['white'] if k==0 else C['ink'],650),role='conceptual-disclosure'))
@@ -108,5 +138,7 @@ def expanded():
     a.append(group('MON-FEEDBACK',txt(174,919,'系统提示与上次事件：按状态显示',11,'#66718B',500),'MON-F13','none','status'))
     return ''.join(a)
 
-(STATES/'MON-01.desktop.svg').write_text(svg(base(),'MON-01-DESKTOP-V2'),encoding='utf-8')
+(STATES/'MON-01.desktop.svg').write_text(svg(base(),'MON-01-DESKTOP-V2.1'),encoding='utf-8')
+for phase in ('ROLLING','ROLL_RESULT','EVENT_PENDING'):
+    (STATES/f'MON-01.{phase}.svg').write_text(svg(base(phase),f'MON-01-{phase}-EXAMPLE-V2.1'),encoding='utf-8')
 (CONCEPTS/'MON-01.tools-expanded.svg').write_text(svg(expanded(),'MON-01-TOOLS-EXPANDED-CONCEPT'),encoding='utf-8')
