@@ -1,0 +1,20 @@
+{
+  "system": "Starry Luxe Clear V2",
+  "inherits": "../v2/design-tokens.json",
+  "canvas": { "width": 1440, "height": 1050 },
+  "color": {
+    "background": "#111A35",
+    "panel": "#273257",
+    "panelDeep": "#1B2746",
+    "infoLight": "#F2F1F8",
+    "mistPurple": "#A397D4",
+    "champagneGold": "#C9AA76",
+    "seasonSpring": "#704E70",
+    "seasonSummer": "#3D637A",
+    "seasonAutumn": "#725459",
+    "seasonWinter": "#485B79"
+  },
+  "radius": { "panel": 18, "control": 10, "art": 12 },
+  "typography": { "fontFamily": "Microsoft YaHei, Noto Sans CJK SC, sans-serif" },
+  "notes": "四季色只用于轮盘语义；原始卡牌图片作为独立 image 层，不是算法输入。"
+}
