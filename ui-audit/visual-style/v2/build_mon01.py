@@ -52,9 +52,9 @@ def base(state='READY'):
     # Only a few low-contrast stars; no decorative content inside functional text areas.
     for i,(x,y,r) in enumerate([(131,54,2),(322,78,1.5),(1031,57,1.4),(1364,184,1.6),(95,762,1.3),(1380,941,1.5)]):
         a.append(f'<circle id="ambient-star-{i+1}" cx="{x}" cy="{y}" r="{r}" fill="#C9AA76" opacity="0.32" data-role="decoration"/>')
-    a.append(group('MON-HEADER', rect(32,22,1376,58,C['panel2'],14) + txt(54,51,'520live  /  大富翁',21,C['white'],750) + txt(337,52,'星夜棋局',12,C['muted'],500), 'MON-F01 MON-F02'))
-    a.append(button('MON-NAV-CARD',1092,30,158,42,'积分抽奖 ↗','MON-F01'))
-    a.append(button('MON-RESET',1260,30,126,42,'重置棋盘','MON-F02','danger'))
+    a.append(group('MON-HEADER', rect(32,22,1376,54,C['panel2'],14) + txt(54,49,'520live  /  大富翁',20,C['white'],750) + txt(333,49,'星夜棋局',11,C['muted'],500,extra='opacity="0.68"'), 'MON-F01 MON-F02'))
+    a.append(button('MON-NAV-CARD',1092,30,158,38,'积分抽奖 ↗','MON-F01'))
+    a.append(button('MON-RESET',1260,30,126,38,'重置棋盘','MON-F02','danger'))
     # Compact tool rail. These are design-proposed disclosure surfaces, not existing routes.
     a.append(group('MON-TOOL-RAIL',rect(32,98,112,875,C['panel2'],18) + txt(88,127,'工具',13,C['muted'],600,'middle'),role='conceptual-disclosure'))
     for j,(label,y,active) in enumerate([('棋盘',168,True),('观众',240,False),('记录',312,False),('说明',384,False)]):
@@ -95,15 +95,15 @@ def base(state='READY'):
     if state != 'READY':
         # The feedback is confined to the empty center. All values are clearly marked examples.
         phase = {'ROLLING':'投掷中','ROLL_RESULT':'骰点与移动反馈','EVENT_PENDING':'事件待触发'}[state]
-        content = rect(492,473,543,248,C['light'],18) + txt(520,505,'设计示例 · 非实时数据',13,'#616B86',650)
-        content += txt(520,548,phase,26,C['ink'],760)
+        content = rect(503,460,520,230,C['light'],18) + txt(530,491,'设计示例 · 非实时数据',13,'#616B86',650)
+        content += txt(530,533,phase,25,C['ink'],760)
         if state == 'ROLLING':
-            content += txt(520,593,'正在生成骰点',17,C['ink'],650) + txt(520,638,'主操作暂不可重复触发',14,'#616B86',550)
+            content += txt(530,577,'正在生成骰点',17,C['ink'],650) + txt(530,620,'主操作暂不可重复触发',14,'#616B86',550)
         elif state == 'ROLL_RESULT':
-            content += txt(520,593,'示例：4 点 · 前进 4 格',19,C['ink'],700) + txt(520,638,'从 #01 积分向 #05 效果移动',14,'#616B86',550)
+            content += txt(530,577,'示例：4 点 · 前进 4 格',19,C['ink'],700) + txt(530,620,'从 #01 积分向 #05 效果移动',14,'#616B86',550)
         else:
-            content += txt(520,593,'示例：#02 厄运事件',19,C['ink'],700) + txt(520,631,'待点击现有「触发事件」操作',14,'#616B86',550)
-            content += button('MON-ACTION-TRIGGER-EVENT',520,660,486,42,'触发事件：厄运','MON-F11','primary','pending')
+            content += txt(530,575,'示例：#02 厄运事件',19,C['ink'],700) + txt(530,607,'待点击现有「触发事件」操作',14,'#616B86',550)
+            content += button('MON-ACTION-TRIGGER-EVENT',530,632,466,42,'触发事件：厄运','MON-F11','primary','pending')
         a.append(group('MON-CENTER-FEEDBACK',content,'MON-F07 MON-F11',state.lower(),'transient-example'))
     # Bottom information strip is contextual, not another permanent center card.
     status = {'READY':'当前 #01 积分   ·   等待掷骰   ·   暂无待处理事件','ROLLING':'示例：投掷中   ·   操作暂不可重复触发','ROLL_RESULT':'示例：4 点   ·   前进 4 格   ·   移动反馈','EVENT_PENDING':'示例：#02 厄运   ·   等待触发事件'}[state]
@@ -124,18 +124,18 @@ def expanded():
     for id_,x,label in [('MON-PROFILE-SAVE',194,'保存'),('MON-PROFILE-LOAD',347,'读取'),('MON-PROFILE-NEW',500,'新档案')]:
         a.append(button(id_,x,321,140,38,label,'MON-F03'))
     a.append(group('MON-AUDIENCE-EDIT',rect(194,374,446,38,'#F2F1F8',8)+txt(209,394,'当前观众昵称：观众',13,C['ink'],550),'MON-F04','editable','control'))
-    a.append(group('MON-USER-SELECT',rect(194,420,446,38,'#E7E4F0',8)+txt(209,440,'P1  观众   ·   #01  积分',13,C['ink'],650),'MON-F05','selected','control'))
+    a.append(group('MON-USER-SELECT',rect(194,420,446,38,'#E7E4F0',8)+rect(194,420,4,38,C['mist'],2)+txt(209,440,'当前观众  P1  ·  #01 积分',13,C['ink'],650),'MON-F05','selected','control'))
     a.append(group('MON-USER-INPUT',rect(194,472,300,38,'#F2F1F8',8)+txt(207,492,'新增观众昵称',12,'#66718B',500),'MON-F05','empty','control'))
-    a.append(button('MON-USER-ADD',506,472,134,38,'添加','MON-F05'))
+    a.append(button('MON-USER-ADD',506,472,134,38,'添加观众','MON-F05','primary'))
     a.append(group('MON-USER-BULK',rect(194,518,446,51,'#F2F1F8',8)+txt(207,543,'批量导入：每行一个昵称，或逗号分隔',12,'#66718B',500),'MON-F05','empty','control'))
     a.append(button('MON-USER-IMPORT',194,580,286,42,'导入观众名单','MON-F05'))
     a.append(button('MON-USER-DELETE',491,580,149,42,'删除观众','MON-F05 MON-F06','danger'))
     a.append(group('MON-EFFECTS',txt(194,651,'当前效果：无',12,'#66718B',550),'MON-F12','none','status'))
-    a.append(group('MON-LOGS',rect(174,690,486,168,'#FFFFFF',14)+txt(194,718,'下播核对记录',17,C['ink'],750)+txt(194,745,'暂无记录；行动后自动写入。',12,'#66718B',500),'MON-F13 MON-F14','empty'))
-    a.append(button('MON-LOG-COPY',194,793,208,42,'复制日志','MON-F14'))
-    a.append(button('MON-LOG-CSV',412,793,228,42,'导出 CSV','MON-F14'))
-    a.append(group('MON-LEGEND',txt(174,888,'七类图例：积分 / 厄运 / 冒险 / 真心 / 效果 / 周边 / 混乱',12,C['ink'],600),'MON-F15','collapsed-content','informational'))
-    a.append(group('MON-FEEDBACK',txt(174,919,'系统提示与上次事件：按状态显示',11,'#66718B',500),'MON-F13','none','status'))
+    a.append(group('MON-LOGS',rect(174,690,486,154,'#FFFFFF',14)+txt(194,716,'下播核对记录',15,C['ink'],750)+txt(194,743,'暂无记录 · 行动后自动写入',12,'#66718B',500),'MON-F13 MON-F14','empty'))
+    a.append(button('MON-LOG-COPY',194,780,208,42,'复制日志','MON-F14'))
+    a.append(button('MON-LOG-CSV',412,780,228,42,'导出 CSV','MON-F14'))
+    a.append(group('MON-LEGEND',txt(174,875,'七类图例  ·  积分 / 厄运 / 冒险 / 真心 / 效果 / 周边 / 混乱',12,C['ink'],600),'MON-F15','summary','informational'))
+    a.append(group('MON-FEEDBACK',txt(174,910,'系统提示与上次事件：按状态显示',12,'#66718B',500),'MON-F13','none','status'))
     return ''.join(a)
 
 (STATES/'MON-01.desktop.svg').write_text(svg(base(),'MON-01-DESKTOP-V2.1'),encoding='utf-8')

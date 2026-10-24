@@ -21,7 +21,7 @@
     "figure": "#C5AFE3",
     "chaos": "#A9B5E0"
   },
-  "typography": {"family": "Microsoft YaHei, Noto Sans CJK SC, sans-serif", "page": 21, "turn": 27, "cell": 15, "body": 13, "caption": 12},
+  "typography": {"family": "Microsoft YaHei, Noto Sans CJK SC, sans-serif", "page": 20, "headerSubtitle": 11, "turn": 27, "cell": 15, "body": 13, "caption": 12},
   "radii": {"main": 22, "panel": 18, "button": 10, "cell": 10},
   "componentTypes": ["main-container", "secondary-information-panel", "primary-secondary-danger-button", "status-label", "board-cell", "contextual-overlay"],
   "decorationPolicy": "Sparse low-opacity stars only; no permanent board-center title, moon or feedback.",
