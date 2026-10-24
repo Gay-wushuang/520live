@@ -1,5 +1,5 @@
 {
-  "system": "Starry Luxe Clear V2",
+  "system": "Starry Luxe Clear V2.1",
   "inherits": "../v2/design-tokens.json",
   "canvas": { "width": 1440, "height": 1050 },
   "color": {
@@ -14,7 +14,7 @@
     "seasonAutumn": "#725459",
     "seasonWinter": "#485B79"
   },
-  "radius": { "panel": 18, "control": 10, "art": 12 },
+  "radius": { "panel": 18, "control": 10, "art": 13 },
   "typography": { "fontFamily": "Microsoft YaHei, Noto Sans CJK SC, sans-serif" },
-  "notes": "四季色只用于轮盘语义；原始卡牌图片作为独立 image 层，不是算法输入。"
+  "notes": "四季色只用于轮盘语义；原始卡牌图片作为独立 image 层，以 contain 显示完整主体，不是算法输入。"
 }

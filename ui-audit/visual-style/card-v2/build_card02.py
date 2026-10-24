@@ -34,7 +34,7 @@ def btn(id_,x,y,w,h,label,func=None,kind='secondary',state='default'):
 
 def real_thumbnail(filename):
     path=REPO/'public'/filename
-    script="const sharp=require('sharp'); sharp(process.argv[1]).resize(168,104,{fit:'cover',position:'centre'}).jpeg({quality:82,chromaSubsampling:'4:4:4'}).toBuffer().then(b=>process.stdout.write(b.toString('base64'))).catch(e=>{console.error(e);process.exit(1)});"
+    script="const sharp=require('sharp'); sharp(process.argv[1]).resize(210,118,{fit:'contain',background:'#F2F1F8'}).jpeg({quality:86,chromaSubsampling:'4:4:4'}).toBuffer().then(b=>process.stdout.write(b.toString('base64'))).catch(e=>{console.error(e);process.exit(1)});"
     result=run(['node','-e',script,str(path)],cwd=REPO,capture_output=True,text=True,check=True)
     return 'data:image/jpeg;base64,'+result.stdout
 
@@ -42,23 +42,24 @@ ART={item[2]:real_thumbnail(item[5]) for item in SEASONS}
 
 def svg(body,name):
     return f'''<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1050" viewBox="0 0 1440 1050" data-design-system="Starry-Luxe-Clear-V2" data-artboard="{name}">
-<title>{name} — 520live CARD-02 视觉试点</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1050" viewBox="0 0 1440 1050" data-design-system="Starry-Luxe-Clear-V2.1" data-artboard="{name}">
+<title>{name} — 520live CARD-02 V2.1 视觉精修</title>
 <desc>静态设计稿；原始卡牌图片的确定性缩略图内嵌为独立 SVG image 对象。轮盘视觉不执行抽奖算法。</desc>
 <style>text {{ font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; }}</style>
 <defs>
 <linearGradient id="night" x2="0" y2="1"><stop stop-color="#172240"/><stop offset="1" stop-color="#111A35"/></linearGradient>
 <clipPath id="wheel-disc"><circle cx="640" cy="500" r="282"/></clipPath>
-<clipPath id="art-spring"><rect x="698" y="336" width="168" height="104" rx="12"/></clipPath>
-<clipPath id="art-summer"><rect x="698" y="560" width="168" height="104" rx="12"/></clipPath>
-<clipPath id="art-autumn"><rect x="414" y="560" width="168" height="104" rx="12"/></clipPath>
-<clipPath id="art-winter"><rect x="414" y="336" width="168" height="104" rx="12"/></clipPath>
+<clipPath id="art-spring"><rect x="648" y="322" width="210" height="118" rx="11"/></clipPath>
+<clipPath id="art-summer"><rect x="648" y="560" width="210" height="118" rx="11"/></clipPath>
+<clipPath id="art-autumn"><rect x="422" y="560" width="210" height="118" rx="11"/></clipPath>
+<clipPath id="art-winter"><rect x="422" y="322" width="210" height="118" rx="11"/></clipPath>
 </defs>{body}</svg>'''
 
-def wheel(phase):
+def wheel(phase, result_example=False):
     a=[]
     a.append(grp('CARD-WHEEL-PANEL',rect(160,98,826,776,COL['deep'],22)+text(190,130,'四季轮盘',18,COL['white'],750)+text(190,157,'指针停下后，才会记录对应季节积分卡',13,COL['muted'],500),'CARD-F01 CARD-F02'))
     a.append(grp('CARD-WHEEL',f'<circle cx="640" cy="500" r="300" fill="{COL["panel"]}" stroke="{COL["edge"]}" stroke-width="2"/>'+'<circle cx="640" cy="500" r="288" fill="#1B2746"/>','CARD-F01 CARD-F02','ready' if phase=='READY' else phase.lower()))
+    disc=[]
     paths=[
         'M640 500 L640 218 A282 282 0 0 1 922 500 Z',
         'M640 500 L922 500 A282 282 0 0 1 640 782 Z',
@@ -67,21 +68,24 @@ def wheel(phase):
     ]
     # Clockwise visual positions: spring, summer, autumn, winter.
     for i,(name,mark,key,fill,accent,filename) in enumerate(SEASONS):
-        x,y=[(698,336),(698,560),(414,560),(414,336)][i]
-        a.append(grp(f'CARD-SECTOR-{i+1}',f'<path d="{paths[i]}" fill="{fill}"/>'+'<path d="'+paths[i]+'" fill="none" stroke="#8390AF" stroke-opacity="0.34" stroke-width="1"/>', 'CARD-F01 CARD-F02',key,'visual-sector'))
-        if phase!='LOADING':
-            art=rect(x-3,y-3,174,110,COL['light'],14,accent,2)+f'<image x="{x}" y="{y}" width="168" height="104" href="{ART[key]}" clip-path="url(#art-{key})" preserveAspectRatio="xMidYMid slice"/>'
-            a.append(grp(f'CARD-WHEEL-ART-{i+1:02d}',art,'CARD-F01 CARD-F10','real-source-thumbnail','raster-art',f'data-source="public/{filename}"'))
+        x,y=[(648,322),(648,560),(422,560),(422,322)][i]
+        disc.append(grp(f'CARD-SECTOR-{i+1}',f'<path d="{paths[i]}" fill="{fill}"/>' + f'<path d="{paths[i]}" fill="{accent}" opacity="0.13"/>'+'<path d="'+paths[i]+'" fill="none" stroke="#8390AF" stroke-opacity="0.28" stroke-width="1"/>', 'CARD-F01 CARD-F02',key,'visual-sector'))
+        if phase not in ('LOADING','ERROR'):
+            art=rect(x-3,y-3,216,124,COL['light'],13,accent,1)+f'<image x="{x}" y="{y}" width="210" height="118" href="{ART[key]}" clip-path="url(#art-{key})" preserveAspectRatio="xMidYMid meet"/>'
+            disc.append(grp(f'CARD-WHEEL-ART-{i+1:02d}',art,'CARD-F01 CARD-F10','real-source-thumbnail','raster-art',f'data-source="public/{filename}"'))
         else:
-            a.append(grp(f'CARD-WHEEL-ART-{i+1:02d}',rect(x,y,168,104,'#6C7691',12)+text(x+84,y+52,'图片加载中',13,COL['white'],550,'middle'),'CARD-F01 CARD-F10','loading-placeholder','temporary-placeholder'))
-        label_y=462 if i in (0,3) else 687
-        a.append(text(x+84,label_y,name,19,COL['white'],750,'middle'))
-    a.append(grp('CARD-WHEEL-HUB',f'<circle cx="640" cy="500" r="43" fill="{COL["panel"]}" stroke="{COL["gold"]}" stroke-width="2"/>'+text(640,501,'四季',14,COL['white'],700,'middle'),'CARD-F02','center','decoration'))
-    a.append(grp('CARD-WHEEL-POINTER',f'<path d="M627 181 L653 181 L640 233 Z" fill="{COL["gold"]}"/>'+f'<circle cx="640" cy="185" r="4" fill="{COL["light"]}"/>','CARD-F02','fixed','pointer'))
+            placeholder='图片加载中' if phase=='LOADING' else '图片未载入'
+            disc.append(grp(f'CARD-WHEEL-ART-{i+1:02d}',rect(x,y,210,118,'#6C7691',11)+text(x+105,y+59,placeholder,13,COL['white'],550,'middle'),'CARD-F01 CARD-F10','loading-placeholder' if phase=='LOADING' else 'error-placeholder','temporary-placeholder'))
+        label_y=463 if i in (0,3) else 705
+        disc.append(text(x+105,label_y,name,19,COL['white'],750,'middle'))
+    disc.append(grp('CARD-WHEEL-HUB',f'<circle cx="640" cy="500" r="43" fill="{COL["panel"]}" stroke="{COL["gold"]}" stroke-width="2"/>'+text(640,501,'四季',14,COL['white'],700,'middle'),'CARD-F02','center','decoration'))
+    a.append(grp('CARD-ROTATING-DISC',''.join(disc),'CARD-F02','result-example' if result_example else phase.lower(),'visual-wheel', 'transform="rotate(-45 640 500)"' if result_example else ''))
+    pointer_label='示例：春季' if result_example else '待抽取'
+    a.append(grp('CARD-WHEEL-POINTER',rect(588,173,104,28,COL['panel'],9)+text(640,188,pointer_label,12,COL['white'],700,'middle')+f'<path d="M627 205 L653 205 L640 234 Z" fill="{COL["gold"]}"/>','CARD-F02','result-example' if result_example else 'neutral','pointer'))
     return ''.join(a)
 
-def main(phase='READY'):
-    if phase not in ('READY','LOADING','SPINNING'): raise ValueError(phase)
+def main(phase='READY', result_example=False):
+    if phase not in ('READY','LOADING','SPINNING','ERROR'): raise ValueError(phase)
     a=[rect(0,0,1440,1050,'url(#night)')]
     for i,(x,y) in enumerate([(133,52),(334,78),(1364,185),(90,790),(1380,943)]):
         a.append(f'<circle id="ambient-star-{i+1}" cx="{x}" cy="{y}" r="1.5" fill="{COL["gold"]}" opacity="0.26" data-role="decoration"/>')
@@ -90,17 +94,23 @@ def main(phase='READY'):
     a.append(grp('CARD-TOOL-RAIL',rect(32,98,112,870,COL['deep'],18)+text(88,127,'工具',13,COL['muted'],600,'middle'),role='conceptual-disclosure'))
     for i,(label,y) in enumerate([('转盘',168),('收集',240),('档案',312),('记录',384)]):
         a.append(grp(f'CARD-TOOL-{i+1}',rect(43,y-24,90,56,COL['panel'] if i==0 else 'none',12)+text(88,y+4,label,14,COL['white'] if i==0 else COL['muted'],700,'middle'),role='conceptual-disclosure'))
-    a.append(wheel(phase))
-    a.append(grp('CARD-OPERATION-PANEL',rect(1002,200,406,674,COL['panel'],18)+text(1030,238,'本轮抽取',22,COL['white'],750)+text(1030,275,'四季积分卡 · 每次抽取记录一张',13,COL['muted'],550),'CARD-F03 CARD-F04 CARD-F05'))
-    a.append(grp('CARD-PLAYER-SUMMARY',rect(1030,305,350,100,COL['deep'],12)+text(1050,334,'当前档案',12,COL['muted'],600)+text(1050,368,'存档 1 · 玩家',18,COL['white'],700),'CARD-F06 CARD-F07','design-example','summary'))
-    stage={'READY':('可以抽取','卡图已载入 · 等待操作'),'LOADING':('加载中','正在载入四季积分卡图片'),'SPINNING':('抽取中','轮盘旋转中 · 不可重复触发')}[phase]
-    a.append(grp('CARD-RESULT-FEEDBACK',rect(1030,433,350,108,COL['deep'],12)+text(1050,462,stage[0],18,COL['white'],700)+text(1050,500,stage[1],13,COL['muted'],550),'CARD-F04',phase.lower(),'status'))
-    a.append(grp('CARD-SPIN-ELIGIBILITY',text(1030,578,'抽取条件',13,COL['muted'],650)+text(1030,608,'图片载入后可抽取 · 无额外消耗',14,COL['white'],600),'CARD-F03',phase.lower(),'informational'))
-    label={'READY':'抽取积分卡','LOADING':'图片加载中…','SPINNING':'抽取中…'}[phase]
-    a.append(btn('CARD-ACTION-SPIN',1030,649,350,60,label,'CARD-F03','primary' if phase=='READY' else 'disabled','ready' if phase=='READY' else 'disabled'))
-    a.append(grp('CARD-RESET-EXPLANATION',text(1030,747,'重置与返回是不同操作',12,COL['muted'],550),'CARD-F05',role='informational'))
+    a.append(wheel(phase,result_example))
+    a.append(grp('CARD-OPERATION-PANEL',rect(1002,200,406,674,COL['panel'],18)+text(1030,244,'本轮抽取',22,COL['white'],750)+text(1030,281,'四季积分卡',13,COL['muted'],550),'CARD-F03 CARD-F04 CARD-F05'))
+    a.append(grp('CARD-PLAYER-SUMMARY',text(1030,345,'当前档案',13,COL['muted'],550)+text(1120,345,'存档 1 · 玩家',14,COL['white'],700),'CARD-F06 CARD-F07','design-example','summary'))
+    status={'READY':('已就绪','卡图已载入，可以抽取'),'LOADING':('加载中','正在载入四季卡图'),'SPINNING':('抽取中','旋转结束前不能再次抽取'),'ERROR':('加载失败','卡图未能载入，请检查资源后重试')}[phase]
+    if result_example: status=('设计示例：春季','指针落在春季扇区内部；非运行时结果')
+    status_color='#F3CDD5' if phase=='ERROR' else COL['muted']
+    a.append(grp('CARD-RESULT-FEEDBACK',text(1030,423,status[0],16,status_color,700)+text(1030,571,status[1],13,status_color,550),'CARD-F04', 'result-example' if result_example else phase.lower(),'status'))
+    a.append(grp('CARD-SPIN-ELIGIBILITY',text(1030,387,'图片载入后可抽取',13,COL['muted'],550),'CARD-F03',phase.lower(),'informational'))
+    label={'READY':'抽取积分卡','LOADING':'图片加载中…','SPINNING':'抽取中…','ERROR':'暂不可抽取'}[phase]
+    if result_example: label='结果停靠示意 · 不可操作'
+    a.append(btn('CARD-ACTION-SPIN',1030,465,350,76,label,'CARD-F03','primary' if phase=='READY' and not result_example else 'disabled','ready' if phase=='READY' and not result_example else 'disabled'))
+    a.append(grp('CARD-RESET-SEPARATOR',rect(1030,714,350,1,COL['edge']),role='decoration'))
+    a.append(grp('CARD-RESET-EXPLANATION',text(1030,742,'重置游戏不会返回棋盘',12,COL['muted'],550),'CARD-F05',role='informational'))
     a.append(btn('CARD-RESET',1030,769,350,52,'重置游戏','CARD-F05','danger' if phase!='SPINNING' else 'disabled','disabled' if phase=='SPINNING' else 'default'))
-    a.append(grp('CARD-FOOTER',rect(160,897,1248,75,COL['panel'],14)+text(185,934,'收集进度',15,COL['white'],700)+text(313,934,'春 0/2  ·  夏 0/2  ·  秋 0/2  ·  冬 0/2',13,COL['muted'],550)+text(1090,934,'档案 / 历史 / 日志  →',13,COL['muted'],600),'CARD-F09 CARD-F11 CARD-F14','zero-progress','summary-not-control'))
+    a.append(grp('CARD-FOOTER',rect(160,897,1248,75,COL['panel'],14)+text(185,934,'当前收集',15,COL['white'],700)+text(318,934,'0 张 · 静态示例',13,COL['muted'],550)+text(1252,934,'查看收集 →',13,COL['muted'],600),'CARD-F09 CARD-F14','zero-progress','summary-not-control'))
+    if phase=='ERROR':
+        a.append(grp('CARD-ERROR-CONCEPT-NOTE',text(190,848,'设计提案：现有运行时尚未单独呈现加载错误',12,COL['muted'],550),state='not-implemented',role='concept-note'))
     return ''.join(a)
 
 def expanded():
@@ -127,7 +137,9 @@ def expanded():
     a.append(btn('CARD-LOG-CSV',1114,904,250,34,'导出 CSV','CARD-F12'))
     return ''.join(a)
 
-(STATES/'CARD-02.desktop.svg').write_text(svg(main(),'CARD-02-DESKTOP-V2'),encoding='utf-8')
-(STATES/'CARD-02.LOADING.svg').write_text(svg(main('LOADING'),'CARD-02-LOADING-CONCEPT-V2'),encoding='utf-8')
-(STATES/'CARD-02.SPINNING.svg').write_text(svg(main('SPINNING'),'CARD-02-SPINNING-CONCEPT-V2'),encoding='utf-8')
-(CONCEPTS/'CARD-02.tools-expanded.svg').write_text(svg(expanded(),'CARD-02-TOOLS-EXPANDED-CONCEPT-V2'),encoding='utf-8')
+(STATES/'CARD-02.desktop.svg').write_text(svg(main(),'CARD-02-DESKTOP-V2.1'),encoding='utf-8')
+(STATES/'CARD-02.LOADING.svg').write_text(svg(main('LOADING'),'CARD-02-LOADING-CONCEPT-V2.1'),encoding='utf-8')
+(STATES/'CARD-02.SPINNING.svg').write_text(svg(main('SPINNING'),'CARD-02-SPINNING-CONCEPT-V2.1'),encoding='utf-8')
+(CONCEPTS/'CARD-02.error-proposal.svg').write_text(svg(main('ERROR'),'CARD-02-ERROR-PROPOSAL-NOT-IMPLEMENTED-V2.1'),encoding='utf-8')
+(CONCEPTS/'CARD-02.tools-expanded.svg').write_text(svg(expanded(),'CARD-02-TOOLS-EXPANDED-CONCEPT-V2.1'),encoding='utf-8')
+(CONCEPTS/'CARD-02.pointer-result-example.svg').write_text(svg(main(result_example=True),'CARD-02-POINTER-RESULT-DESIGN-EXAMPLE-V2.1'),encoding='utf-8')
