@@ -80,8 +80,8 @@ def wheel(phase, result_example=False):
         disc.append(text(x+105,label_y,name,19,COL['white'],750,'middle'))
     disc.append(grp('CARD-WHEEL-HUB',f'<circle cx="640" cy="500" r="43" fill="{COL["panel"]}" stroke="{COL["gold"]}" stroke-width="2"/>'+text(640,501,'四季',14,COL['white'],700,'middle'),'CARD-F02','center','decoration'))
     a.append(grp('CARD-ROTATING-DISC',''.join(disc),'CARD-F02','result-example' if result_example else phase.lower(),'visual-wheel', 'transform="rotate(-45 640 500)"' if result_example else ''))
-    pointer_label='示例：春季' if result_example else '待抽取'
-    a.append(grp('CARD-WHEEL-POINTER',rect(588,173,104,28,COL['panel'],9)+text(640,188,pointer_label,12,COL['white'],700,'middle')+f'<path d="M627 205 L653 205 L640 234 Z" fill="{COL["gold"]}"/>','CARD-F02','result-example' if result_example else 'neutral','pointer'))
+    pointer_label=rect(588,173,104,28,COL['panel'],9)+text(640,188,'示例：春季',12,COL['white'],700,'middle') if result_example else rect(600,179,80,20,COL['panel'],8)+text(640,190,'待抽取',11,COL['muted'],600,'middle')
+    a.append(grp('CARD-WHEEL-POINTER',pointer_label+f'<path d="M627 205 L653 205 L640 234 Z" fill="{COL["gold"]}"/>','CARD-F02','result-example' if result_example else 'neutral','pointer'))
     return ''.join(a)
 
 def main(phase='READY', result_example=False):
@@ -109,8 +109,6 @@ def main(phase='READY', result_example=False):
     a.append(grp('CARD-RESET-EXPLANATION',text(1030,742,'重置游戏不会返回棋盘',12,COL['muted'],550),'CARD-F05',role='informational'))
     a.append(btn('CARD-RESET',1030,769,350,52,'重置游戏','CARD-F05','danger' if phase!='SPINNING' else 'disabled','disabled' if phase=='SPINNING' else 'default'))
     a.append(grp('CARD-FOOTER',rect(160,897,1248,75,COL['panel'],14)+text(185,934,'当前收集',15,COL['white'],700)+text(318,934,'0 张 · 静态示例',13,COL['muted'],550)+text(1252,934,'查看收集 →',13,COL['muted'],600),'CARD-F09 CARD-F14','zero-progress','summary-not-control'))
-    if phase=='ERROR':
-        a.append(grp('CARD-ERROR-CONCEPT-NOTE',text(190,848,'设计提案：现有运行时尚未单独呈现加载错误',12,COL['muted'],550),state='not-implemented',role='concept-note'))
     return ''.join(a)
 
 def expanded():
